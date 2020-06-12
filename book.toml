@@ -1,0 +1,10 @@
+[book]
+authors = ["Jared Wolff"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Product Documentation"
+
+
+[output.html]
+git-repository-url = "https://www.github.com/jaredwolff/docs"
