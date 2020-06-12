@@ -5,6 +5,12 @@ multilingual = false
 src = "src"
 title = "Product Documentation"
 
+[build]
+# create-missing = false
+
+[output.html.fold]
+# enable = true
 
 [output.html]
+# no-section-label = true
 git-repository-url = "https://www.github.com/jaredwolff/docs"

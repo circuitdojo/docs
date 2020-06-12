@@ -60,5 +60,6 @@ $(OPTIMIZED_IMAGES):
 .PHONY: deploy
 deploy:
 	@echo rsync to $(DEPLOY_DIR)
-	@rsync -zr --del $(DEST_DIR) $(USER)@$(SERVER):$(DEPLOY_DIR)/
+	@ssh $(USER)@$(SERVER) mkdir -p $(DEPLOY_DIR)
+	@rsync -zr --del $(DEST_DIR)/ $(USER)@$(SERVER):$(DEPLOY_DIR)/
 	@echo "🚀 Docs are deployed!"
