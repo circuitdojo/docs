@@ -6,7 +6,7 @@
 
 This board can be powered several ways. The most popular way to power Feather boards is by using the USB port. This board is no exception. It works well across both USB and LiPoly batteries. You even have the option to disconnect the battery charger for a safe connection to primary cells!
 
-The board is designed from the ground up to be power efficent at the most used power state. *standby.* That's right, if you're developing something that's battery powered, your most used state will usually be standby mode. As of this writing the estimated current draw in this state should be about 10µA. That's approximately 1.7 years on a 150mAH cell!
+The board is designed from the ground up to be power efficient at the most used power state. *standby.* That's right, if you're developing something that's battery powered, your most used state will usually be standby mode. As of this writing the estimated current draw in this state should be about 2µA. That's approximately 8.5 years on a 150mAH cell!
 
 Speaking of power, this board also has a fully fledged DC/DC Buck Boost. That whether your input voltage is 5.5 or 2.8V you'll get a nice stable 3.3V at the output.
 
@@ -18,4 +18,4 @@ Finally, but not least, the nRF9160. I've been watching this part very carefully
 
 I'll be launching in collaboration with the awesome folks at [Hackster.io](https://www.hackster.io/launch) and [GroupGets](https://groupgets.com). We're all very excited to bring these boards to you!
 
-If you want real-time updates, enter your info below and i'll stay in touch. I can't wait to share more with you!
+If you want real-time updates, [sign up here](https://www.jaredwolff.com/store/nrf91-feather/) and i'll stay in touch. I can't wait to share more with you!

@@ -7,4 +7,4 @@
 
 [aqw]: img/aqw-x200.png
 [fw]: img/nrf91-feather-v31-headers-x200.png
-[fw-intro]: ./ch01-01-introduction.md
+[fw-intro]: ./ch01-01-nrf9160-feather-introduction.md
