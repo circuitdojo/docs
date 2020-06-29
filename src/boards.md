@@ -9,4 +9,4 @@
 [aqw-intro]: https://www.jaredwolff.com/documentation/air-quality-wing/
 
 [fw]: img/nrf91-feather-v31-headers-x200.png
-[fw-intro]: ./nrf9160-introduction.md
+[fw-intro]: ./nrf9160-getting-started.md

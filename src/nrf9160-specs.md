@@ -10,7 +10,7 @@ Here are the elctrical specifications for the nRF9160 Feather. Most of the speci
 - **Max output current:** 800mA
 - **Off current w/ Low Power RTC:** < 3µA
 
-## Pin Ratings (MD/A0-A5/D0-D8)
+## Pin Ratings (MD/A0-A5/D0-D8/TX/RX/CIPO/COPI/SCK/RST)
 
 - **Max input voltage:** 3.6V
 
@@ -50,13 +50,11 @@ The port works with most U.FL based active antenna parts. The nRF9160 Feather ha
 and verified with the following parts:
 
 
-| Part Number     | Manufacturerer    | Link         | GNSS (1602MHz) | Datasheet |
-| --------------- | ----------------- | ------------ | -------------- | --------- |
-| ACTPAT182-01-IP | Inventek Systems  | [Pricing][1] | No             | [Link][4] |
-| APAGM2704A-C2G  | Abracon           | [Pricing][2] | Yes            | [Link][3] |
-| GPSGB2530       | Pulse Electronics | [Pricing][6] | Yes            | [Link][5] |
-
-**🔲 TODO: 1602 matters?**
+| Part Number     | Manufacturerer    | Country of Origin | 1602MHz Capable | Datasheet | Notes                |
+| --------------- | ----------------- | ----------------- | --------------- | --------- | -------------------- |
+| ACTPAT182-01-IP | Inventek Systems  | Taiwan            | No              | [Link][4] | Offered w/ GroupGets |
+| APAGM2704A-C2G  | Abracon           | China             | Yes             | [Link][3] |                      |
+| GPSGB2530       | Pulse Electronics | China             | Yes             | [Link][5] |                      |
 
 
 [1]: https://octopart.com/actpat182-01-ip-inventek+systems-33601633?r=sp
@@ -69,16 +67,29 @@ and verified with the following parts:
 
 ## Cellular Antenna
 
-The nRF9160 Feather has been tested with these approved antennas:
+The nRF9160 Feather has been tested with these approved antennas. They're chosen specifically to match the FCC requirements as indicated [here.](https://apps.fcc.gov/oetcf/tcb/reports/Tcb731GrantForm.cfm?mode=COPY&RequestTimeout=500&tcb_code=&application_id=5jPUJx5%2Bvjp3BKCESrEhWw%3D%3D&fcc_id=2ANPO00NRF9160)
 
-| Part Number     | Manufacturerer | Link                      | Datasheet         |
-| --------------- | -------------- | ------------------------- | ----------------- |
-| FXUB63.07.0150C | Taoglas        | [Pricing][fxub63-pricing] | [Link][fxub63-ds] |
-|                 |                | [Pricing][#]              | [Link][#]         |
-|                 |                | [Pricing][#]              | [Link][#]         |
+| Part Number     | Manufacturerer        | Country of Origin | Datasheet                  | Notes    | Tested |
+| --------------- | --------------------- | ----------------- | -------------------------- | -------- | ------ |
+| FH2B4MH1F2F0100 | Unictron Technologies | Taiwan            | [Link][uni-ds]             | Included |        |
+| SRFL026         | Antenova              | China             | [Link][SRFL026-ds]         |          | X      |
+| W3907B0100      | Pulse Electronics     | China             | [Link][W3907B0100-ds]      |          |        |
+| MFX3.07.0150C   | Taoglas               | Taiwan            | [Link][mfx3-ds]            |          |        |
+| FXUB63.07.0150C | Taoglas               | Taiwan            | [Link][fxub63-ds]          | GPS/GNSS | X      |
+| ANT-LTE-RPC-UFL | Linx                  | China             | [Link][ant-lte-rpc-ufl-ds] | GPS/GNSS |        |
 
 [fxub63-pricing]: https://octopart.com/fxub63.07.0150c-taoglas-48644609?r=sp
 [fxub63-ds]: https://cdn.taoglas.com/datasheets/FXUB63.07.0150C.pdf
-[#]: #
+[ant-lpl-pricing]: https://octopart.com/ant-lpl-fpc-100-linx-106001623?r=sp
+[ant-lpl-ds]: https://linxtechnologies.com/wp/wp-content/uploads/ant-lpl-fpc-100-ds.pdf
+[uni-ds]: https://www.unictron.com/wp-content/uploads/H2B4MH1F2F0100.pdf
+[uni-pricing]: https://octopart.com/h2b4mh1f2f0100-unictron-93186548?r=sp
+[mol-ds]: https://www.molex.com/pdm_docs/ps/2091420180-001.pdf
+[mol-pricing]: https://octopart.com/search?q=2091420180&currency=USD&specs=0
+[SRFL026-pricing]: https://octopart.com/srfl026-100-antenova-73285557?r=sp
+[SRFL026-ds]: http://antenova.com/wp-content/uploads/2016/05/Mitis-SRFL026-PS-1.1.pdf
+[W3907B0100-ds]: https://productfinder.pulseeng.com/doc_type/WEB301/doc_num/W3907XXXX/doc_part/W3907XXXX.pdf
+[mfx3-ds]: https://cdn.taoglas.com/datasheets/MFX3.07.0150C.pdf
+[ant-lte-rpc-ufl-ds]: https://linxtechnologies.com/wp/wp-content/uploads/ant-lte-rpc-ccc-ds.pdf
 
-Any other antenna **may not be supported**. If you choose to use a different one, proceed at your own risk!
+Any other antenna **are not supported**. If you choose to use a different one, proceed at your own risk!
