@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to the nRF9160 Feather
 
 The nRF9160 Feather by Jared Wolff (aka Circuit Dojo LLC) is an electronics development board. It features a Nordic Semiconductor nRF9160-SICA part. This part is capable of both CAT M1 LTE and NB-IoT for communication with the outside world. It's compatible primarily with Zephyr via the nRF Connect SDK. Other toolchains and languages coming soon to a Github repository near you.
 
@@ -37,7 +37,7 @@ The nRF9160 Feather by Jared Wolff (aka Circuit Dojo LLC) is an electronics deve
   * Max bus speed of 133MHz
   * Standard SPI
 * Power supply
-  * 3.3V Buck/Boost up to 1A of current draw
+  * 3.3V Buck/Boost up to 0.9A of current draw
   * Operating range 2.8 to 5.5V
   * External LiPoly battery connection (JST SPH type)
   * LiPoly set to 300mA with indication
@@ -49,6 +49,9 @@ The nRF9160 Feather by Jared Wolff (aka Circuit Dojo LLC) is an electronics deve
   * Standard feather form factor GPIOs (0.1" pitch)
   * 2x buttons (1 Reset, 1 General Purpose)
   * 1x Blue LED connected to D7
+* Antenna connections:
+  * 1x U.FL for LTE with matching network
+  * 1x U.FL for active GPS antennas
 * Feather form factor
   * 50.8mm x 22.86mm (2" x 0.9")
 
