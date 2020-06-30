@@ -13,4 +13,4 @@ title = "Product Documentation"
 
 [output.html]
 # no-section-label = true
-git-repository-url = "https://www.github.com/jaredwolff/docs"
+git-repository-url = "https://www.github.com/circuitdojo/docs"
