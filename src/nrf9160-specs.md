@@ -50,9 +50,9 @@ The port works with most U.FL based active antenna parts. The nRF9160 Feather ha
 and verified with the following parts:
 
 
-| Part Number     | Manufacturerer   | Country of Origin | Datasheet            | Notes                |
-| --------------- | ---------------- | ----------------- | -------------------- | -------------------- |
-| ACTPAT182-01-IP | Inventek Systems | Taiwan            | [Link][actpat182-ds] | Offered w/ GroupGets |
+| Part Number     | Manufacturerer   | Datasheet            | Notes                |
+| --------------- | ---------------- | -------------------- | -------------------- |
+| ACTPAT182-01-IP | Inventek Systems | [Link][actpat182-ds] | Offered w/ GroupGets |
 
 [actpat182-ds]: https://static6.arrow.com/aropdfconversion/422c439d1147508166bb2a384ddf266b0a8da68b/2actpat182_functional_specification.pdf
 
@@ -60,11 +60,13 @@ and verified with the following parts:
 
 The nRF9160 Feather has been tested with these approved antennas. They're chosen specifically to match the FCC requirements as indicated [here.](https://apps.fcc.gov/oetcf/tcb/reports/Tcb731GrantForm.cfm?mode=COPY&RequestTimeout=500&tcb_code=&application_id=5jPUJx5%2Bvjp3BKCESrEhWw%3D%3D&fcc_id=2ANPO00NRF9160)
 
-| Part Number     | Manufacturerer        | Country of Origin | Datasheet      | Notes    |
-| --------------- | --------------------- | ----------------- | -------------- | -------- |
-| FH2B4MH1F2F0100 | Unictron Technologies | Taiwan            | [Link][uni-ds] | Included |
+| Part Number     | Manufacturerer        | Datasheet                  | Notes           |
+| --------------- | --------------------- | -------------------------- | --------------- |
+| FH2B4MH1F2F0100 | Unictron Technologies | [Link][uni-ds]             | Included        |
+| ANT-LTE-RPC-UFL | Linx                  | [Link][ant-lte-rpc-ufl-ds] | GPS/GNSS, Rigid |
 
 [uni-ds]: https://www.unictron.com/wp-content/uploads/H2B4MH1F2F0100.pdf
 [uni-pricing]: https://octopart.com/h2b4mh1f2f0100-unictron-93186548?r=sp
+[ant-lte-rpc-ufl-ds]: https://linxtechnologies.com/wp/wp-content/uploads/ant-lte-rpc-ccc-ds.pdf
 
-Only tested antennas **are supported**. If you choose to use a different one, proceed at your own risk!
+**Only tested antennas are supported**. If you choose to use a different one, proceed at your own risk!

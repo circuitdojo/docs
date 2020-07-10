@@ -4,15 +4,23 @@
 
 To make things easier for you, the nRF9160 Feather comes pre-tested and ready for integration. All applicable testing will be done to ensure comppliance with FCC and CE EMI/EMC requirements. See each section below for more information.
 
-## OSHWA Certification:
+## Open Source Hardware Certification:
 
-**Current status:** Not complete
+![OSHW](img/OSHW_mark_US000644.png)
+
+- **Current status:** Compliant
+- **UID:** US000644
+- **More Info:** [certification database link](https://certification.oshwa.org/us000644.html)
 
 ## CE Compliance
 
 **Current status:** Not complete
 
 ## FCC Part15 Compliance
+
+**Current status:** Not complete
+
+## ISED (IC) Compliance
 
 **Current status:** Not complete
 

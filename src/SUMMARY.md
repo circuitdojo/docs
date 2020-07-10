@@ -12,5 +12,6 @@
   - [Example Code](./nrf9160-example-code.md)
   - [Downloads](./nrf9160-downloads.md)
   - [Compliance](./nrf9160-compliance.md)
+  - [Troubleshooting](./nrf9160-troubleshooting.md)
   - [Purchase](./nrf9160-purchase.md)
   - [Thanks](./nrf9160-thanks.md)

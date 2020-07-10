@@ -33,7 +33,7 @@ Here's a full working list of what plays nicely with the nRF9160 Feather. This l
 | Verizon                      | Verizon      | Due to network contraints, currently only works in administrative mode.                                                               | 🔶       |            |
 | Twilio (Standard Wireles)    | T-Mobile     | T-Mobile does not support the nRF9160.                                                                                                | 🔴       |            |
 | Twilio (Standard Narrowband) | T-Mobile     | T-Mobile does not support the nRF9160.                                                                                                | 🔴       |            |
-| Twilio (Super Sim)           | ?            | Fails to make a full connection. Still debugging.                                                                                     | 🔴       | super      |
+| Twilio (Super Sim)           | ?            | Fails to make a full connection. May work with future nRF9160 modem firmware.                                                              | 🔶       | super      |
 | AT&T                         | AT&T         | Untested.                                                                                                                             | 🔶       |            |
 
 Emoji usage chart:
