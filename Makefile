@@ -58,7 +58,7 @@ $(OPTIMIZED_IMAGES):
 	convert -strip -compress JPEG -resize '730>' $(subst $(OPTIMIZED_DIR)/,$(CONTENT_DIR)/,$@) $@
 
 .PHONY: deploy
-deploy: build
+deploy: all
 	@echo rsync to $(DEPLOY_DIR)
 	@ssh $(USER)@$(SERVER) mkdir -p $(DEPLOY_DIR)
 	@rsync -zr --del $(DEST_DIR)/ $(USER)@$(SERVER):$(DEPLOY_DIR)/
