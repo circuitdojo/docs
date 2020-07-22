@@ -4,7 +4,7 @@
 ![Diagram](img/nrf9160-feather-v31-features.png)
 
 
-This board can be powered several ways. The most popular way to power Feather boards is by using the USB port. This board is no exception. It works well across both USB and LiPoly batteries. You even have the option to disconnect the battery charger for a safe connection to primary cells!
+This board can be powered several ways. The most popular way to power Feather boards is by using the USB port. This board is no exception. It works well across both USB and LiPoly batteries.
 
 The board is designed from the ground up to be power efficient at the most used power state: *standby.* That's right, if you're developing something that's battery powered, your most used state will usually be standby mode. As of this writing the estimated current draw in this state should be about 2µA. That's approximately 8.5 years on a 150mAH cell!
 
