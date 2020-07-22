@@ -13,4 +13,5 @@ title = "Product Documentation"
 
 [output.html]
 # no-section-label = true
+additional-js = ["src/js/fathom.js"]
 git-repository-url = "https://www.github.com/circuitdojo/docs"
