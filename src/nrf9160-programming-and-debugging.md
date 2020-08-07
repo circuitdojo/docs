@@ -7,30 +7,54 @@ There are currently two ways of programming the nRF9160 Feather. You can use the
 
 ## Booloader use
 
-Currently the nRF9160 Feather uses the MCUBoot bootloader which comes standard with the nRF Connect SDK. In order to utilize the bootloader, you'll ned to install `mcumgr`. Here's how below:
+Currently the nRF9160 Feather uses the MCUBoot bootloader which comes standard with the nRF Connect SDK. It is the recommended way to load new firmware onto your nRF9160 Feather.
 
-### On Windows
+In order to utilize the bootloader, you'll ned to install `newtmgr` (AKA `mcumgr`). Here's how below:
 
-1. Make sure you have the latest version of Go installed. You can [install according to the information here.](https://golang.org/dl/)
-1. Run `go get github.com/apache/mynewt-mcumgr-cli/mcumgr` from `cmd`.
-1. Make sure that `C:\Go\bin\` is in your `PATH`. (Should be done by default)
-1. Once done, run `mcumgr` to make sure it's installed!
+### Binary Download
 
-![Go on Windows](img/mcumgr.png)
+Download one of the binary files below. (Install script coming soon...)
 
-### On OSX
+- [Windows](files/newtmgr/windows/newtmgr.exe)
+- [Mac OSX](files/newtmgr/darwin/newtmgr)
+- [Linux](files/newtmgr/linux/newtmgr)
 
-To install you'll need Go version 1.7 or greater. You can either use `brew` ([HomeBrew](https://brew.sh)) or download the [installer from here.](https://golang.org/dl/)
+Then place that file in your `$PATH`. On Linux and OSX that location will be `/usr/local/bin`. On Windows you can place the file in a location of your choice. Then, you'll have to update your `$PATH`. If you're unfamailiar with the process check out [this guide.](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/)
 
-1. If you don't have Hombrew installed run: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
-1. If you don't have Go installed,run `brew install go`.
-1. Run `go get github.com/apache/mynewt-mcumgr-cli/mcumgr` from any terminal.
-1. Make sure that `~/go/bin/` is in your `PATH`. (Should be done by default)
-1. Once done, run `mcumgr` to make sure it's installed!
+### Setting your connection configuration (one time only)
 
-![mcumgr on OSX](img/mcumgr-osx.png)
+In order to easily work with `newtmgr` you'll need to make a one-time connection profile.
 
-## Using `mcumgr`
+<script id="asciicast-352234" src="https://asciinema.org/a/352234.js" async data-rows="10"></script>
+
+**For Mac OS**
+
+```
+newtmgr conn add serial type=serial connstring='dev=/dev/tty.SLAB_USBtoUART,baud=1000000'
+```
+
+**For Linux**
+
+```
+sudo newtmgr conn add serial type=serial connstring="dev=/dev/ttyUSB0,baud=1000000"
+```
+
+Depending on your system, the serial port may show up differently. Replace `/dev/ttyUSB0` with the serial port name. Also, `sudo` is required for Linux to access the serial port properly.
+
+**For Windows**
+
+```
+newtmgr conn add serial type=serial connstring="dev=COM3,baud=1000000"
+```
+
+In all three cases above you've created a connection called `serial`. We'll be using that when issuing commands to the nRF9160 Feather.
+
+## Using `newtmgr`
+
+<center><video width="100%" class="video" poster="/img/screencap.png" controls preload>
+    <source src="/video/dfu_update.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></center>
 
 **Pre-check:** MCUBoot *needs* to be enabled in your project before you can use it! Make sure that you have `CONFIG_BOOTLOADER_MCUBOOT=y` in your `prj.conf`
 
@@ -39,17 +63,15 @@ To install you'll need Go version 1.7 or greater. You can either use `brew` ([Ho
    1. Then tap the RST button while holding mode
    1. Let go of the MODE button
 1. Building your application if you haven't already with `west build`. It will create a folder called `build`. The file we care about is `build/zephyr/app_update.bin`
-1. Load the file using `mcumgr`
-    ```
-    mcumgr --conntype=serial --connstring /dev/tty.SLAB_USBtoUART image upload build/zephyr/app_update.bin
-    mcumgr --conntype=serial --connstring /dev/tty.SLAB_USBtoUART reset
-    ```
-    Your firmware will then be transferred.
+1. Load the file using `newtmgr`
+    1. Load the binary file using: `newtmgr -c serial image upload build/zephyr/app_update.bin`
+    1. Reset your board using `newtmgr -c serial reset` or hit the **RST** button. Full process below:
+    <script id="asciicast-352227" src="https://asciinema.org/a/352227.js" async  data-rows="10"></script>
 
-**Two important notes:**
+**Note:**
 
-1. The transfer process is currently *slow*. The default BAUD is 115200. I've tested it at higher speeds (1M BAUD) and it works well. Stay tuned for improvements here. If you want guarenteed fast programming speeds, use the J-Link method.
-1. The nRF9160 Feather does not respond to `mcumgr` commands **unless it's in DFU mode**.
+1. The transfer process is limited to 1M BAUD. In most cases it takes about 8 seconds to transfer application code.
+1. The nRF9160 Feather does not respond to `newtmgr` commands **unless it's in DFU mode**. (See step 1 above to get it into DFU mode.)
 
 ## Requirements for external programming
 
