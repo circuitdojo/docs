@@ -29,7 +29,7 @@
 * Micro USB connection for USB-to-Serial and DFU
 * Pre-programmed MCUBoot bootloader
 * External NOR Flash by Winbond
-  * 2MB of space
+  * ~~2MB~~ 4MB of space (Upgraded for all boards as of August 2, 2020!)
   * Max bus speed of 133MHz
   * Standard SPI
 * Power supply

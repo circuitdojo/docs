@@ -4,84 +4,24 @@
 
 ## 🚨Read this first🚨
 
-TODO: this section will have all the warnings and information on how to use. Battery being one important thing. Also compliance with Verizon is another.
+There are some important things about the nRF9160 Feather before you get started:
+
+1. The nRF9160 Feater shouldn't be used with a battery less than 300mAH. More information in the [specs section.](./nrf9160-specs.md)
+
+1. If you need to debug your nRF9160 Feather, it requires an external programmer. More information on that in the [Requirements for external programming](nrf9160-programming-and-debugging.md#requirements-for-external-programming) section
 
 ## What's included
 
-TODO: picture of included contents
+![nRF9160 Feather](img/feather-trimmed.png)
 
 - 1x nRF9160 Feather board
-- 1x set of headers (16 pin and 12 pin)
-- 1x wide band cellular antenna
+- 1x set of male headers (16 pin and 12 pin)
+- 1x wide-band LTE antenna
 
-## Getting to know the hardware
+## Getting Started Sections
 
-### Soldering headers
+- [Programming and Debugging](nrf9160-programming-and-debugging.md)
+- [Serial Debug Usage](nrf9160-serial-usage.md)
+- [nRF Connect Desktop](nrf9160-nrf-connect-desktop.md)
 
-### Connecting antennas
-
-Once your headers are started you should *always* connect the LTE antenna before doing anything else.
-
-Use finger to push on to the connector. You should get a nice *click*.
-Removal, use your fingernail underneath and remove.
-
-**Note** GPS isn't required before powering up but you will need it for GPS to work!
-
-### Plugging in USB
-
-### Connecting battery
-
-### Using with Doubler/Tripler
-
-### Using with Breadboard
-
-### Sim usage
-
-Insert into the bottom. Nano (4FF) size only.
-
-Removal is the reverse of the above.
-
-👍[More info on which providers to go with here.](./nrf9160-cellular-matrix.md)
-
-
-## Setting up the toolchain
-
-### Mac
-
-### Windows
-
-### Linux
-
-## Programming code via bootloader
-
-`mcumgr`
-`nrfjprog`?
-
-Speed is currently set to 115200 but hopefully that can be improved in the future!
-
-## Programming code via nRF Connect Desktop
-
-dfadf
-
-## Onboard USB-to-Serial
-
-- Opening the SLAB_USBtoUART port on OSX. It will show up differently on PC.
-
-## Programming Firmware
-
-### Using J-Link
-
-- Using tag connect. Link to example `blinky` firmware.
-- nRF53 development board works best for programming
-  - talk about shorting the jumper for permanent programming mode
-  - using JTAG adapter board
-- nrfjprog
-
-### Using `pyocd` and CMCSIS-DAP
-
-- derp
-
-## Board Definition
-
-- Where it's located/how to use.
-
+## More coming soon..

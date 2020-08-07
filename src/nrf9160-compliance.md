@@ -24,6 +24,10 @@ To make things easier for you, the nRF9160 Feather comes pre-tested and ready fo
 
 **Current status:** Not complete
 
+## Verizon Network Certification
+
+**Current status:** Not complete
+
 ## FCC Pre-certification and Markings
 
 When designing the nRF9160 Feather into your own projects, there are some marking requirements. Per the [instructions](https://www.nordicsemi.com/-/media/Software-and-other-downloads/SiP/nRF9160-SiP/Hardware-integration-guide/nRF9160HardwareIntegrationGuidev11.pdf) from Nordic, you must have this written on your product somewhere:
