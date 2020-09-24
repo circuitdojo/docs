@@ -29,3 +29,16 @@ The major drawback of using `screen` is that it does not save your history. It's
 ```
 ls -l /dev | grep SLAB
 ```
+
+
+### `cu`
+
+You can also use `cu` to display your debug output. Here's an example:
+
+```
+sudo cu -l /dev/tty.SLAB_USBtoUART -s 115200
+```
+
+If you notice, it requires super user permissions. (This is the only drawback to it IMHO)
+
+To escape from your session type `~.`
