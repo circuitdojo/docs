@@ -4,6 +4,7 @@ There are currently two ways of programming the nRF9160 Feather. You can use the
 
 - [Bootloader use](#booloader-use)
 - [External programming](#requirements-for-external-programming)
+- [Modem trace](#getting-a-modem-trace)
 
 ## Booloader use
 
@@ -146,3 +147,54 @@ In the above, i'm:
 1. Doing a pristine build of my application with the nRF9160 Feather as the target.
 1. Then flashing using the `nrfjprog` runner option. This is preferred for all J-Link boards.
 1. Resetting the board using `nrfjprog -r`. As of this writing, `west` does not reset the board after programming.
+
+## Getting a modem trace
+
+Sometimes, you may be requested to get a modem trace of your device. This section will focus on helping you get one for your nRF9160 Feather.
+
+In order to get a modem trace, the TX and RX pins on your board need to be free. You'll also need a UART to USB adapter of some type. I used an FTDI one that has each of the lines broken out.
+
+1. First, set your `prj.conf` to include the following lines:
+
+    ```
+    # Enable modem trace
+    CONFIG_BSD_LIBRARY_TRACE_ENABLED=y
+
+    # AT host library
+    CONFIG_UART_INTERRUPT_DRIVEN=y
+    CONFIG_AT_HOST_LIBRARY=y
+    ```
+
+2. Then, create a folder in your project/sample called `boards` and add a new file called `circuitdojo_feather_nrf9160ns.overlay` We'll want to enable the UART1 interface on pins 23 and 24 like below:
+
+    ```
+    /*
+    * Copyright (c) 2020 Circuit Dojo LLC
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+
+    &uart1 {
+    status = "okay";
+    current-speed = <115200>;
+    tx-pin = <24>;
+    rx-pin = <23>;
+    };
+    ```
+
+3. Connect your USB to UART adatper. I've used clips from my logic analyzer to hold the wires in place. Connect the **yellow** RX wire to the TX on the board. Connect the **orange** wire to the RX on the board.
+
+    ![img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.42.58_PM.png](img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.42.58_PM.png)
+
+4. Then, inside LTE link monitor enable the process with `AT%XMODEMTRACE=1,2`. Then execute `AT+CFUN=0`. This will perpetually save and keep modem traces **on**.
+5. Then open the serial port in the modem trace App and click start.
+
+    ![img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.47.06_PM.png](img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.47.06_PM.png)
+
+    6. Then run your app as normal. You should see the **Trace size** go up little by little as connections are made, etc.
+
+    ![img/programming-and-debugging/Screen_Shot_2020-09-16_at_5.12.48_PM.png](img/programming-and-debugging/Screen_Shot_2020-09-16_at_5.12.48_PM.png)
+
+    7. Then grab the file according to the log output. For example: `Tracefile created: /Users/jaredwolff/Library/Application Support/nrfconnect/pc-nrfconnect-tracecollector/trace-2020-09-16T20-47-19.741Z.bin`
+
+    For more information, check out Nordic's [original article](https://devzone.nordicsemi.com/nordic/cellular-iot-guides/b/getting-started-cellular/posts/how-to-get-modem-trace-using-trace-collector-in-nrf-connect) on the subject.
