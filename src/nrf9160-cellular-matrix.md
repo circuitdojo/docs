@@ -32,9 +32,9 @@ Here's a full working list of what plays nicely with the nRF9160 Feather. This l
 | ------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
 | Hologram                  | Sprint/AT&T  | The first SIM to get working out of the box. Also supports T-Mobile and Verizon connections. Recommended 🌟                            | ✅       | hologram   |
 | Soracom                   | AT&T         | Tested previously with a different module in this location. Will test again with the nRF9160. Requires a PDN setting of `sora`/`sora` | ✅       | soracom.io |
-| Verizon                   | Verizon      | Due to network contraints, currently only works in administrative mode.                                                               | 🔶       |            |
+| Verizon                   | Verizon      | Works greaet once the IMEI is cleared with Verizon. More to come here..                                                               | ✅       |            |
 | Twilio (Standard Wireles) | T-Mobile     | T-Mobile does not support the nRF9160.                                                                                                | 🔴       |            |
-| Twilio (Super Sim)        | ?            | Fails to make a full connection. May work with future nRF9160 modem firmware.                                                         | 🔶       | super      |
+| Twilio (Super Sim)        | ?            | Fails to make a full connection. May work with future nRF9160 modem firmware.                                                         | 🔴       | super      |
 | AT&T                      | AT&T         | Untested.                                                                                                                             | 🔶       |            |
 
 ## NB IoT
