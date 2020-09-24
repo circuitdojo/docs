@@ -2,6 +2,7 @@
 
 ![Downloads](img/downloads.png)
 
+## Hardware Related
 
 | Type              | Donwload Link                 |
 | ----------------- | ----------------------------- |
@@ -9,12 +10,23 @@
 | Hardware          | [Link to Github][github-hw]   |
 | Bill of Materials | [Link to Aligni][bom]         |
 | 3D Model          | [Link to Github][github-hw]   |
+| Enclosure         | [Link to Grabcad][grabcad]    |
+
+## Software Related
+
+| Type               | Donwload Link      |
+| ------------------ | ------------------ |
+| Bootloader  (v1)   | [Link][bootloader] |
+| newtmgr CLI   (v1) | [Link][newtmgr]    |
 
 
 [github-docs]: https://www.github.com/circuitdojo/docs/
 [github-hw]: https://www.github.com/circuitdojo/nrf9160-feather/
 [aligni]: https://www.aligni.com
 [bom]: https://circuitdojo.aligni.com/part/380080?revision_id=402623#tab_part-list
+[grabcad]: https://grabcad.com/library/nrf9160-feather-tracker-enclosure-1
+[bootloader]: /files/nrf9160_feather_bootloader_v1.zip
+[newtmgr]: /nrf9160-programming-and-debugging.md#binary-download
 
 ## License
 
