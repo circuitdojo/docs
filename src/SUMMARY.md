@@ -10,7 +10,9 @@
   - [Getting Started](./nrf9160-getting-started.md)
     - [Programming and Debugging](./nrf9160-programming-and-debugging.md)
     - [Debug Serial Usage](./nrf9160-serial-usage.md)
-    - [nRF Connect Desktop](./nrf9160-nrf-connect-desktop.md)
+    - [nRF Connect Desktop](./nrf9160-nrf-connect-desktop.md)'
+  - [Example Code](./nrf9160-example-code.md)
+    - [nRF Cloud AGPS Sample](./nrf9160-agps-sample.md)
   - [Cellular Provider Matrix](./nrf9160-cellular-matrix.md)
   - [Downloads](./nrf9160-downloads.md)
   - [Compliance](./nrf9160-compliance.md)
