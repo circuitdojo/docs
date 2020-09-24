@@ -1,6 +1,8 @@
 # Debug Serial Usage
 
-The nRF9160 Feather comes with an on-board USB-to-UART chip. You can use it with most serial terminal viewers. Here are a few suggestions:
+The nRF9160 Feather comes with an on-board Silicon Labs CP2102 USB-to-UART chip. You can use it with most serial terminal viewers. If you have an older version of Windows you will have to install the driver. [The download is located here.](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
+
+Here's some recommendations for software to communicate with the nRF9160 Feather. No matter what program you use, the standard baud rate for the console is 115200. All other options are standard/default (8 bits, oon-pairty, 1 stop bit).
 
 ## Multi-Platform
 
