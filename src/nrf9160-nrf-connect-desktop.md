@@ -71,3 +71,5 @@ Here are the instructions for updating your modem firmware:
    ![Find modem firmware](img/5-modem-firmware.png)
 1. Start the DFU process by clicking **Write**!
    ![Start the process](img/6-start-mfw-dfu.png)
+
+Then, your device will be updated. This process takes about *45 seconds*. You can check if the firmware version using the `AT+CGMR` AT command. Devices running on Verizon **must** use modem firmware v1.1.2.
