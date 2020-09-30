@@ -16,6 +16,10 @@ IMAGES := \
 	$(wildcard $(CONTENT_DIR)/img/*.JPG) \
 	$(wildcard $(CONTENT_DIR)/img/*.jpeg) \
 	$(wildcard $(CONTENT_DIR)/img/*.png) \
+	$(wildcard $(CONTENT_DIR)/img/*/*.jpg) \
+	$(wildcard $(CONTENT_DIR)/img/*/*.JPG) \
+	$(wildcard $(CONTENT_DIR)/img/*/*.jpeg) \
+	$(wildcard $(CONTENT_DIR)/img/*/*.png) \
 	$(wildcard $(CONTENT_DIR)/*/img/*.jpg) \
 	$(wildcard $(CONTENT_DIR)/*/img/*.jpeg) \
 	$(wildcard $(CONTENT_DIR)/*/img/*.png) \
