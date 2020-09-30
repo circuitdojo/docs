@@ -12,6 +12,8 @@ Currently the nRF9160 Feather uses the MCUBoot bootloader which comes standard w
 
 In order to utilize the bootloader, you'll ned to install `newtmgr` (AKA `mcumgr`). Here's how below:
 
+**IMPORTANT:** updates above ~192kB will not work with the current version of the bootloader. Examples like the `asset_tracker` require a programmer.
+
 ### Binary Download
 
 Download one of the binary files below. (Install script coming soon...)
