@@ -2,6 +2,44 @@
 
 The `nrf_cloud_agps` sample is the *easiest* way to get started with generating GPS coordinates with your nRF9160 Feather.
 
+## Programming `nrf_cloud_apgs` **Sample**
+
+As of this writing, this example works best using a fork of nRF Connect SDK. You can skip the compilation step and download the update binary [here](files/nrf_cloud_agps_nrf9160_feather.bin).
+
+1. Change directories to `ncs/nrf`
+1. Then run these git commands:
+   ```
+   git remote add markus https://github.com/coderbyheart/sdk-nrf
+   git fetch markus
+   git checkout markus/nrfcloud-configurable-mqtt-client-id-prefix
+   ```
+   **Note** this is temporary until these changes are [pushed to the main branch.](https://github.com/nrfconnect/sdk-nrf/pull/2961)
+1. Run `west update` to fetch all dependencies
+1. Then change directories to `nrf/samples/nrf9160/nrf_cloud_agps/`
+1. Add this to `prj.conf`:
+   ```
+   # Cloud prefix for nRF9160 Feather
+   CONFIG_NRF_CLOUD_CLIENT_ID_PREFIX="feather-"
+
+   # Enable Zephyr application to be booted by MCUboot
+   CONFIG_BOOTLOADER_MCUBOOT=y
+   ```
+
+Then compile as normal:
+
+```
+$ west build -b circuitdojo_feather_nrf9160ns
+```
+
+Then load using `newmgr`:
+
+```
+$ newtmgr -c serial image upload build/zephyr/app_update.bin
+$ newtmgr -c serial reset
+```
+
+**Note:** fixes in this fork will be merged into the nRF Connect SDK main branch soon.
+
 ## Setting Up nRF Cloud
 
 During factory test, your nRF9160 Feather is added to nRF Cloud for your immediate use! The only thing you'll need, other than your nRF9160 Feather, SIM and antenna is your getting started card:
@@ -31,3 +69,6 @@ Here are the steps to get you the rest of the way.
 That's it!
 
 Your device screen will adapt to the example code that you're using. For example, it should display a map when you begin to publish GPS data.
+
+![nRF Cloud Screenshot with map](img/agps-sample/nrf-cloud-screenshot.png)
+

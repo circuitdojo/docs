@@ -14,11 +14,12 @@
 
 ## Software Related
 
-| Type                         | Donwload Link            |
-| ---------------------------- | ------------------------ |
-| Bootloader  (v1)             | [Link][bootloader]       |
-| newtmgr CLI   (v1)           | [Link][newtmgr]          |
-| LTE Link Monitor   (v1.1.16) | [Link][lte-link-monitor] |
+| Type                         | Donwload Link              |
+| ---------------------------- | -------------------------- |
+| Bootloader  (v1)             | [Link][bootloader]         |
+| newtmgr CLI   (v1)           | [Link][newtmgr]            |
+| LTE Link Monitor   (v1.1.16) | [Link][lte-link-monitor]   |
+| nRF Cloud AGPS example .bin  | [Link][nrf-cloud-agps-bin] |
 
 [github-docs]: https://www.github.com/circuitdojo/docs/
 [github-hw]: https://www.github.com/circuitdojo/nrf9160-feather/
@@ -28,6 +29,7 @@
 [bootloader]: /files/nrf9160_feather_bootloader_v1.zip
 [newtmgr]: /nrf9160-programming-and-debugging.md#binary-download
 [lte-link-monitor]: /files/pc-nrfconnect-linkmonitor-1.1.6.tgz
+[nrf-cloud-agps-bin]: files/nrf_cloud_agps_nrf9160_feather.bin
 
 ## License
 

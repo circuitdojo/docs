@@ -2,7 +2,7 @@
 
 ## Prerequisites/SDK Setup
 
-You must have nRF Connect SDK installed in order to compile and load code to your nRF9160 Feather. For more details, complete steps 1-6 [in this guide.](https://docs.zephyrproject.org/latest/getting_started/index.html)
+You must have nRF Connect SDK installed in order to compile and load code to your nRF9160 Feather. For more details, complete steps 1-6 [in this guide.](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_installing.html)
 
 ## Example
 As long as you have all the requirements from the guide above, compiling for the nRF9160 Feather should be as simple as running the following:
@@ -18,6 +18,14 @@ west build -b circuitdojo_feather_nrf9160ns -p
 ```
 
 The output assets are placed in the `build/zephyr` folder. If you're programming from scratch, you'll want the `merged.hex`. If you're using `newtmgr` then you'll want the `app_update.bin`. More info on different programming methods in the programming and debugging section using [newtmgr](nrf9160-programming-and-debugging.md#using-newtmgr) and [an external programmer](nrf9160-programming-and-debugging.md#programming-with-the-nrf5340-pdk).
+
+For subsequent builds you don't need `-b circuitdojo_feather_nrf9160ns` **if you're not using the -p param**.
+
+```
+west build
+```
+
+`west` uses the last board that was indicated for the re-build.
 
 Here's an example compile output from the [blinky sample](nrf9160-blinky-sample.md):
 
