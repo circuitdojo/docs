@@ -12,7 +12,6 @@
     - [Programming and Debugging](./nrf9160-programming-and-debugging.md)
     - [Debug Serial Usage](./nrf9160-serial-usage.md)
     - [nRF Connect Desktop](./nrf9160-nrf-connect-desktop.md)'
-  - [Verizon operation](./nrf9160-verizon.md)
   - [Example Code](./nrf9160-example-code.md)
     - [Blinky Sample](./nrf9160-blinky-sample.md)
     - [AT Client Sample](./nrf9160-at-client-sample.md)
@@ -20,6 +19,7 @@
   - [Cellular Provider Matrix](./nrf9160-cellular-matrix.md)
   - [Downloads](./nrf9160-downloads.md)
   - [Compliance](./nrf9160-compliance.md)
+  - [Verizon operation](./nrf9160-verizon.md)
   - [Troubleshooting](./nrf9160-troubleshooting.md)
   - [Purchase](./nrf9160-purchase.md)
   - [Thanks](./nrf9160-thanks.md)

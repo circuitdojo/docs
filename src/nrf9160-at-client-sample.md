@@ -9,7 +9,7 @@ Before you do compile make sure that the following lines are added to the `prj.c
 CONFIG_BOOTLOADER_MCUBOOT=y
 ```
 
-This will enable support for the bootloader. Then, build using the build command:)
+This will enable support for the bootloader. Then, build using the build command:
 
 ```
 $ west build -b circuitdojo_feather_nrf9160ns

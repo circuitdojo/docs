@@ -1,6 +1,6 @@
 # Compiling an Application
 
-## Prerequisites
+## Prerequisites/SDK Setup
 
 You must have nRF Connect SDK installed in order to compile and load code to your nRF9160 Feather. For more details, complete steps 1-6 [in this guide.](https://docs.zephyrproject.org/latest/getting_started/index.html)
 
