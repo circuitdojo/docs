@@ -105,9 +105,9 @@ The port works with most U.FL based active antenna parts. The nRF9160 Feather ha
 and verified with the following parts:
 
 
-| Part Number     | Manufacturerer   | Datasheet            | Notes                |
-| --------------- | ---------------- | -------------------- | -------------------- |
-| ACTPAT182-01-IP | Inventek Systems | [Link][actpat182-ds] | Offered w/ GroupGets |
+| Part Number     | Manufacturerer   | Datasheet            | Notes               |
+| --------------- | ---------------- | -------------------- | ------------------- |
+| ACTPAT182-01-IP | Inventek Systems | [Link][actpat182-ds] | Offered as an addon |
 
 [actpat182-ds]: https://static6.arrow.com/aropdfconversion/422c439d1147508166bb2a384ddf266b0a8da68b/2actpat182_functional_specification.pdf
 
