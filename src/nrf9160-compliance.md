@@ -14,19 +14,19 @@ To make things easier for you, the nRF9160 Feather comes pre-tested and ready fo
 
 ## CE Compliance
 
-**Current status:** Not complete
+**Current status:** Compliant
 
 ## FCC Part15 Compliance
 
-**Current status:** Not complete
+**Current status:** Compliant
 
 ## ISED (IC) Compliance
 
-**Current status:** Not complete
+**Current status:** Compliant
 
 ## Verizon Network Certification
 
-**Current status:** Not complete
+**Current status:** In progress
 
 ## FCC Pre-certification and Markings
 
