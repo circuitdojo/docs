@@ -14,11 +14,11 @@
 
 ## Software Related
 
-| Type               | Donwload Link      |
-| ------------------ | ------------------ |
-| Bootloader  (v1)   | [Link][bootloader] |
-| newtmgr CLI   (v1) | [Link][newtmgr]    |
-
+| Type                         | Donwload Link            |
+| ---------------------------- | ------------------------ |
+| Bootloader  (v1)             | [Link][bootloader]       |
+| newtmgr CLI   (v1)           | [Link][newtmgr]          |
+| LTE Link Monitor   (v1.1.16) | [Link][lte-link-monitor] |
 
 [github-docs]: https://www.github.com/circuitdojo/docs/
 [github-hw]: https://www.github.com/circuitdojo/nrf9160-feather/
@@ -27,6 +27,7 @@
 [grabcad]: https://grabcad.com/library/nrf9160-feather-tracker-enclosure-1
 [bootloader]: /files/nrf9160_feather_bootloader_v1.zip
 [newtmgr]: /nrf9160-programming-and-debugging.md#binary-download
+[lte-link-monitor]: /files/pc-nrfconnect-linkmonitor-1.1.6.tgz
 
 ## License
 
