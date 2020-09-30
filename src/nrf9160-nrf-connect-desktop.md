@@ -11,11 +11,13 @@ You can find the download page for [nRF Connect Desktop here.](https://www.nordi
 
 ## LTE Link Monitor
 
-The best way to debug anything cellular-related is to use the LTE Link Monitor. You will need to install a special one that I compiled specifically for the nRF9160 Feather. Here's the [LTE Link Monitor download](files/pc-nrfconnect-linkmonitor-1.1.1.tgz) (Version 1.1..1)
+The best way to debug anything cellular-related is to use the LTE Link Monitor. You will need to install a special one that I compiled specifically for the nRF9160 Feather. Here's the [LTE Link Monitor download](files/pc-nrfconnect-linkmonitor-1.1.6.tgz) (Version 1.1.6)
 
 **What's the difference you ask?**
 
-My version of LTE Link Monitor has **flow control turned off**. I hope in future versions of LTE Link Montior it will have this option to turn it on and off on the fly.
+My version of LTE Link Monitor has a check box in the bottom right for enabling/disabling flow control. Future versions of the Link Monitor will have this feature rolled in. Make sure for the nRF9160 Feather that **you uncheck the Flow Control checkbox** before connecting to your nRF9160 Feather.
+
+![Flow Control unchecked](img/nrf-connect-desktop/flow-control-checkbox.png)
 
 To install:
 
@@ -23,7 +25,7 @@ To install:
 1. Copy the LTE Link Monitor .tgz file to `%USERPROFILE%\.nrfconnect-apps\local` (on Windows) or `$HOME/.nrfconnect-apps/local` (on Linux/macOS). Here's an example of where it is on Windows:
    ![Location on windows](img/location-on-windows.png)
 1. Close and re-open nRF Connect Desktop (if it's open)
-1. Then click *Open* next to the v1.1.1 version of LTE Link Monitor. It will also have *local* written underneath it.
+1. Then click *Open* next to the **local** version of LTE Link Monitor.
 
 ![Local version of LTE Link Monitor](img/lte-link-monitor-local.png)
 
