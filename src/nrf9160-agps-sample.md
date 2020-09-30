@@ -44,7 +44,7 @@ $ newtmgr -c serial reset
 
 During factory test, your nRF9160 Feather is added to nRF Cloud for your immediate use! The only thing you'll need, other than your nRF9160 Feather, SIM and antenna is your getting started card:
 
-[] Picture of card.
+![Cloud Code](/img/agps-sample/nrf-cloud-code.jpg)
 
 Every nRF9160 Feather has a device ID generated based on the IMEI. Your full device ID will look something like:
 
