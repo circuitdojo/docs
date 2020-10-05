@@ -7,13 +7,7 @@ The `nrf_cloud_agps` sample is the *easiest* way to get started with generating 
 As of this writing, this example works best using a fork of nRF Connect SDK. You can skip the compilation step and download the update binary [here](files/nrf_cloud_agps_nrf9160_feather.bin).
 
 1. Change directories to `ncs/nrf`
-1. Then run these git commands:
-   ```
-   git remote add markus https://github.com/coderbyheart/sdk-nrf
-   git fetch markus
-   git checkout markus/nrfcloud-configurable-mqtt-client-id-prefix
-   ```
-   **Note** this is temporary until these changes are [pushed to the main branch.](https://github.com/nrfconnect/sdk-nrf/pull/2961)
+1. Make sure that you're running the latest master. Running `git fetch` and then  `git checkout bb259bfad1fa3572563444edb512fc8a6f12a3f4`.
 1. Run `west update` to fetch all dependencies
 1. Then change directories to `nrf/samples/nrf9160/nrf_cloud_agps/`
 1. Add this to `prj.conf`:
