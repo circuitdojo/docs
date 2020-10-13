@@ -26,7 +26,7 @@ To make things easier for you, the nRF9160 Feather comes pre-tested and ready fo
 
 ## Verizon Network Certification
 
-**Current status:** In progress
+**Current status:** Certified
 
 ## FCC Pre-certification and Markings
 
