@@ -15,7 +15,7 @@ The best way to debug anything cellular-related is to use the LTE Link Monitor. 
 
 **What's the difference you ask?**
 
-My version of LTE Link Monitor has a check box in the bottom right for enabling/disabling flow control. Future versions of the Link Monitor will have this feature rolled in. Make sure for the nRF9160 Feather that **you uncheck the Flow Control checkbox** before connecting to your nRF9160 Feather.
+My version of LTE Link Monitor has a check box in the bottom right for enabling/disabling flow control. Future versions of the Link Monitor will have this feature rolled in. Make sure for the nRF9160 Feather that **you uncheck the Flow Control and Auto device/port filter checkboxes**  before connecting to your nRF9160 Feather.
 
 ![Flow Control unchecked](img/nrf-connect-desktop/flow-control-checkbox.png)
 
