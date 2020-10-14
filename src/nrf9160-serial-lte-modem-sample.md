@@ -49,7 +49,7 @@ The Serial LTE Modem sample is extremely handy when you already have an applicat
     ```
     newtmgr -c serial image upload build/zephyr/app_update.bin
     ```
-1. Running the app, you should see the boot message if you open [LTE Link Monitor](nrf9160-nrf-connect-desktop.md#lte-link-monitor) with **Flow Control turned off**:
+1. Running the app, you should see the boot message if you open [LTE Link Monitor](nrf9160-nrf-connect-desktop.md#using-with-lte-link-monitor) with **Flow Control turned off**:
    ```
    *** Booting Zephyr OS build v2.3.0-rc1-ncs1-2410-g7d20f2ebf259
    ***[00:00:00.207,794] [0m<inf> app: Serial LTE Modem[0m

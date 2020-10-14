@@ -4,8 +4,8 @@
 
 nRF Connect Desktop is *the* utility that you can use to manipulate your nRF9160 Feather. In this section we'll be focusing on two apps that will affect you the most:
 
-1. LTE Link Monitor
-1. Programmer
+1. [LTE Link Monitor](#lte-link-monitor)
+1. [Programmer](#programmer)
 
 You can find the download page for [nRF Connect Desktop here.](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs)
 
@@ -15,9 +15,7 @@ The best way to debug anything cellular-related is to use the LTE Link Monitor. 
 
 **What's the difference you ask?**
 
-My version of LTE Link Monitor has a check box in the bottom right for enabling/disabling flow control. Future versions of the Link Monitor will have this feature rolled in. Make sure for the nRF9160 Feather that **you uncheck the Flow Control and Auto device/port filter checkboxes**  before connecting to your nRF9160 Feather.
-
-![Flow Control unchecked](img/nrf-connect-desktop/flow-control-checkbox.png)
+My version of LTE Link Monitor has a check box in the bottom right for enabling/disabling flow control. Future versions of the Link Monitor will have this feature rolled in.
 
 To install:
 
@@ -30,6 +28,32 @@ To install:
 ![Local version of LTE Link Monitor](img/lte-link-monitor-local.png)
 
 For more information check out [Nordic's Documentation.](https://nordicsemiconductor.github.io/pc-nrfconnect-docs/local_app_installation)
+
+### Using with LTE Link Monitor
+
+Almost any code example can be used with the AT Host Library. Generally all that is needed is adding these lines to your `prj.conf`:
+
+```
+# AT host library
+CONFIG_AT_HOST_LIBRARY=y
+CONFIG_UART_INTERRUPT_DRIVEN=y
+```
+
+Alternatively, for a quick start, simply program the [`at_client` example](nrf9160-at-client-sample.md) to your nRF9160 Feather. Then follow these quick steps to get up an running:
+
+1. Insert your SIM into the nRF9160 Feather.
+1. Attach your LTE antenna.
+1. Plug your nRF9160 Feather into your computer's USB port.
+1. Ensure that **Flow Control is turned off,** and **Auto device/port filter is also unchecked.**
+   ![Flow Control unchecked](img/nrf-connect-desktop/flow-control-checkbox.png)
+1. Connect to it using the Device dropdown in the top left hand corner of the LTE Link Monitor.
+   ![Devices dropdown](img/nrf-connect-desktop/devices-dropdown.png)
+   On *nix based systems, the port will show up like `/dev/tty.SLAB_USBtoUART`. On Windows, you'll have to determine which COM port is associated by using the device manager.
+1. With **Automatic requests** turned on and the nRF9160 Feather connected, press the **AT+CFUN=1** button followed by the **AT+CFUN?** button. This will cause a few important commands to be automatically sent to your nRF9160 Feather.
+   Additionally, your nRF9160 Feather will attempt to connect to the closest compatible tower possible.
+1. Review the LTE Link Monitor for connection information.
+   ![LTE Link Monitor connected](img/nrf-connect-desktop/connected.png)
+   Yes, the LTE Link Monitor provides some great information. Consider it your go-to tool when debugging cellular or board related issues.
 
 ## Programmer
 
@@ -56,6 +80,8 @@ Another way of programming your application other firmware images is to use the 
 ### Updating Modem Firmware
 
 Your modem firmware plays an important role in the nRF9160. The easiest way, as of this writing, to update is to use the Programmer's **Update modem** function. It's important to note that not all firmware is certified to work on every provider. For a full up-to-date list, check out [Nordic's documentation](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fstruct_nrftools%2Fstruct%2Fnrftools_nrfconnect.html).
+
+**Another note:** you will need a [programmer and Tag Connect cable](nrf9160-programming-and-debugging.md#requirements-for-external-programming) in order to update the modem firmware.
 
 Here are the instructions for updating your modem firmware:
 
