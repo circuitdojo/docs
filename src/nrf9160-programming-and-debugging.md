@@ -184,7 +184,7 @@ In order to get a modem trace, the TX and RX pins on your board need to be free.
     };
     ```
 
-3. Connect your USB to UART adatper. I've used clips from my logic analyzer to hold the wires in place. Connect the **yellow** RX wire to the TX on the board. Connect the **orange** wire to the RX on the board.
+3. Connect your USB to UART adatper. I've used clips from my logic analyzer to hold the wires in place. Connect the **yellow** wire to the TX on the board. Connect the **orange** wire to the RX on the board.
 
     ![img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.42.58_PM.png](img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.42.58_PM.png)
 
