@@ -5,6 +5,7 @@ There are currently two ways of programming the nRF9160 Feather. You can use the
 - [Bootloader use](#booloader-use)
 - [External programming](#requirements-for-external-programming)
 - [Modem trace](#getting-a-modem-trace)
+- [Debugging in Visual Code](#debugging-in-visual-code)
 
 ## Booloader use
 
@@ -193,10 +194,57 @@ In order to get a modem trace, the TX and RX pins on your board need to be free.
 
     ![img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.47.06_PM.png](img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.47.06_PM.png)
 
-    6. Then run your app as normal. You should see the **Trace size** go up little by little as connections are made, etc.
+6. Then run your app as normal. You should see the **Trace size** go up little by little as connections are made, etc.
 
     ![img/programming-and-debugging/Screen_Shot_2020-09-16_at_5.12.48_PM.png](img/programming-and-debugging/Screen_Shot_2020-09-16_at_5.12.48_PM.png)
 
-    7. Then grab the file according to the log output. For example: `Tracefile created: /Users/jaredwolff/Library/Application Support/nrfconnect/pc-nrfconnect-tracecollector/trace-2020-09-16T20-47-19.741Z.bin`
+7. Then grab the file according to the log output. For example: `Tracefile created: /Users/jaredwolff/Library/Application Support/nrfconnect/pc-nrfconnect-tracecollector/trace-2020-09-16T20-47-19.741Z.bin`
 
     For more information, check out Nordic's [original article](https://devzone.nordicsemi.com/nordic/cellular-iot-guides/b/getting-started-cellular/posts/how-to-get-modem-trace-using-trace-collector-in-nrf-connect) on the subject.
+
+## Debugging in Visual Code
+
+Debugging your application is possible with Visual Code. You will need a J-Link programmer and a Tag Connect ([TC2030-CTX-NL](https://www.tag-connect.com/product/tc2030-ctx-nl-6-pin-no-legs-cable-with-10-pin-micro-connector-for-cortex-processors)) cable for this process. [Programmers include the nRF9160 DK, nRF532 DK, J-Link EDU](#requirements-for-external-programming) (if your project is non-profit) and the standard commercial J-Link programmers.
+
+Here's the process:
+
+1. Install the **C/C++ Extension** and the **Cortex-Debug** extensions. They're both very handy in development and debugging of Zephyr based projects.
+    ![C/C++ Extension](img/programming-and-debugging/c_extention.png)
+    ![Cortex M Debug Extension](iimg/../img/programming-and-debugging/cortex_m_debug_extension.png)
+1. If you don't have one already, create a `.vscode` folder in the **root** of your project.
+    ![.vscode Fodler](img/programming-and-debugging/vscode_folder.png)
+1. Create a file called `launch.json`. This is where we'll set up the configuration for debugging.
+1. Here's a real example of a config I was using to debug a project:
+   ```
+   {
+     // Use IntelliSense to learn about possible attributes.
+     // Hover to view descriptions of existing attributes.
+     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+     "version": "0.2.0",
+     "configurations": [
+       {
+         "name": "Cortex Debug",
+         "cwd": "${workspaceRoot}",
+         "executable": "${workspaceRoot}/pyrinas/applications/dreamstars/build/zephyr/zephyr.elf",
+         "request": "launch",
+         "type": "cortex-debug",
+         "servertype": "jlink",
+         "device": "nrf9160_xxAA",
+         "interface": "swd",
+         "armToolchainPath": "/Users/jaredwolff/gcc-arm-none-eabi-9-2019-q4-major/bin"
+       }
+     ]
+   }
+   ```
+1. Change the **executable** path and the **armToolchainPath** to reflect your system. Make sure you point the **executable** option to the `.elf` file that gets produced during the compilation process.
+1. Next, go to your projects `prj.conf` and disable the bootloader by **commenting out** `CONFIG_BOOTLOADER_MCUBOOT=y` or changing the `y` to a `n`. As of this writing, disabling the bootloader **is required** as it prevents the debugging process from occuring.
+1. In `prj.conf` you'll also want to enable the `CONFIG_DEBUG` option. This disables compiler optimizations which makes the debug process hairy or impossible.
+1. Finally, program your project using `west build && west flash`
+1. At this point, if you've ever done any debugging in Visual Code, you should be able to follow the final steps to debug your application!
+1. Set some breakpoints in your code by pressing the line number you want. A red dot will appear where the breakpoint is set.
+    ![Breakpoint](img/programming-and-debugging/breakpoint.png)
+1. Start debugging by clicking the debug icon on the left. Then click the **play** button in the top left.
+    ![Debug menu](img/programming-and-debugging/debug_menu.png)
+    ![Debug play button](img/programming-and-debugging/debug_play_button.png)
+1. You can use the popup menu on the right to control traversal through your code.
+    ![Popup debug control](img/programming-and-debugging/debug_control.png)
