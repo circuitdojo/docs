@@ -48,3 +48,5 @@ Programming can be completed with `newtmgr`:
 ```
 $ newtmgr -c serial image upload build/zephyr/app_update.bin
 ```
+
+During testing, it's recomended to use the [LTE Link Monitor](nrf9160-nrf-connect-desktop.md#using-with-lte-link-monitor) whenever you need to manually test or execute commands.
