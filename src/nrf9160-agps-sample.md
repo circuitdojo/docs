@@ -4,12 +4,12 @@ The `nrf_cloud_agps` sample is the *easiest* way to get started with generating 
 
 ## Programming `nrf_cloud_apgs` **Sample**
 
-As of this writing, this example works best using a fork of nRF Connect SDK. You can skip the compilation step and download the update binary [here](files/nrf_cloud_agps_nrf9160_feather.bin).
+As of this writing, this example works best using the pre-release version of nRF Connect SDK. You can skip the compilation step and download the update binary [here](files/nrf_cloud_agps_nrf9160_feather.bin).
 
 1. Change directories to `ncs/nrf`
 1. Make sure that you're running the latest master. Running `git fetch` and then  `git checkout bb259bfad1fa3572563444edb512fc8a6f12a3f4`.
 1. Run `west update` to fetch all dependencies
-1. Then change directories to `nrf/samples/nrf9160/nrf_cloud_agps/`
+1. Then change directories to `nrf/samples/nrf9160/agps/`
 1. Add this to `prj.conf`:
    ```
    # Cloud prefix for nRF9160 Feather
@@ -31,8 +31,6 @@ Then load using `newmgr`:
 $ newtmgr -c serial image upload build/zephyr/app_update.bin
 $ newtmgr -c serial reset
 ```
-
-**Note:** fixes in this fork will be merged into the nRF Connect SDK main branch soon.
 
 ## Setting Up nRF Cloud
 
