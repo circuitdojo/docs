@@ -17,6 +17,10 @@ As of this writing, this example works best using the pre-release version of nRF
 
    # Enable Zephyr application to be booted by MCUboot
    CONFIG_BOOTLOADER_MCUBOOT=y
+   
+   # COEX0 is used to enable the GPS LNA, but it has to be configured to do so.
+   CONFIG_NRF9160_GPS_SET_COEX0=y
+   CONFIG_NRF9160_GPS_COEX0_STRING="AT%XCOEX0=1,1,1565,1586"
    ```
 
 Then compile as normal:
