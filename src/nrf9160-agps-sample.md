@@ -32,9 +32,9 @@ $ newtmgr -c serial image upload build/zephyr/app_update.bin
 $ newtmgr -c serial reset
 ```
 
-## Setting Up nRF Cloud
+## Setting Up nRF Connect for Cloud
 
-During factory test, your nRF9160 Feather is added to nRF Cloud for your immediate use! The only thing you'll need, other than your nRF9160 Feather, SIM and antenna is your getting started card:
+During factory test, your nRF9160 Feather is added to nRF Connect for Cloud for your immediate use! The only thing you'll need, other than your nRF9160 Feather, SIM and antenna is your getting started card:
 
 ![Cloud Code](/img/agps-sample/nrf-cloud-code.jpg)
 
@@ -46,7 +46,7 @@ Here are the steps to get you the rest of the way.
 
 1. First, program your device with the `nrf_cloud_agps` sample.
 1. Then, power up and confirm that the device can connect to the cloud.
-1. Create an nRF Cloud Account
+1. Create an nRF Connect for Cloud Account
    ![Add new device](img/agps-sample/add-new-device.png)
 1. Once created, go to the top left and click the big **+** icon.
    ![Add LTE device](img/agps-sample/add-lte-device.png)
@@ -54,7 +54,7 @@ Here are the steps to get you the rest of the way.
    ![Skip iBasis](img/agps-sample/skip-ibasis-setup.png)
 1. Enter the Device ID and the PIN provided on your card.
    ![Enter device ID and pin](img/agps-sample/enter-device-id-and-pin.png)
-1. Once you press **Add Device**, nRF Cloud should notify you that your device has been added!
+1. Once you press **Add Device**, nRF Connect for Cloud should notify you that your device has been added!
 1. Navigate to **Devices** and click on the device you're working wtih!
    ![Devices](img/agps-sample/devices.png)
 
@@ -62,5 +62,5 @@ That's it!
 
 Your device screen will adapt to the example code that you're using. For example, it should display a map when you begin to publish GPS data.
 
-![nRF Cloud Screenshot with map](img/agps-sample/nrf-cloud-screenshot.png)
+![nRF Connect for Cloud Screenshot with map](img/agps-sample/nrf-cloud-screenshot.png)
 
