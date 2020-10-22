@@ -4,12 +4,12 @@ The `nrf_cloud_agps` sample is the *easiest* way to get started with generating 
 
 ## Programming `nrf_cloud_apgs` **Sample**
 
-As of this writing, this example works best using a fork of nRF Connect SDK. You can skip the compilation step and download the update binary [here](files/nrf_cloud_agps_nrf9160_feather.bin).
+As of this writing, this example works best using the pre-release version of nRF Connect SDK. You can skip the compilation step and download the update binary [here](files/nrf_cloud_agps_nrf9160_feather.bin).
 
 1. Change directories to `ncs/nrf`
 1. Make sure that you're running the latest master. Running `git fetch` and then  `git checkout bb259bfad1fa3572563444edb512fc8a6f12a3f4`.
 1. Run `west update` to fetch all dependencies
-1. Then change directories to `nrf/samples/nrf9160/nrf_cloud_agps/`
+1. Then change directories to `nrf/samples/nrf9160/agps/`
 1. Add this to `prj.conf`:
    ```
    # Cloud prefix for nRF9160 Feather
@@ -17,6 +17,10 @@ As of this writing, this example works best using a fork of nRF Connect SDK. You
 
    # Enable Zephyr application to be booted by MCUboot
    CONFIG_BOOTLOADER_MCUBOOT=y
+   
+   # COEX0 is used to enable the GPS LNA, but it has to be configured to do so.
+   CONFIG_NRF9160_GPS_SET_COEX0=y
+   CONFIG_NRF9160_GPS_COEX0_STRING="AT%XCOEX0=1,1,1565,1586"
    ```
 
 Then compile as normal:
@@ -32,11 +36,9 @@ $ newtmgr -c serial image upload build/zephyr/app_update.bin
 $ newtmgr -c serial reset
 ```
 
-**Note:** fixes in this fork will be merged into the nRF Connect SDK main branch soon.
+## Setting Up nRF Connect for Cloud
 
-## Setting Up nRF Cloud
-
-During factory test, your nRF9160 Feather is added to nRF Cloud for your immediate use! The only thing you'll need, other than your nRF9160 Feather, SIM and antenna is your getting started card:
+During factory test, your nRF9160 Feather is added to nRF Connect for Cloud for your immediate use! The only thing you'll need, other than your nRF9160 Feather, SIM and antenna is your getting started card:
 
 ![Cloud Code](/img/agps-sample/nrf-cloud-code.jpg)
 
@@ -48,7 +50,7 @@ Here are the steps to get you the rest of the way.
 
 1. First, program your device with the `nrf_cloud_agps` sample.
 1. Then, power up and confirm that the device can connect to the cloud.
-1. Create an nRF Cloud Account
+1. Create an nRF Connect for Cloud Account
    ![Add new device](img/agps-sample/add-new-device.png)
 1. Once created, go to the top left and click the big **+** icon.
    ![Add LTE device](img/agps-sample/add-lte-device.png)
@@ -56,7 +58,7 @@ Here are the steps to get you the rest of the way.
    ![Skip iBasis](img/agps-sample/skip-ibasis-setup.png)
 1. Enter the Device ID and the PIN provided on your card.
    ![Enter device ID and pin](img/agps-sample/enter-device-id-and-pin.png)
-1. Once you press **Add Device**, nRF Cloud should notify you that your device has been added!
+1. Once you press **Add Device**, nRF Connect for Cloud should notify you that your device has been added!
 1. Navigate to **Devices** and click on the device you're working wtih!
    ![Devices](img/agps-sample/devices.png)
 
@@ -64,5 +66,5 @@ That's it!
 
 Your device screen will adapt to the example code that you're using. For example, it should display a map when you begin to publish GPS data.
 
-![nRF Cloud Screenshot with map](img/agps-sample/nrf-cloud-screenshot.png)
+![nRF Connect for Cloud Screenshot with map](img/agps-sample/nrf-cloud-screenshot.png)
 
