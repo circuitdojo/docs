@@ -9,7 +9,7 @@ As of this writing, this example works best using the pre-release version of nRF
 1. Change directories to `ncs/nrf`
 1. Make sure that you're running the latest master. Running `git fetch` and then  `git checkout bb259bfad1fa3572563444edb512fc8a6f12a3f4`.
 1. Run `west update` to fetch all dependencies
-1. Then change directories to `nrf/samples/nrf9160/agps/`
+1. Then change directories to `nrf/samples/nrf9160/nrf_cloud_agps/` (on the latest main branch it's changed to `/nrf/samples/nrf9160/agps/`)
 1. Add this to `prj.conf`:
    ```
    # Cloud prefix for nRF9160 Feather
@@ -17,7 +17,7 @@ As of this writing, this example works best using the pre-release version of nRF
 
    # Enable Zephyr application to be booted by MCUboot
    CONFIG_BOOTLOADER_MCUBOOT=y
-   
+
    # COEX0 is used to enable the GPS LNA, but it has to be configured to do so.
    CONFIG_NRF9160_GPS_SET_COEX0=y
    CONFIG_NRF9160_GPS_COEX0_STRING="AT%XCOEX0=1,1,1565,1586"
