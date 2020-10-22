@@ -14,12 +14,13 @@
 
 ## Software Related
 
-| Type                         | Donwload Link              |
-| ---------------------------- | -------------------------- |
-| Bootloader  (v1)             | [Link][bootloader]         |
-| newtmgr CLI   (v1)           | [Link][newtmgr]            |
-| LTE Link Monitor   (v1.1.16) | [Link][lte-link-monitor]   |
-| nRF Cloud AGPS example .bin  | [Link][nrf-cloud-agps-bin] |
+| Type                        | Donwload Link              |
+| --------------------------- | -------------------------- |
+| Bootloader  (v1)            | [Link][bootloader]         |
+| newtmgr CLI   (v1)          | [Link][newtmgr]            |
+| nRF Cloud AGPS example .bin | [Link][nrf-cloud-agps-bin] |
+| AT Client example .bin      | [link][at-client-bin]      |
+| Blinky example .bin         | [link][blinky-bin]         |
 
 [github-docs]: https://www.github.com/circuitdojo/docs/
 [github-hw]: https://www.github.com/circuitdojo/nrf9160-feather/
@@ -30,6 +31,8 @@
 [newtmgr]: /nrf9160-programming-and-debugging.md#binary-download
 [lte-link-monitor]: /files/pc-nrfconnect-linkmonitor-1.1.6.tgz
 [nrf-cloud-agps-bin]: files/nrf_cloud_agps_nrf9160_feather.bin
+[at-client-bin]: files/at-client-v1.3.2.bin
+[blinky-bin]: files/blinky-v1.3.2.bin
 
 ## License
 
