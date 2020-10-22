@@ -50,3 +50,5 @@ $ newtmgr -c serial image upload build/zephyr/app_update.bin
 ```
 
 During testing, it's recomended to use the [LTE Link Monitor](nrf9160-nrf-connect-desktop.md#using-with-lte-link-monitor) whenever you need to manually test or execute commands.
+
+**Note:** you can get a pre-build binary file compiled using v1.3.2 [here](files/at-client-v1.3.2.bin).
