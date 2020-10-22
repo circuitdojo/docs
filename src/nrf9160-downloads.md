@@ -30,7 +30,7 @@
 [bootloader]: /files/nrf9160_feather_bootloader_v1.zip
 [newtmgr]: /nrf9160-programming-and-debugging.md#binary-download
 [lte-link-monitor]: /files/pc-nrfconnect-linkmonitor-1.1.6.tgz
-[nrf-cloud-agps-bin]: files/nrf_cloud_agps_nrf9160_feather.bin
+[nrf-cloud-agps-bin]: files/nrf_cloud_agps_bb259bf.bin
 [at-client-bin]: files/at-client-v1.3.2.bin
 [blinky-bin]: files/blinky-v1.3.2.bin
 

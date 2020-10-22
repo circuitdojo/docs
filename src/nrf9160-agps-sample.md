@@ -4,7 +4,7 @@ The `nrf_cloud_agps` sample is the *easiest* way to get started with generating 
 
 ## Programming `nrf_cloud_apgs` **Sample**
 
-As of this writing, this example works best using the pre-release version of nRF Connect SDK. You can skip the compilation step and download the update binary [here](files/nrf_cloud_agps_nrf9160_feather.bin).
+As of this writing, this example works best using the pre-release version of nRF Connect SDK. You can skip the compilation step and download the update binary [here](files/nrf_cloud_agps_bb259bf.bin).
 
 1. Change directories to `ncs/nrf`
 1. Make sure that you're running the latest master. Running `git fetch` and then  `git checkout bb259bfad1fa3572563444edb512fc8a6f12a3f4`.
@@ -68,3 +68,12 @@ Your device screen will adapt to the example code that you're using. For example
 
 ![nRF Connect for Cloud Screenshot with map](img/agps-sample/nrf-cloud-screenshot.png)
 
+### Troubleshooting
+
+There are some things that can go wrong here. They're usually related to your nRF Cloud certs.
+
+- [] Discuss downloading the certs again.
+- [] Removing
+- [] Reloading
+
+All of this information is based on the [tutorial here.](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrf91_dk_gsg%2FUG%2Fnrf91_DK_gsg%2Fupdating_certificates.html)
