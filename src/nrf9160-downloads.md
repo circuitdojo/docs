@@ -21,6 +21,8 @@
 | nRF Cloud AGPS example .bin | [Link][nrf-cloud-agps-bin] |
 | AT Client example .bin      | [link][at-client-bin]      |
 | Blinky example .bin         | [link][blinky-bin]         |
+| Board Defintions (v1.3.x)   | [link][board-defs-v1.3.x]  |
+| Board Definitions (v1.2.x)  | [link][board-defs-v1.2.x]  |
 
 [github-docs]: https://www.github.com/circuitdojo/docs/
 [github-hw]: https://www.github.com/circuitdojo/nrf9160-feather/
@@ -33,6 +35,8 @@
 [nrf-cloud-agps-bin]: files/nrf_cloud_agps_bb259bf.bin
 [at-client-bin]: files/at-client-v1.3.2.bin
 [blinky-bin]: files/blinky-v1.3.2.bin
+[board-defs-v1.3.x]: files/board-definitions-ncs-v1.3.x.zip
+[board-defs-v1.2.x]: files/board-definitions-ncs-v1.2.x.zip
 
 ## License
 

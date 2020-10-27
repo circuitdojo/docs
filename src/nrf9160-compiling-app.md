@@ -4,6 +4,19 @@
 
 You must have nRF Connect SDK installed in order to compile and load code to your nRF9160 Feather. For more details, complete steps 1-6 [in this guide.](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_installing.html)
 
+## Board Defintion Files
+
+Currently the 1.2 and 1.3 branchs of the nRF Connect SDK does not have support for the nRF9160 Feather built in. You'll need to download and copy the appropriate board defintion files from the [downloads page.](nrf9160-downloads.md) If you're using the latest nRF SDK those defintions should be included.
+
+To install, unzip the contents of the board defintions to `ncs/zephyr/boards/arm/` It should create a folder called `circuitdojo_feather_nrf9160`. Congrats your board files are installed! You should be able to use the `circuitdojo_feather_nrf9160ns` target for your Zephyr builds!
+
+Here are the direct downloads:
+
+- [board-defs-v1.3.x](files/board-definitions-ncs-v1.3.x.zip)
+- [board-defs-v1.2.x](files/board-definitions-ncs-v1.2.x.zip)
+
+**Note:** if you're using the v1.2.x branch of nRF Connect SDK, make sure you're using the v1.2.x definitions. Same for the v1.3.x definitions.
+
 ## Example
 As long as you have all the requirements from the guide above, compiling for the nRF9160 Feather should be as simple as running the following:
 
