@@ -17,6 +17,8 @@ There are some important things about the nRF9160 Feather before you get started
 - 1x nRF9160 Feather board
 - 1x set of male headers (16 pin and 12 pin)
 - 1x wide-band LTE antenna
+- 1x getting started card
+- 1x IoT SIM
 
 ## Getting Started Sections
 
