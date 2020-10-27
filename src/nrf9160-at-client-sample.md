@@ -2,7 +2,7 @@
 
 Change directories to `ncs/nrf/samples/nrf9160/at_client`. Then compile as shown beffore in the [compiling section](nrf9160-compiling-app.md) of this guide.
 
-Before you do compile make sure that the following lines are added to the `prj.conf` if not already:
+Before you do compile make sure that the following lines are added to the `prj.conf`:
 
 ```
 # Enable Zephyr application to be booted by MCUboot

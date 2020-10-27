@@ -21,6 +21,7 @@ Programming can be completed with `newtmgr`:
 
 ```
 $ newtmgr -c serial image upload build/zephyr/app_update.bin
+$ newtmgr -c serial reset
 ```
 
 **Note:** pre-built binary can be downloaded here: [blinky-v1.3.2.bin](files/blinky-v1.3.2.bin)
