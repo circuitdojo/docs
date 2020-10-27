@@ -2,7 +2,11 @@
 
 ## Prerequisites/SDK Setup
 
-You must have nRF Connect SDK installed in order to compile and load code to your nRF9160 Feather. For more details, complete steps 1-6 [in this guide.](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_installing.html)
+If you haven't already, make sure you've set up the SDK:
+
+- [Mac OS](nrf9160-sdk-setup-mac.md)
+- [Windows](nrf9160-sdk-setup-windows.md)
+- [Linux](nrf9160-sdk-setup-linux.md)
 
 ## Board Defintion Files
 

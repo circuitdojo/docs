@@ -20,6 +20,14 @@ There are some important things about the nRF9160 Feather before you get started
 - 1x getting started card
 - 1x IoT SIM
 
+## SDK and Development Environment Setup
+
+Instructions below are based on using Microsoft's Visual Studio Code as your workspace. While you may choose a different editor, most of the steps remain the same.
+
+- [Mac OS](nrf9160-sdk-setup-mac.md)
+- [Windows](nrf9160-sdk-setup-windows.md)
+- [Linux](nrf9160-sdk-setup-linux.md)
+
 ## Getting Started Sections
 
 - [Compiling an Application](nrf9160-compiling-app.md)
