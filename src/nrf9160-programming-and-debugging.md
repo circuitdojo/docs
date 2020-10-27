@@ -19,7 +19,7 @@ In order to utilize the bootloader, you'll ned to install `newtmgr` (AKA `mcumgr
 
 Download one of the binary files below. (Install script coming soon...)
 
-- [Windows](files/newtmgr/windows/newtmgr.exe)
+- [Windows](files/newtmgr/windows/newtmgr.exe.zip)
 - [Mac OSX](files/newtmgr/darwin/newtmgr)
 - [Linux](files/newtmgr/linux/newtmgr)
 
