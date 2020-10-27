@@ -80,6 +80,8 @@ This page is all about getting your Windows machine compiling code for the nRF91
    pip install -r nrf/scripts/requirements.txt
    pip install -r bootloader/mcuboot/scripts/requirements.txt
    ```
+
+   **Note** you will get an error during this process related to Visual Studio (not Visual Studio Code). You can ignore this issue.
 1. If you're using `v1.3.2` of nRF Connect SDK, you'll need to download and "install" the nRF9160 Feather board definitions. (Normally you would not have to do this but older versions of NCS do not have them included).
     [You can download them here.](nrf9160-downloads.md)
 1. Once downloaded, extract the folder to `ncs/zephyr/boards/arm/` so that `circuitdojo_feather_nrf9160ns` is in the `arm` folder. (The full path to the above should be `ncs/zephyr/boards/arm/circuitdojo_feather_nrf9160ns/`) That's all you need to do!
