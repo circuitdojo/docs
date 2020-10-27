@@ -12,7 +12,7 @@ CONFIG_BOOTLOADER_MCUBOOT=y
 This will enable support for the bootloader. Then, build using the build command:
 
 ```
-$ west build -b circuitdojo_feather_nrf9160ns
+west build -b circuitdojo_feather_nrf9160ns
 
 ...
 
@@ -46,7 +46,7 @@ You can see towards the end of this output that both the application **and** the
 Programming can be completed with `newtmgr`:
 
 ```
-$ newtmgr -c serial image upload build/zephyr/app_update.bin
+newtmgr -c serial image upload build/zephyr/app_update.bin
 ```
 
 During testing, it's recomended to use the [LTE Link Monitor](nrf9160-nrf-connect-desktop.md#using-with-lte-link-monitor) whenever you need to manually test or execute commands.

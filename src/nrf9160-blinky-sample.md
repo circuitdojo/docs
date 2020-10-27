@@ -12,7 +12,7 @@ CONFIG_BOOTLOADER_MCUBOOT=y
 This will enable support for the bootloader. Then, build using the build command:
 
 ```
-$ west build -b circuitdojo_feather_nrf9160ns
+west build -b circuitdojo_feather_nrf9160ns
 ```
 
 You can see towards the end of this output that both the application **and** the bootloader have been built and merged.
@@ -20,8 +20,8 @@ You can see towards the end of this output that both the application **and** the
 Programming can be completed with `newtmgr`:
 
 ```
-$ newtmgr -c serial image upload build/zephyr/app_update.bin
-$ newtmgr -c serial reset
+newtmgr -c serial image upload build/zephyr/app_update.bin
+newtmgr -c serial reset
 ```
 
 **Note:** pre-built binary can be downloaded here: [blinky-v1.3.2.bin](files/blinky-v1.3.2.bin)

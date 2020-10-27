@@ -26,14 +26,14 @@ As of this writing, this example works best using the pre-release version of nRF
 Then compile as normal:
 
 ```
-$ west build -b circuitdojo_feather_nrf9160ns
+west build -b circuitdojo_feather_nrf9160ns
 ```
 
 Then load using `newmgr`:
 
 ```
-$ newtmgr -c serial image upload build/zephyr/app_update.bin
-$ newtmgr -c serial reset
+newtmgr -c serial image upload build/zephyr/app_update.bin
+newtmgr -c serial reset
 ```
 
 ## Setting Up nRF Connect for Cloud
