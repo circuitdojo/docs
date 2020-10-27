@@ -22,5 +22,6 @@
   - [Compliance](./nrf9160-compliance.md)
   - [Verizon operation](./nrf9160-verizon.md)
   - [Troubleshooting](./nrf9160-troubleshooting.md)
+  - [Support](./nrf9160-support.md)
   - [Purchase](./nrf9160-purchase.md)
   - [Thanks](./nrf9160-thanks.md)

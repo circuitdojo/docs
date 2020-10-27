@@ -7,8 +7,8 @@
 There are some important things about the nRF9160 Feather before you get started:
 
 1. The nRF9160 Feater shouldn't be used with a battery less than 300mAH. More information in the [specs section.](./nrf9160-specs.md)
-
 1. If you need to debug your nRF9160 Feather, it requires an external programmer. More information on that in the [Requirements for external programming](nrf9160-programming-and-debugging.md#requirements-for-external-programming) section.
+1. Looking for help? Check out the support forum: [https://community.jaredwolff.com](https://community.jaredwolff.com)
 
 ## What's included
 
