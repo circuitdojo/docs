@@ -20,8 +20,8 @@ In order to utilize the bootloader, you'll ned to install `newtmgr` (AKA `mcumgr
 Download one of the binary files below. (Install script coming soon...)
 
 - [Windows](files/newtmgr/windows/newtmgr.exe.zip)
-- [Mac OSX](files/newtmgr/darwin/newtmgr)
-- [Linux](files/newtmgr/linux/newtmgr)
+- [Mac OSX](files/newtmgr/darwin/newtmgr.zip)
+- [Linux](files/newtmgr/linux/newtmgr.zip)
 
 Then place that file in your `$PATH`. On Linux and OSX that location will be `/usr/local/bin`. On Windows you can place the file in a location of your choice. Then, you'll have to update your `$PATH`. If you're unfamailiar with the process check out [this guide.](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/)
 

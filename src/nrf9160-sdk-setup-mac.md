@@ -111,7 +111,7 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
 ## `newtmgr`
 
 1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
-   - [Mac OSX](files/newtmgr/darwin/newtmgr)
+   - [Mac OSX](files/newtmgr/darwin/newtmgr.zip)
 
     If you're not sure, `/usr/local/bin/` is always a good spot for these types of binaries.
 1. Then you'll need to add your serial profile to make it easier to download/update your device:
