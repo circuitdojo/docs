@@ -9,11 +9,12 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
 ## Installing SDK
 1. Install Python3. The easiest way is with [Homebrew](https://brew.sh). Install `brew` first, then open a terminal and run:
     ```
-    brew install python3 git gcc-arm-embedded
+    brew install python3 git cmake ninja wget
+    brew cask install gcc-arm-embedded
     ```
-1. Once complete, check to make sure that `python3` is installed:
+1. Once complete, check to make sure that `python3` is installed. Here's the example output. (Your version may be different.)
    ```
-   python3 --version
+   > python3 --version
    Python 3.8.6
    ```
     **💡Note:** if you've freshly installed Homebrew or get an error that `python3` is not found, you may have to add `/usr/local/bin` to your `PATH`. For example here's an entry for `.bash_profile` or `.zshrc`:
@@ -41,11 +42,6 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
    cd ncs
    west init -m https://github.com/nrfconnect/sdk-nrf --mr v1.3.2
    ```
-   This will install the latest stable version of the SDK. Once downloaded you can always change versions of the SDK by:
-     1. Changing to the `nrf` directory
-     1. Fetching any new changes using `git fetch origin`
-     1. Checking out the tag you'd like (ex. `git checkout v1.2.2`)
-     1. Running a `west update`
 
     **💡Note:** if you make changes to the dependency directories, you may see a warning in yellow stating `west` could not update. You'll need to clean that dependency or stash it using `git reset --hard` or `git stash`. Stashing is preferred that way if you want to save your work.
 1. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
@@ -69,21 +65,28 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
    ├── tools
    └── zephyr
    ```
-1. Installing the remaining SDK requirements using `pip3`:
+1. Install the remaining `python3` requirements by running these commands in your `ncs` directory.
    ```
    pip3 install -r zephyr/scripts/requirements.txt
    pip3 install -r nrf/scripts/requirements.txt
    pip3 install -r bootloader/mcuboot/scripts/requirements.txt
    ```
-1. If you're using `v1.3.2` of nRF Connect SDK, you'll need to download and "install" the nRF9160 Feather board definitions. (Normally you would not have to do this but older versions of NCS do not have them included).
-    [You can download them here.](nrf9160-downloads.md)
-1. Once downloaded, extract the folder to `ncs/zephyr/boards/arm/` so that `circuitdojo_feather_nrf9160ns` is in the `arm` folder. (The full path to the above should be `ncs/zephyr/boards/arm/circuitdojo_feather_nrf9160ns/`) That's all you need to do!
+1. If you're using `v1.3.2` of nRF Connect SDK, you'll need to download and "install" the nRF9160 Feather board definitions. Here's the commands:
+
+    ```
+    cd ~/ncs/zephyr/boards/arm/
+    wget https://docs.jaredwolff.com/files/board-definitions-ncs-v1.3.x.zip
+    unzip board-definitions-ncs-v1.3.x.zip
+    rm board-definitions-ncs-v1.3.x.zip
+    ```
 
     **💡Note:** if you ever upgrade to a more recent version of NCS you'll need to remove or rename this folder since newer versions *will* have this folder.
 
+    **Note:** make sure that you install your board defs **before** you compile any code. Otherwise you'll need to do a rebuild using the `-p` parameter. Ex. `west build -b circuitdojo_feather_nrf9160ns`
+
 ## The ARM Embedded Toolchain
 
-1. First let's make sure it installed correctly in the `brew install` setup earlier. In a terminal run `arm-none-eabi-gcc --version` to confirm it's in the right place:
+1. First let's make sure it installed correctly in the `brew cask install` setup earlier. In a terminal run `arm-none-eabi-gcc --version` to confirm it's in the right place:
    ```
    ❯ arm-none-eabi-gcc --version
    arm-none-eabi-gcc (GNU Arm Embedded Toolchain 9-2020-q2-update) 9.3.1 20200408 (release)
@@ -91,6 +94,10 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
    This is free software; see the source for copying conditions.  There is NO
    warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
    ```
+
+   **Note** for Catalina users you will get an error when running these utilities for the first time. You must allow them to be executed in your Security preferences.
+
+   ![Error running ARM Toolchain](img/sdk-setup-mac/cannot-be-opened.jpeg)
 
 1. Finally you'll need export a few important environment variables for things to work. For `bash` here's the entry for `.bash_profile` that I have:
    ```
@@ -121,6 +128,10 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
    If you have multiple Silicon Labs CP2102 connected to your machine your serial port *may be named differently*. I recommend you unplug all devices that could be named `tty.SLAB_USBtoUART` to ensure you're targeting the correct device during programming.
 
 For more info in using `newtmgr` checkout the [programming section](nrf9160-programming-and-debugging.md#booloader-use) of this documentation.
+
+## USB Drivers
+
+1. If your device is not initailizing as a comp port in the `/dev/` folder you may have to [install the drivers.](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) Make sure it shows up before proceeding to the next step.
 
 ## Testing it
 

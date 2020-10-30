@@ -10,7 +10,7 @@
   - [Getting Started](./nrf9160-getting-started.md)
     - [SDK Setup (Mac OS)](./nrf9160-sdk-setup-mac.md)
     - [SDK Setup (Windows)](./nrf9160-sdk-setup-windows.md)
-    - [SDK Setup (Linux)](./nrf9160-sdk-setup-linux.md)
+    - [SDK Setup (Linux - Ubuntu)](./nrf9160-sdk-setup-linux.md)
     - [Compiling an Application](./nrf9160-compiling-app.md)
     - [Programming and Debugging](./nrf9160-programming-and-debugging.md)
     - [nRF Connect Desktop](./nrf9160-nrf-connect-desktop.md)

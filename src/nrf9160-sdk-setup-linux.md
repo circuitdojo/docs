@@ -1,4 +1,4 @@
-# SDK Setup (Linux)
+# SDK Setup (Linux - Ubuntu)
 
 
 This page is all about getting your Linux machine compiling code for the nRF9160 Feather. Run into trouble during the process? Post your questions on the [community forum.](https://community.jaredwolff.com)
@@ -38,11 +38,6 @@ This page is all about getting your Linux machine compiling code for the nRF9160
    cd ncs
    west init -m https://github.com/nrfconnect/sdk-nrf --mr v1.3.2
    ```
-   This will install the latest stable version of the SDK. Once downloaded you can always change versions of the SDK by:
-     1. Changing to the `nrf` directory
-     1. Fetching any new changes using `git fetch origin`
-     1. Checking out the tag you'd like (ex. `git checkout v1.2.2`)
-     1. Running a `west update`
 
     **💡Note:** if you make changes to the dependency directories, you may see a warning in yellow stating `west` could not update. You'll need to clean that dependency or stash it using `git reset --hard` or `git stash`. Stashing is preferred that way if you want to save your work.
 1. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
@@ -74,9 +69,14 @@ This page is all about getting your Linux machine compiling code for the nRF9160
    ```
 
    **Note:** there may be an error during the first `pip3 install` you can safely ignore them.
-1. If you're using `v1.3.2` of nRF Connect SDK, you'll need to download and "install" the nRF9160 Feather board definitions. (Normally you would not have to do this but older versions of NCS do not have them included).
-    [You can download them here.](nrf9160-downloads.md)
-1. Once downloaded, extract the folder to `ncs/zephyr/boards/arm/` so that `circuitdojo_feather_nrf9160ns` is in the `arm` folder. (The full path to the above should be `ncs/zephyr/boards/arm/circuitdojo_feather_nrf9160ns/`) That's all you need to do!
+1. If you're using `v1.3.2` of nRF Connect SDK, you'll need to download and "install" the nRF9160 Feather board definitions. Here are the commands:
+
+   ```
+   cd ~/ncs/zephyr/boards/arm/
+   wget https://docs.jaredwolff.com/files/board-definitions-ncs-v1.3.x.zip
+   unzip board-definitions-ncs-v1.3.x.zip
+   rm board-definitions-ncs-v1.3.x.zip
+   ```
 
     **💡Note:** if you ever upgrade to a more recent version of NCS you'll need to remove or rename this folder since newer versions *will* have this folder.
 
@@ -135,3 +135,7 @@ For more info in using `newtmgr` checkout the [programming section](nrf9160-prog
 ## Testing it
 
 You can quickly test if your SDK is set up correctly by checking out the [`blinky` example](nrf9160-blinky-sample.md).
+
+## Thanks
+
+Thanks to Michael W. for the help and feedback on installling the board defintions.

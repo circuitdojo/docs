@@ -8,6 +8,8 @@ If you haven't already, make sure you've set up the SDK:
 - [Windows](nrf9160-sdk-setup-windows.md)
 - [Linux](nrf9160-sdk-setup-linux.md)
 
+**Side note** One of the engineers at Nordic configured a [Docker Image](https://github.com/coderbyheart/fw-nrfconnect-nrf-docker#using-prebuild-image-from-dockerhub) you can also use to build your code. I'll be adding a section on this when I get a chance to test it!
+
 ## Board Defintion Files
 
 Currently the 1.2 and 1.3 branchs of the nRF Connect SDK does not have support for the nRF9160 Feather built in. You'll need to download and copy the appropriate board defintion files from the [downloads page.](nrf9160-downloads.md) If you're using the latest nRF SDK those defintions should be included.

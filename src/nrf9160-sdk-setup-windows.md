@@ -32,18 +32,16 @@ This page is all about getting your Windows machine compiling code for the nRF91
    pip install west
    ```
    **💡Note:** you can update `west` by issuing `pip3 install -U west` It will uninstall the version on your machine and replace it with the latest. (It won't do anything if you have the latest installed.)
-1. Now create a folder on your machine and call it `ncs` (short for nRF Connect SDK). For windows it's best to put it in `C:\` Open a terminal in this folder and initialize nRF Connect SDK using `west`:
+1. Now create a folder on your machine and call it `ncs` (short for nRF Connect SDK). For windows it's best to put it in `C:\`.
+   Open a **new** command prompt (or powershell) in this folder and initialize nRF Connect SDK using `west`:
+
    ```
    cd C:\
    mkdir ncs
    cd ncs
    west init -m https://github.com/nrfconnect/sdk-nrf --mr v1.3.2
    ```
-   This will install the latest stable version of the SDK. Once downloaded you can always change versions of the SDK by:
-     1. Changing to the `nrf` directory
-     1. Fetching any new changes using `git fetch origin`
-     1. Checking out the tag you'd like (ex. `git checkout v1.2.2`)
-     1. Running a `west update`
+
 
     **💡Note:** if you make changes to the dependency directories, you may see a warning in yellow stating `west` could not update. You'll need to clean that dependency or stash it using `git reset --hard` or `git stash`. Stashing is preferred that way if you want to save your work.
 1. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
