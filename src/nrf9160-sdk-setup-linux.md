@@ -101,9 +101,16 @@ This page is all about getting your Linux machine compiling code for the nRF9160
 ## `newtmgr`
 
 1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
-   - [Linux](files/newtmgr/linux/newtmgr.zip)
 
-    If you're not sure, `~/.local/bin` is always a good spot for these types of binaries.
+   ```
+   cd ~/Downloads
+   wget "https://docs.jaredwolff.com/files/newtmgr/linux/newtmgr.zip"
+   unzip newtmgr.zip
+   mv newtmgr ~/.local/bin
+   rm newtmgr.zip
+   ```
+
+   If you're not sure, `~/.local/bin` is always a good spot for these types of binaries.
 1. Then you'll need to add your serial profile to make it easier to download/update your device:
    ```
    newtmgr conn add serial type=serial connstring='dev=/dev/ttyUSB0,baud=1000000'

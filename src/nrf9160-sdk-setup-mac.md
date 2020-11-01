@@ -10,7 +10,6 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
 1. Install Python3. The easiest way is with [Homebrew](https://brew.sh). Install `brew` first, then open a terminal and run:
     ```
     brew install python3 git cmake ninja wget
-    brew cask install gcc-arm-embedded
     ```
 1. Once complete, check to make sure that `python3` is installed. Here's the example output. (Your version may be different.)
    ```
@@ -86,13 +85,14 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
 
 ## The ARM Embedded Toolchain
 
-1. First let's make sure it installed correctly in the `brew cask install` setup earlier. In a terminal run `arm-none-eabi-gcc --version` to confirm it's in the right place:
+
+1. Install the toolchain by pulling it from ARM. Run these commands:
+
    ```
-   ❯ arm-none-eabi-gcc --version
-   arm-none-eabi-gcc (GNU Arm Embedded Toolchain 9-2020-q2-update) 9.3.1 20200408 (release)
-   Copyright (C) 2019 Free Software Foundation, Inc.
-   This is free software; see the source for copying conditions.  There is NO
-   warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+   cd ~
+   wget "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2"
+   tar xvfj gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2
+   rm gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2
    ```
 
    **Note** for Catalina users you will get an error when running these utilities for the first time. You must allow them to be executed in your Security preferences.
@@ -102,8 +102,8 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
 1. Finally you'll need export a few important environment variables for things to work. For `bash` here's the entry for `.bash_profile` that I have:
    ```
    # Zephyr related
-   export ZEPHYR_TOOLCHAIN_VARIANT=cross-compile
-   export CROSS_COMPILE=/usr/local/bin/arm-none-eabi-
+   export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
+   export GNUARMEMB_TOOLCHAIN_PATH="~/gcc-arm-none-eabi-9-2019-q4-major"
    ```
 
    **💡Note:** this should also work for `.zshrc` for those folks who are using newer versions of Mac OS (or just plain prefer `zsh`)
@@ -111,14 +111,21 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
    For folks using `fish` you're going to use:
 
    ```
-   set -Ux ZEPHYR_TOOLCHAIN_VARIANT cross-compile
-   set -Ux CROSS_COMPILE /usr/local/bin/arm-none-eabi-
+   set -Ux ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
+   set -Ux GNUARMEMB_TOOLCHAIN_PATH "~/gcc-arm-none-eabi-9-2019-q4-major"
    ```
 
 ## `newtmgr`
 
 1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
-   - [Mac OSX](files/newtmgr/darwin/newtmgr.zip)
+
+   ```
+   cd ~/Downloads
+   wget "https://docs.jaredwolff.com/files/newtmgr/darwin/newtmgr.zip"
+   unzip newtmgr.zip
+   sudo mv newtmgr /usr/local/bin
+   rm newtmgr.zip
+   ```
 
     If you're not sure, `/usr/local/bin/` is always a good spot for these types of binaries.
 1. Then you'll need to add your serial profile to make it easier to download/update your device:

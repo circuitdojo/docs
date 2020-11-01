@@ -88,12 +88,12 @@ This page is all about getting your Windows machine compiling code for the nRF91
 
 ## The ARM Embedded Toolchain
 
-1. You can download and install the toolchain with [this direct link.](https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-win32.exe?revision=50c95fb2-67ca-4df7-929b-55396266b4a1&la=en&hash=DE1CD6E7A15046FD1ADAF828EA4FA82228E682E2)
+1. You can download and install the toolchain with [this direct link.](https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2019-q4-major-win32.exe)
 
-1. One installed, re-open your prompt and run `arm-none-eabi-gcc --version` to make sure it's installed correctly.
+1. One installed, re-open your prompt (or use the provided DOS prompt that will pop up post install) and run `arm-none-eabi-gcc --version` to make sure it's installed correctly.
    ```
    arm-none-eabi-gcc --version
-   arm-none-eabi-gcc (GNU Arm Embedded Toolchain 9-2020-q2-update) 9.3.1 20200408 (release)
+   arm-none-eabi-gcc (GNU Arm Embedded Toolchain 9-2019-q4-major) 9.2.1 20191025 (release)
    Copyright (C) 2019 Free Software Foundation, Inc.
    This is free software; see the source for copying conditions.  There is NO
    warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
