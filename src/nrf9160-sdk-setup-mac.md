@@ -34,22 +34,28 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
    pip3 install west
    ```
    **💡Note:** you can update `west` by issuing `pip3 install -U west` It will uninstall the version on your machine and replace it with the latest. (It won't do anything if you have the latest installed.)
-1. Now create a folder on your machine and call it `ncs` (short for nRF Connect SDK). Open a terminal to this folder and initialize nRF Connect SDK using `west`:
+1. Now create a folder on your machine and call it `nfed` (short for nRF9160 Feather Examples and Drivers). Open a terminal to this folder and initialize nRF Connect SDK using `west`:
    ```
    cd ~
-   mkdir ncs
-   cd ncs
-   west init -m https://github.com/nrfconnect/sdk-nrf --mr v1.3.2
+   mkdir nfed
+   cd nfed
+   west init -m https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers --mr main
    ```
 
-    **💡Note:** if you make changes to the dependency directories, you may see a warning in yellow stating `west` could not update. You'll need to clean that dependency or stash it using `git reset --hard` or `git stash`. Stashing is preferred that way if you want to save your work.
+   **Note:** if you are using an `ncs` directory structure (older documentation) you can do this with the same effect:
+
+   ```
+   cd ncs
+   git clone https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers nrf9160-feather
+   ```
+
 1. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
    ```
    west update
    ```
    You'll see a *bunch* of output go by as `west` downloads dependencies using Git.
 
-   Here's what your `ncs` folder should look like:
+   Here's what your `nfed` folder should look like:
    ```
    ❯ tree -L 1
    .
@@ -59,29 +65,18 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
    ├── mbedtls
    ├── modules
    ├── nrf
+   ├── nrf9160-feather
    ├── nrfxlib
    ├── test
    ├── tools
    └── zephyr
    ```
-1. Install the remaining `python3` requirements by running these commands in your `ncs` directory.
+1. Install the remaining `python3` requirements by running these commands in your `nfed` directory.
    ```
    pip3 install -r zephyr/scripts/requirements.txt
    pip3 install -r nrf/scripts/requirements.txt
    pip3 install -r bootloader/mcuboot/scripts/requirements.txt
    ```
-1. If you're using `v1.3.2` of nRF Connect SDK, you'll need to download and "install" the nRF9160 Feather board definitions. Here's the commands:
-
-    ```
-    cd ~/ncs/zephyr/boards/arm/
-    wget https://docs.jaredwolff.com/files/board-definitions-ncs-v1.3.x.zip
-    unzip board-definitions-ncs-v1.3.x.zip
-    rm board-definitions-ncs-v1.3.x.zip
-    ```
-
-    **💡Note:** if you ever upgrade to a more recent version of NCS you'll need to remove or rename this folder since newer versions *will* have this folder.
-
-    **Note:** make sure that you install your board defs **before** you compile any code. Otherwise you'll need to do a rebuild using the `-p` parameter. Ex. `west build -b circuitdojo_feather_nrf9160ns`
 
 ## The ARM Embedded Toolchain
 

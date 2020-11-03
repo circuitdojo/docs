@@ -32,31 +32,36 @@ This page is all about getting your Windows machine compiling code for the nRF91
    pip install west
    ```
    **💡Note:** you can update `west` by issuing `pip3 install -U west` It will uninstall the version on your machine and replace it with the latest. (It won't do anything if you have the latest installed.)
-1. Now create a folder on your machine and call it `ncs` (short for nRF Connect SDK). For windows it's best to put it in `C:\`.
+1. Now create a folder on your machine and call it `nfed` (short for nRF9160 Feather Examples and Drivers). For windows it's best to put it in `C:\`.
    Open a **new** command prompt (or powershell) in this folder and initialize nRF Connect SDK using `west`:
 
    ```
    cd C:\
-   mkdir ncs
-   cd ncs
-   west init -m https://github.com/nrfconnect/sdk-nrf --mr v1.3.2
+   mkdir nfed
+   cd nfed
+   west init -m https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers --mr main
    ```
 
+   **Note:** if you are using an `ncs` directory structure (older documentation) you can do this with the same effect:
 
-    **💡Note:** if you make changes to the dependency directories, you may see a warning in yellow stating `west` could not update. You'll need to clean that dependency or stash it using `git reset --hard` or `git stash`. Stashing is preferred that way if you want to save your work.
+   ```
+   cd ncs
+   git clone https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers nrf9160-feather
+   ```
+
 1. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
    ```
    west update
    ```
    You'll see a *bunch* of output go by as `west` downloads dependencies using Git. (This will take hot minute so make sure you're prepared with something else to do. 😬)
 
-   Here's what your `ncs` folder should look like:
+   Here's what your `nfed` folder should look like:
    ```
-   C:\ncs>dir
+   C:\nfed>dir
     Volume in drive C has no label.
     Volume Serial Number is B013-63F8
 
-    Directory of C:\ncs
+    Directory of C:\nfed
 
    10/27/2020  12:25 PM    <DIR>          .
    10/27/2020  12:25 PM    <DIR>          ..
@@ -65,6 +70,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
    10/27/2020  12:25 PM    <DIR>          mbedtls
    10/27/2020  12:27 PM    <DIR>          modules
    10/27/2020  12:22 PM    <DIR>          nrf
+   10/27/2020  12:22 PM    <DIR>          nr9160-feather
    10/27/2020  12:24 PM    <DIR>          nrfxlib
    10/27/2020  12:24 PM    <DIR>          test
    10/27/2020  12:26 PM    <DIR>          tools
@@ -80,11 +86,6 @@ This page is all about getting your Windows machine compiling code for the nRF91
    ```
 
    **Note** you will get an error during this process related to Visual Studio (not Visual Studio Code). You can ignore this issue.
-1. If you're using `v1.3.2` of nRF Connect SDK, you'll need to download and "install" the nRF9160 Feather board definitions. (Normally you would not have to do this but older versions of NCS do not have them included).
-    [You can download them here.](nrf9160-downloads.md)
-1. Once downloaded, extract the folder to `ncs/zephyr/boards/arm/` so that `circuitdojo_feather_nrf9160ns` is in the `arm` folder. (The full path to the above should be `ncs/zephyr/boards/arm/circuitdojo_feather_nrf9160ns/`) That's all you need to do!
-
-    **💡Note:** if you ever upgrade to a more recent version of NCS you'll need to remove or rename this folder since newer versions *will* have this folder.
 
 ## The ARM Embedded Toolchain
 
@@ -101,7 +102,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
 1. You will have to set some important environment variables. Here's what they should look like:
    ```
    setx ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
-   setx GNUARMEMB_TOOLCHAIN_PATH "C:\Program Files (x86)\GNU Arm Embedded Toolchain\9 2019-q4-major"
+   setx GNUARMEMB_TOOLCHAIN_PATH "C:\Program Files (x86)\GNU Tools Arm Embedded\9 2019-q4-major"
    ```
 
 ## `newtmgr`
