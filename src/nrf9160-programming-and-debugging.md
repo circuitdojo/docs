@@ -119,7 +119,7 @@ Here are a couple of close up shots of how to connect the nRF5340-PDK:
 
 ![nRF9160 Feather w/ Tag Connect Connected](img/nrf9160-feather-tag-connect-connected.jpg)
 
-I highly recommend you jump *SB47* on your nRF5380-PDK with some solder. This forces the debugger to think an external devices is permanently connected. If you're only doing external debugging, this is very useful.
+I highly recommend you jump *SB47* on your nRF5340-PDK with some solder. This forces the debugger to think an external devices is permanently connected. If you're only doing external debugging, this is very useful.
 
 ![nRF5340-DK jumper highlighted](img/nrf53-dk-jumper.jpeg)
 

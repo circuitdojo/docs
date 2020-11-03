@@ -88,7 +88,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
 
 ## The ARM Embedded Toolchain
 
-1. You can download and install the toolchain with [this direct link.](https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2019-q4-major-win32.exe)
+1. You can download and install the toolchain with [this direct link.](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads/9-2019-q4-major)
 
 1. One installed, re-open your prompt (or use the provided DOS prompt that will pop up post install) and run `arm-none-eabi-gcc --version` to make sure it's installed correctly.
    ```
@@ -101,7 +101,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
 1. You will have to set some important environment variables. Here's what they should look like:
    ```
    setx ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
-   setx GNUARMEMB_TOOLCHAIN_PATH "C:\Program Files (x86)\GNU Arm Embedded Toolchain\9 2020-q2-update"
+   setx GNUARMEMB_TOOLCHAIN_PATH "C:\Program Files (x86)\GNU Arm Embedded Toolchain\9 2019-q4-major"
    ```
 
 ## `newtmgr`
