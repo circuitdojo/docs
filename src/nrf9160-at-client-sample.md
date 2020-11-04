@@ -1,5 +1,11 @@
 # AT Client Sample
 
+## Precompiled Binary
+
+**Note:** you can get a pre-build binary file compiled using v1.3.2 [here](files/at-client-v1.3.2.bin).
+
+## Instructions
+
 Change directories to `ncs/nrf/samples/nrf9160/at_client`. Then compile as shown beffore in the [compiling section](nrf9160-compiling-app.md) of this guide.
 
 Before you do compile make sure that the following lines are added to the `prj.conf`:
@@ -51,4 +57,3 @@ newtmgr -c serial image upload build/zephyr/app_update.bin
 
 During testing, it's recomended to use the [LTE Link Monitor](nrf9160-nrf-connect-desktop.md#using-with-lte-link-monitor) whenever you need to manually test or execute commands.
 
-**Note:** you can get a pre-build binary file compiled using v1.3.2 [here](files/at-client-v1.3.2.bin).
