@@ -1,12 +1,12 @@
 # nRF Cloud AGPS Sample
 
+The `nrf_cloud_agps` sample is the *easiest* way to get started with generating GPS coordinates with your nRF9160 Feather.
+
+
 ## Precompiled Binary
 
 **Note:** you can get a pre-build binary file compiled using v1.3.2 [here](files/nrf_cloud_agps_bb259bf.bin).
 
-## Instructions
-
-The `nrf_cloud_agps` sample is the *easiest* way to get started with generating GPS coordinates with your nRF9160 Feather.
 
 ## Programming `nrf_cloud_apgs` **Sample**
 
