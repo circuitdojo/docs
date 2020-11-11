@@ -208,6 +208,7 @@ Debugging your application is possible with Visual Code. You will need a J-Link 
 
 Here's the process:
 
+1. Download and install your version of the [nRF Command Line Tools](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Command-Line-Tools/Download#infotabs)
 1. Install the **C/C++ Extension** and the **Cortex-Debug** extensions. They're both very handy in development and debugging of Zephyr based projects.
     ![C/C++ Extension](img/programming-and-debugging/c_extention.png)
     ![Cortex M Debug Extension](iimg/../img/programming-and-debugging/cortex_m_debug_extension.png)
