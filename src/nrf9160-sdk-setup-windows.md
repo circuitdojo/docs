@@ -108,7 +108,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
 ## `newtmgr`
 
 1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
-   - [Windows](files/newtmgr/windows/newtmgr)
+   - [Windows](files/newtmgr/windows/newtmgr.zip)
 
     If you're not sure, `C:\bin\` is always a good spot for these types of binaries.
 1. You'll have to make sure that `C:\bin\` is added to your system `PATH`. Hit the start menu or Windows key and type "environment variables". Open the "Edit the system environment variables." option.
