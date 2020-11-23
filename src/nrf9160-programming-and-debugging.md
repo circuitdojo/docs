@@ -3,7 +3,7 @@
 There are currently two ways of programming the nRF9160 Feather. You can use the built-in bootloader or use an external programmer.
 
 - [Bootloader use](#booloader-use)
-- [External programming](#requirements-for-external-programming)
+- [External programming](#requirements-for-external-programming-and-debugging)
 - [Modem trace](#getting-a-modem-trace)
 - [Debugging in Visual Code](#debugging-in-visual-code)
 
@@ -19,7 +19,7 @@ In order to utilize the bootloader, you'll ned to install `newtmgr` (AKA `mcumgr
 
 Download one of the binary files below. (Install script coming soon...)
 
-- [Windows](files/newtmgr/windows/newtmgr.exe.zip)
+- [Windows](files/newtmgr/windows/newtmgr.zip)
 - [Mac OSX](files/newtmgr/darwin/newtmgr.zip)
 - [Linux](files/newtmgr/linux/newtmgr.zip)
 
@@ -77,7 +77,7 @@ In all three cases above you've created a connection called `serial`. We'll be u
 1. The transfer process is limited to 1M BAUD. In most cases it takes about 8 seconds to transfer application code.
 1. The nRF9160 Feather does not respond to `newtmgr` commands **unless it's in DFU mode**. (See step 1 above to get it into DFU mode.)
 
-## Requirements for external programming
+## Requirements for external programming and debugging
 
 You can also use external programmers with the nRF9160 Feather. Here are the current supported external programmers:
 
@@ -100,12 +100,32 @@ In this next section, I'll be focusing on using the nRF5340-PDK as *the* program
 
 2. Then, run the `.exe` that was downloaded. It will do all the heavy lifting for you.
 3. Run `nrfjprog` in a `cmd` window to make sure your install is working.
+4. You may also have to add `JLink.exe` to your path. It's the exact [same proceedure](nrf9160-sdk-setup-windows.md#newtmgr) as adding `newtmgr` except the path you're adding is `C:\Program Files (x86)\SEGGER\JLink`
+    ![Paths updated for Windows for JLink](img/programming-and-debugging/paths-updated-for-jlink.png)
+5. Close/restart VSCode and your Command Prompt
+6. Run `jlink.exe` and make sure it opens.
+   ```
+   > jlink.exe
+   SEGGER J-Link Commander V6.86f (Compiled Oct 23 2020 18:01:48)
+   DLL version V6.86f, compiled Oct 23 2020 18:00:13
+
+   Connecting to J-Link via USB...O.K.
+   Firmware: J-Link OB-K22-NordicSemi compiled Jan 21 2020 17:33:01
+   Hardware version: V1.00
+   S/N: 960083363
+   License(s): RDI, FlashBP, FlashDL, JFlash, GDB
+   VTref=3.300V
+
+
+   Type "connect" to establish a target connection, '?' for help
+   J-Link>
+   ```
 
 ### Mac
 
 2. First run `nRF-Command-Line-Tools_10_9_0_OSX.pkg`
 3. Once that install is done, run `JLink_MacOSX_V680a.pkg`
-4. Open a fresh terminal window and run `nrfjprog` to make sure your install is complete.
+4. Open a fresh terminal window and run `nrfjprog` and `jlinkexe` to make sure your install is complete. 
 
 ## Setting up the nRF5340-PDK
 
@@ -189,7 +209,13 @@ In order to get a modem trace, the TX and RX pins on your board need to be free.
 
     ![img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.42.58_PM.png](img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.42.58_PM.png)
 
-4. Then, inside LTE link monitor enable the process with `AT%XMODEMTRACE=1,2`. Then execute `AT+CFUN=0`. This will perpetually save and keep modem traces **on**.
+4. Then, inside LTE link monitor enable the process with:
+    ```
+    AT%XMODEMTRACE=1,2
+    AT+CFUN=0
+    ```
+    
+    This will perpetually save and keep modem traces **on**.
 5. Then open the serial port in the modem trace App and click start.
 
     ![img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.47.06_PM.png](img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.47.06_PM.png)
@@ -215,7 +241,7 @@ Here's the process:
 1. If you don't have one already, create a `.vscode` folder in the **root** of your project.
     ![.vscode Fodler](img/programming-and-debugging/vscode_folder.png)
 1. Create a file called `launch.json`. This is where we'll set up the configuration for debugging.
-1. Here's a real example of a config I was using to debug a project:
+1. Here's a real example of a config I was using to debug a project in OSX:
    ```
    {
      // Use IntelliSense to learn about possible attributes.
@@ -237,6 +263,30 @@ Here's the process:
      ]
    }
    ```
+   
+   For folks on Windows you'll have to modify appropriately:
+   ```
+   {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+       {
+           "name": "Cortex Debug",
+           "cwd": "${workspaceRoot}",
+           "executable": "${workspaceRoot}\\nrf9160-feather\\samples\\blinky\\build\\zephyr\\zephyr.elf",
+           "request": "launch",
+           "type": "cortex-debug",
+           "servertype": "jlink",
+           "device": "nrf9160_xxAA",
+           "interface": "swd",
+           "armToolchainPath": "C:\\Program Files (x86)\\GNU Tools Arm Embedded\\9 2019-q4-major\\bin"
+       }
+    ]
+   }
+   ```
+   Remember that `workspaceRoot` refers to the folder you have opened in VSCode. This will most likely be `C:\nfed\`. You will have to modify the `"executable"` entry to match the path of your `zephyr.elf` file.
 1. Change the **executable** path and the **armToolchainPath** to reflect your system. Make sure you point the **executable** option to the `.elf` file that gets produced during the compilation process.
 1. Next, go to your projects `prj.conf` and disable the bootloader by **commenting out** `CONFIG_BOOTLOADER_MCUBOOT=y` or changing the `y` to a `n`. As of this writing, disabling the bootloader **is required** as it prevents the debugging process from occuring.
 1. In `prj.conf` you'll also want to enable the `CONFIG_DEBUG` option. This disables compiler optimizations which makes the debug process hairy or impossible.

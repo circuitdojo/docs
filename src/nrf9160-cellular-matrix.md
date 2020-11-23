@@ -56,8 +56,8 @@ before adopting a provider.
 
 We don't always have the ability to test every single cellular provider. In this section, here are a few providers that customers have reported success with.
 
-| Provider Name | Connected To | Notes                                                                   | APN |
-| ------------- | ------------ | ----------------------------------------------------------------------- | --- |
-| Kore          | Verizon/AT&T | Provides separate SIM cards for Verizon/AT&T. AT&T ESIM also available. |     |
+| Provider Name | Connected To | Notes | APN |
+| ------------- | ------------ | ----- | --- |
+|               |              |       |     |
 
 For the latest information on which providers support the nRF9160 SiP check out [Nordic's nRF9160 certification page.](https://www.nordicsemi.com/Products/Low-power-cellular-IoT/nRF9160-Certifications)
