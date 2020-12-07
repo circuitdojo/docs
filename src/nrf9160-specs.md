@@ -53,6 +53,8 @@
 
 *\* nRF9160 tech specs provided from the nRF9160 Product Specification*
 
+![Block Diagram](img/nrf9160-feather-block-diagram.png)
+
 ## Electrical
 
 Here are the elctrical specifications for the nRF9160 Feather. Most of the specifications here are based on the nRF9160 Product Specification. You can get the latest version of the [nRF9160 Product Specification here.](https://infocenter.nordicsemi.com/pdf/nRF9160_PS_v1.2.pdf) All previous versions can be [found here.](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fstruct_nrf91%2Fstruct%2Fnrf9160.html&cp=2_0)
