@@ -121,12 +121,9 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
    newtmgr conn add serial type=serial connstring='dev=/dev/tty.SLAB_USBtoUART,baud=1000000'
    ```
    If you have multiple Silicon Labs CP2102 connected to your machine your serial port *may be named differently*. I recommend you unplug all devices that could be named `tty.SLAB_USBtoUART` to ensure you're targeting the correct device during programming.
+2. **Having trouble?** You may have to [install the drivers.](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
 
 For more info in using `newtmgr` checkout the [programming section](nrf9160-programming-and-debugging.md#booloader-use) of this documentation.
-
-## USB Drivers
-
-1. If your device is not initailizing as a comp port in the `/dev/` folder you may have to [install the drivers.](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) Make sure it shows up before proceeding to the next step.
 
 ## Testing it
 

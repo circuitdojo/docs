@@ -24,7 +24,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
 
    ```
    choco feature enable -n allowGlobalConfirmation
-   choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+   choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' --version 3.18.5
    choco install ninja gperf python git
    ```
 1. Next install `west` using `pip`. West is the most important utility for using nRF Connect SDK & Zephyr. You'll become *quite* familliar with very soon.
@@ -116,6 +116,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
    newtmgr conn add serial type=serial connstring="dev=COM5,baud=1000000"
    ```
    Make sure that the COM port matches the one attached to the nRF9160 Feather. An easy way to check is to remove and add the device to see which COM port shows up in device manager.
+1. **Having trouble?** You may need to install the [Silabs VCP driver.](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
 
 For more info in using `newtmgr` checkout the [programming section](nrf9160-programming-and-debugging.md#booloader-use) of this documentation.
 
