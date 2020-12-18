@@ -36,6 +36,8 @@ If you would like to "clean" your project before building add the `-p` parameter
 west build -b circuitdojo_feather_nrf9160ns -p
 ```
 
+**Note:** having trouble building? Make sure you check out the [troubleshooting](nrf9160-troubleshooting.md) page.
+
 The output assets are placed in the `build/zephyr` folder. If you're programming from scratch, you'll want the `merged.hex`. If you're using `newtmgr` then you'll want the `app_update.bin`. More info on different programming methods in the programming and debugging section using [newtmgr](nrf9160-programming-and-debugging.md#using-newtmgr) and [an external programmer](nrf9160-programming-and-debugging.md#programming-with-the-nrf5340-pdk).
 
 For subsequent builds you don't need `-b circuitdojo_feather_nrf9160ns` **if you're not using the -p param**.

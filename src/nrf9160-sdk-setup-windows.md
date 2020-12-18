@@ -42,14 +42,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
    west init -m https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers --mr main
    ```
 
-   **Note:** if you are using an `ncs` directory structure (older documentation) you can do this with the same effect:
-
-   ```
-   cd ncs
-   git clone https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers nrf9160-feather
-   ```
-
-1. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
+2. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
    ```
    west update
    ```
@@ -78,7 +71,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
                   0 File(s)              0 bytes
                  11 Dir(s)  29,099,958,272 bytes free
    ```
-1. Installing the remaining SDK requirements using `pip3`:
+3. Installing the remaining SDK requirements using `pip3`:
    ```
    pip install -r zephyr/scripts/requirements.txt
    pip install -r nrf/scripts/requirements.txt

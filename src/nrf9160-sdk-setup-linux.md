@@ -39,13 +39,6 @@ This page is all about getting your Linux machine compiling code for the nRF9160
    west init -m https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers --mr main
    ```
 
-   **Note:** if you are using an `ncs` directory structure (older documentation) you can do this with the same effect:
-
-   ```
-   cd ncs
-   git clone https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers nrf9160-feather
-   ```
-
 1. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
    ```
    west update
