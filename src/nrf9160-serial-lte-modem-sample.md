@@ -44,6 +44,8 @@ The Serial LTE Modem sample is extremely handy when you already have an applicat
     ```
     west build -b circuitdojo_feather_nrf9160ns
     ```
+    
+    **Note:** having trouble building? Make sure you check out the [troubleshooting](nrf9160-troubleshooting.md) page.
 1. Flash the example using `newtmgr`:
 
     ```

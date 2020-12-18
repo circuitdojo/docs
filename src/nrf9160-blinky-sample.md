@@ -15,6 +15,8 @@ This will enable support for the bootloader. Then, build using the build command
 west build -b circuitdojo_feather_nrf9160ns
 ```
 
+**Note:** having trouble building? Make sure you check out the [troubleshooting](nrf9160-troubleshooting.md) page.
+
 You can see towards the end of this output that both the application **and** the bootloader have been built and merged.
 
 Programming can be completed with `newtmgr`:

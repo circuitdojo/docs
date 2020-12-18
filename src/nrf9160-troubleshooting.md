@@ -14,7 +14,7 @@ This page has a list of common problems and solutions realated to the nRF9160 Fe
 
 **Potential solution:*** If your nRF9160 Feather is plugged into USB, try a different USB power supply. During the testing of the nRF9160 Feather, I found that certain USB C-to-A adapters injected were not properly grounded. This lead to issues getting a fix or prevented it all together. This especially applied to Apple Macbooks.
 
-## "The toolchain is unable to build a dummy C file" (Mac OS)
+## "The toolchain is unable to build a dummy C file"
 
 If you're trying to build an example and you're getting an error building your code your should delete the `Cmake` cache:
 
@@ -23,3 +23,5 @@ rm -rf ~/Library/Caches/zephyr
 ```
 
 More info here: [https://devzone.nordicsemi.com/f/nordic-q-a/55475/the-toolchain-is-unable-to-build-a-dummy-c-file](https://devzone.nordicsemi.com/f/nordic-q-a/55475/the-toolchain-is-unable-to-build-a-dummy-c-file)
+
+Also a post on the forum: [https://community.jaredwolff.com/d/51-error-whilst-compiling-blinky/3](https://community.jaredwolff.com/d/51-error-whilst-compiling-blinky/3)

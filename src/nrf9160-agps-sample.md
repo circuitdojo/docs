@@ -35,6 +35,8 @@ Then compile as normal:
 west build -b circuitdojo_feather_nrf9160ns
 ```
 
+**Note:** having trouble building? Make sure you check out the [troubleshooting](nrf9160-troubleshooting.md) page.
+
 Then load using `newmgr`:
 
 ```

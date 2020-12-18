@@ -47,6 +47,8 @@ Memory region         Used Size  Region Size  %age Used
 [174/174] Generating zephyr/merged.hex
 ```
 
+**Note:** having trouble building? Make sure you check out the [troubleshooting](nrf9160-troubleshooting.md) page.
+
 You can see towards the end of this output that both the application **and** the bootloader have been built and merged.
 
 Programming can be completed with `newtmgr`:
