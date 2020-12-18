@@ -10,7 +10,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
 
 ## SDK Install
 
-1. Install the Chocolatey (`choco`) package manager. In the start menu type `Powershell` then right click and open with Administrative Privledges.
+1. Install the Chocolatey (`choco`) package manager. In the start menu type `cmd` then right click and open with Administrative Privledges.
 
    ![Powershell w/ Admin](img/sdk-setup-windows/powershell-admin.png)
 
@@ -20,20 +20,20 @@ This page is all about getting your Windows machine compiling code for the nRF91
    ```
 
    For more info check out [this page](https://chocolatey.org/install).
-1. Now, lets install the remaining deps we'll need for Zephyr/nRF Connect using `choco`. In the same `powershell.exe`as above run:
+2. Now, lets install the remaining deps we'll need for Zephyr/nRF Connect using `choco`. In a new `cmd.exe` session (with Administrator privledges) run:
 
    ```
    choco feature enable -n allowGlobalConfirmation
    choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' --version 3.18.5
    choco install ninja gperf python git
    ```
-1. Next install `west` using `pip`. West is the most important utility for using nRF Connect SDK & Zephyr. You'll become *quite* familliar with very soon.
+3. Next install `west` using `pip`. West is the most important utility for using nRF Connect SDK & Zephyr. You'll become *quite* familliar with very soon.
    ```
    pip install west
    ```
    **💡Note:** you can update `west` by issuing `pip3 install -U west` It will uninstall the version on your machine and replace it with the latest. (It won't do anything if you have the latest installed.)
-1. Now create a folder on your machine and call it `nfed` (short for nRF9160 Feather Examples and Drivers). For windows it's best to put it in `C:\`.
-   Open a **new** command prompt (or powershell) in this folder and initialize nRF Connect SDK using `west`:
+4. Now create a folder on your machine and call it `nfed` (short for nRF9160 Feather Examples and Drivers). For windows it's best to put it in `C:\`.
+   Open a **new** `cmd.exe` prompt in this folder and initialize nRF Connect SDK using `west`:
 
    ```
    cd C:\
@@ -42,7 +42,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
    west init -m https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers --mr main
    ```
 
-2. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
+5. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
    ```
    west update
    ```
@@ -71,7 +71,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
                   0 File(s)              0 bytes
                  11 Dir(s)  29,099,958,272 bytes free
    ```
-3. Installing the remaining SDK requirements using `pip3`:
+6. Installing the remaining SDK requirements using `pip3`:
    ```
    pip install -r zephyr/scripts/requirements.txt
    pip install -r nrf/scripts/requirements.txt
@@ -116,7 +116,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
    newtmgr conn add serial type=serial connstring="dev=COM5,baud=1000000"
    ```
    Make sure that the COM port matches the one attached to the nRF9160 Feather. An easy way to check is to remove and add the device to see which COM port shows up in device manager.
-1. **Having trouble?** You may need to install the [Silabs VCP driver.](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
+1. **Having trouble?** You may need to install the [Silabs VCP driver.](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers). Download and install the **CP210x VCP Windows** option.
 
 For more info in using `newtmgr` checkout the [programming section](nrf9160-programming-and-debugging.md#booloader-use) of this documentation.
 
