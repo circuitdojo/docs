@@ -81,7 +81,3 @@ Follow the same steps as above. Except for **Step 9**.  Then copy your `nfed` di
 ## Testing it
 
 You can quickly test if your SDK is set up correctly by checking out the [`blinky` example](nrf9160-blinky-sample.md).
-
-## Manual instructions
-
-Older more tedious/manual instructions can be [found here](nrf9160-sdk-setup-mac-manual.md).
