@@ -63,9 +63,9 @@ This page is all about getting your Linux machine compiling code for the nRF9160
    ```
 1. Installing the remaining SDK requirements using `pip3`:
    ```
-   pip3 install -r zephyr/scripts/requirements.txt
-   pip3 install -r nrf/scripts/requirements.txt
-   pip3 install -r bootloader/mcuboot/scripts/requirements.txt
+   pip3 install --user -r zephyr/scripts/requirements.txt
+   pip3 install --user -r nrf/scripts/requirements.txt
+   pip3 install --user -r bootloader/mcuboot/scripts/requirements.txt
    ```
 
    **Note:** there may be an error during the first `pip3 install` you can safely ignore them.

@@ -36,6 +36,8 @@ The Serial LTE Modem sample is extremely handy when you already have an applicat
        cts-pin = <30>;
    };
    ```
+
+   **Note:** it's **very important** that your overlay file ends in `.overlay` or you will get compilation errors.
 1. When you're done, here's what it should look like:
 
    ![boards folder](img/serial-lte-modem/file-setup.png)

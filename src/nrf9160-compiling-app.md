@@ -229,5 +229,5 @@ Memory region         Used Size  Region Size  %age Used
            ---------------------------------------------------------
    ```
 
-   The default nRF9160 Feather bootloader uses the default MCUBoot key. If you're working on a secure application, be sure to change this key. More information about this topic is [here.](#)
+   The default nRF9160 Feather bootloader uses the default MCUBoot key. If you're working on a secure application, be sure to change this key.
 

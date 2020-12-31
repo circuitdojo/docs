@@ -5,18 +5,14 @@ The `nrf_cloud_agps` sample is the *easiest* way to get started with generating 
 
 ## Precompiled Binary
 
-**Note:** you can get a pre-build binary file compiled using v1.3.2 [here](files/nrf_cloud_agps_bb259bf.bin).
+**Note:** you can get a pre-build binary file compiled previously using NCS v1.3.2 [here](files/nrf_cloud_agps_bb259bf.bin).
 
 
 ## Programming `nrf_cloud_apgs` **Sample**
 
-As of this writing, this example works best using the pre-release version of nRF Connect SDK.
-
-1. Change directories to `ncs/nrf`
-1. Make sure that you're running the latest master. Running `git fetch` and then  `git checkout bb259bfad1fa3572563444edb512fc8a6f12a3f4`.
-1. Run `west update` to fetch all dependencies
-1. Then change directories to `nrf/samples/nrf9160/nrf_cloud_agps/` (on the latest main branch it's changed to `/nrf/samples/nrf9160/agps/`)
-1. Add this to `prj.conf`:
+1. Change directories to `ncs/nrf` (Make sure you're using NCS v1.4.0 or newer.)
+2. Then change directories to `/nrf/samples/nrf9160/agps/`
+3. Add this to `prj.conf`:
    ```
    # Cloud prefix for nRF9160 Feather
    CONFIG_NRF_CLOUD_CLIENT_ID_PREFIX="feather-"
