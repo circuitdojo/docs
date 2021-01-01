@@ -32,11 +32,11 @@ For more info in using `newtmgr` checkout the [programming section](nrf9160-prog
 
 ## SDK Install
 
-Installing the latest SDK is a snap and only takes a few steps. Let's walk through them here:
+Before we start, if you already have NCS installed, you can skip to **Step 8**. Let's begin!
 
-1. Download and install [nRF Connect Desktop](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs)
+1. Download and install [nRF Connect For Desktop](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs)
    
-   ![Download page for nRF Connect Desktop](img/sdk-setup-windows/nrf-connect-desktop-download.png)
+   ![Download page for nRF Connect For Desktop](img/sdk-setup-windows/nrf-connect-desktop-download.png)
 
 2. Once downloaded, run the installer.
 

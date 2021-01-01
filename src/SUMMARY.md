@@ -15,7 +15,7 @@
     - [SDK Setup (Linux - Ubuntu)](./nrf9160-sdk-setup-linux.md)
     - [Compiling an Application](./nrf9160-compiling-app.md)
     - [Programming and Debugging](./nrf9160-programming-and-debugging.md)
-    - [nRF Connect Desktop](./nrf9160-nrf-connect-desktop.md)
+    - [nRF Connect for Desktop](./nrf9160-nrf-connect-desktop.md)
     - [Debug Serial Usage](./nrf9160-serial-usage.md)
   - [Example Code](./nrf9160-example-code.md)
     - [Blinky Sample](./nrf9160-blinky-sample.md)

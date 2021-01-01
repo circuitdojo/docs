@@ -33,4 +33,4 @@ Instructions below are based on using Microsoft's Visual Studio Code as your wor
 - [Compiling an Application](nrf9160-compiling-app.md)
 - [Programming and Debugging](nrf9160-programming-and-debugging.md)
 - [Serial Debug Usage](nrf9160-serial-usage.md)
-- [nRF Connect Desktop](nrf9160-nrf-connect-desktop.md)
+- [nRF Connect For Desktop](nrf9160-nrf-connect-desktop.md)

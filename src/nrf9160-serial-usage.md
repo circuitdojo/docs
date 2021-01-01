@@ -6,7 +6,7 @@ Here's some recommendations for software to communicate with the nRF9160 Feather
 
 ## Multi-Platform
 
-### nRF Connect Desktop - LTE Link Monitor
+### nRF Connect For Desktop - LTE Link Monitor
 
 If you haven't already, make sure you check out the [LTE Link Monitor](nrf9160-nrf-connect-desktop.md#lte-link-monitor). It's a great multi-purpose tool for using and debugging the nRF9160 Feather.
 
