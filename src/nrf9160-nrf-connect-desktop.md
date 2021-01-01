@@ -1,13 +1,19 @@
-# nRF Connect Desktop
+# nRF Connect For Desktop
 
-![nRF Connect Desktop](img/nrf-connect-desktop.png)
+![nRF Connect For Desktop](img/nrf-connect-desktop.png)
 
-nRF Connect Desktop is *the* utility that you can use to manipulate your nRF9160 Feather. In this section we'll be focusing on two apps that will affect you the most:
+nRF Connect For Desktop is *the* utility that you can use to manipulate your nRF9160 Feather. In this section we'll be focusing on two apps that will affect you the most:
 
 1. [LTE Link Monitor](#lte-link-monitor)
 1. [Programmer](#programmer)
 
-You can find the download page for [nRF Connect Desktop here.](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs)
+You can find the download page for [nRF Connect For Desktop here.](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs)
+
+**Linux usesr:** nRF Connect for Desktop is distributed as an `appimage`. Right click and enable running as an executable. Then you can double click and run as any other app.
+
+![Appimage](img/nrf-connect-desktop/nrf-connect-desktop-appimage.png)
+![Execute](img/nrf-connect-desktop/nrf-connect-desktop-execute.png)
+![nRF Connect Desktop running on Ubuntu](img/nrf-connect-desktop/nrf-connect-desktop-running.png)
 
 ## LTE Link Monitor
 
@@ -15,11 +21,11 @@ The best way to debug anything cellular-related is to use the LTE Link Monitor.
 
 To install:
 
-1. Install [nRF Connect Desktop app](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
+1. Install [nRF Connect For Desktop app](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
 1. Open it up and in the list of apps find **LTE Link Monitor**
 1. Click **install**
 1. Once installed click **open** and let the fun begin!
-   ![nRF Connect Desktop with LTE Link Monitor installed](img/nrf-connect-desktop/nrf-connect-desktop.png)
+   ![nRF Connect For Desktop with LTE Link Monitor installed](img/nrf-connect-desktop/nrf-connect-desktop.png)
 
 For more information check out [Nordic's Documentation.](https://nordicsemiconductor.github.io/pc-nrfconnect-docs/local_app_installation)
 
@@ -55,7 +61,7 @@ The programmer is excellent for updating your application firmware. The most imp
 
 ### Updating Application Firmware
 
-Another way of programming your application other firmware images is to use the nRF Connect Desktop Programmer App.
+Another way of programming your application other firmware images is to use the nRF Connect For Desktop Programmer App.
 
 1. First, you'll need to install it if you haven't already.
 1. Then open it up and select your programmer
@@ -69,7 +75,7 @@ Another way of programming your application other firmware images is to use the 
 1. Hit write to start the writing process. Remember your programmer **has to be connected** to the nRF910 Feather for this to work!
    ![Add a hex file](img/program-4-hit-write.png)
 
-**Handy trick!** Since the nRF Connect Desktop app is web based, you can use (Command) ⌘ + R to refresh the program. (or CTRL + R on Windows/Linux) This is great when the app goes into a weird state or if your serial device/programmer is now showing up.
+**Handy trick!** Since the nRF Connect For Desktop app is web based, you can use (Command) ⌘ + R to refresh the program. (or CTRL + R on Windows/Linux) This is great when the app goes into a weird state or if your serial device/programmer is now showing up.
 
 ### Updating Modem Firmware
 
@@ -80,7 +86,7 @@ Your modem firmware plays an important role in the nRF9160. The easiest way, as 
 Here are the instructions for updating your modem firmware:
 
 1. [Download](https://www.nordicsemi.com/Products/Low-power-cellular-IoT/nRF9160/Download#infotabs) the modem firmware you need.
-1. Next, open up the *Programmer* in nRF Connect Desktop. (You may need to open it first)
+1. Next, open up the *Programmer* in nRF Connect For Desktop. (You may need to open it first)
 1. Then open up a connection to your programmer. (Your programmer should be connected to USB and attached to your nRF9160 Feather)
    ![Port choices](img/2-programmer-choices.png)
 1. Once opened, the program will read the memory contents of your device and display it.
