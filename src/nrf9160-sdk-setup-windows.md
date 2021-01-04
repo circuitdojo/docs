@@ -8,28 +8,6 @@ This page is all about getting your Windows machine compiling code for the nRF91
 1. If you decide to use Visual Studio Code, make sure you install the **C/C++** and **Cortex-Debug** extentions using the built in extension marketplace.
    ![Extensions installed](img/sdk-setup-windows/visual-studio-code-extensions.png)
 
-## `newtmgr`
-
-1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
-   - [Windows](files/newtmgr/windows/newtmgr.zip)
-
-    If you're not sure, `C:\bin\` is always a good spot for these types of binaries.
-1. You'll have to make sure that `C:\bin\` is added to your system `PATH`. Hit the start menu or Windows key and type "environment variables". Open the "Edit the system environment variables." option.
-1. Go to the **System variables** section and find path.
-1. Click **Edit**
-   ![Edit system variables](img/sdk-setup-windows/editing-variables.png)
-1. Click **New**
-1. Enter **C:\bin\\** into the new line.
-1. Press **Ok** for the remaining prompts.
-1. Then, you'll need to add your serial profile to make it easier to download/update your device:
-   ```
-   newtmgr conn add serial type=serial connstring="dev=COM5,baud=1000000"
-   ```
-   Make sure that the COM port matches the one attached to the nRF9160 Feather. An easy way to check is to remove and add the device to see which COM port shows up in device manager.
-1. **Having trouble?** You may need to install the [Silabs VCP driver.](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers). Download and install the **CP210x VCP Windows** option.
-
-For more info in using `newtmgr` checkout the [programming section](nrf9160-programming-and-debugging.md#booloader-use) of this documentation.
-
 ## SDK Install
 
 Before we start, if you already have NCS installed, you can skip to **Step 8**. Let's begin!
@@ -64,15 +42,68 @@ Before we start, if you already have NCS installed, you can skip to **Step 8**. 
 8. Finally, once installed you'll have a dropdown that youc an access. Click on it and then the **Open Bash** or **Open Command Prompt** option. (I prefer bash since I use *nix a lot)
    ![Open terminal](img/sdk-setup-windows/select-bash-or-command-prompt.png)
 
-9.  This will open a terminal. Copy and paste this command into your new terminal to get all the nRF9160 Feather goodies!
+9. To get the nRF9160 Feather examples we'll update `/opt/nordic/v1.4.1/nrf/west.yml`. First in the `remotes` section add:
 
+   ```yaml
+    - name: circuitdojo
+      url-base: https://github.com/circuitdojo
    ```
-   git clone -b v1.4.x https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers.git nfed
+
+   So it looks like:
+
+   ```yaml
+    - name: Alexa-Gadgets-Embedded-Sample-Code
+      path: modules/alexa-embedded
+      revision: face92d8c62184832793f518bb1f19379538c5c1
+      remote: alexa
+    - name: nfed
+      repo-path: nrf9160-feather-examples-and-drivers
+      revision: v1.4.x
+      path: nfed
+      remote: circuitdojo
    ```
 
-   ![Getting NFED](img/sdk-setup-windows/bash.png)
+10. Then in the `projects` section add at the bottom:
 
-Now you can get to playing around with some of the nRF9160 Feather example code! Remember you'll always have to open a terminal using the Toolchain Manager to build code!
+    ```yaml
+    - name: nfed
+      repo-path: nrf9160-feather-examples-and-drivers
+      revision: v1.4.x
+      path: nfed
+      remote: circuitdojo
+    ```
+
+    So it looks like:
+
+    ```yaml
+    ...
+    - name: Alexa-Gadgets-Embedded-Sample-Code
+      path: modules/alexa-embedded
+      revision: face92d8c62184832793f518bb1f19379538c5c1
+      remote: alexa
+    - name: nfed
+      repo-path: nrf9160-feather-examples-and-drivers
+      revision: v1.4.x
+      path: nfed
+      remote: circuitdojo
+    ```
+    
+11. Then run `west update` in your freshly created bash/command prompt session. This will fetch the nRF9160 Feather examples.
+
+
+## `newtmgr`
+
+1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr`.
+   - [Windows](files/newtmgr/windows/newtmgr.zip)
+1. Extract it and move it into your `toolchain/bin/` directory. This will likely be: `C:\Users\<your username>\ncs\v1.4.1\toolchain\bin`
+2. Then, you'll need to add your serial profile to make it easier to download/update your device:
+   ```
+   newtmgr conn add serial type=serial connstring="dev=COM5,baud=1000000"
+   ```
+   Make sure that the COM port matches the one attached to the nRF9160 Feather. An easy way to check is to remove and add the device to see which COM port shows up in device manager.
+3. **Having trouble?** You may need to install the [Silabs VCP driver.](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers). Download and install the **CP210x VCP Windows** option.
+
+For more info in using `newtmgr` checkout the [programming section](nrf9160-programming-and-debugging.md#booloader-use) of this documentation.
 
 ## Migrating from previous instructions
 
