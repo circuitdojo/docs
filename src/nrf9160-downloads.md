@@ -17,6 +17,7 @@
 | Type                        | Donwload Link              |
 | --------------------------- | -------------------------- |
 | Bootloader  (v1)            | [Link][bootloader]         |
+| Bootloader  (v2)            | [Link][bootloader-v2]      |
 | newtmgr CLI   (v1)          | [Link][newtmgr]            |
 | nRF Cloud AGPS example .bin | [Link][nrf-cloud-agps-bin] |
 | AT Client example .bin      | [link][at-client-bin]      |
@@ -30,6 +31,7 @@
 [bom]: https://circuitdojo.aligni.com/part/380080?revision_id=402623#tab_part-list
 [grabcad]: https://grabcad.com/library/nrf9160-feather-tracker-enclosure-1
 [bootloader]: /files/nrf9160_feather_bootloader_v1.zip
+[bootloader-v2]: /files/nrf9160_feather_bootloader_v2.zip
 [newtmgr]: /nrf9160-programming-and-debugging.md#binary-download
 [lte-link-monitor]: /files/pc-nrfconnect-linkmonitor-1.1.6.tgz
 [nrf-cloud-agps-bin]: files/nrf_cloud_agps_bb259bf.bin
