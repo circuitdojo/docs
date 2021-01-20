@@ -29,4 +29,5 @@
   - [Troubleshooting](./nrf9160-troubleshooting.md)
   - [Support](./nrf9160-support.md)
   - [Purchase](./nrf9160-purchase.md)
+  - [Changelog](./nrf9160-changelog.md)
   - [Thanks](./nrf9160-thanks.md)
