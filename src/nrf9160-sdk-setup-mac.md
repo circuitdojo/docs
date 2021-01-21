@@ -44,7 +44,7 @@ Installing the latest SDK is a snap and only takes a few steps. Let's walk throu
 8. Finally, once installed you'll have a dropdown that you can access. Click on it and then the **Open Terminal** option.
    ![Open terminal](img/sdk-setup-mac/open-terminal.png)
 
-9. To get the nRF9160 Feather examples we'll update `/opt/nordic/v1.4.1/nrf/west.yml`. First in the `remotes` section add:
+9. To get the nRF9160 Feather examples we'll update `/opt/nordic/ncs/v1.4.1/nrf/west.yml`. First in the `remotes` section add:
 
    ```yaml
     - name: circuitdojo
@@ -54,15 +54,10 @@ Installing the latest SDK is a snap and only takes a few steps. Let's walk throu
    So it looks like:
 
    ```yaml
-    - name: Alexa-Gadgets-Embedded-Sample-Code
-      path: modules/alexa-embedded
-      revision: face92d8c62184832793f518bb1f19379538c5c1
-      remote: alexa
-    - name: nfed
-      repo-path: nrf9160-feather-examples-and-drivers
-      revision: v1.4.x
-      path: nfed
-      remote: circuitdojo
+   - name: alexa
+     url-base: https://github.com/alexa
+   - name: circuitdojo
+     url-base: https://github.com/circuitdojo
    ```
 
 10. Then in the `projects` section add at the bottom:
