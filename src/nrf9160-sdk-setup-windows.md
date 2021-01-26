@@ -49,20 +49,6 @@ Before we start, if you already have NCS installed, you can skip to **Step 8**. 
       url-base: https://github.com/circuitdojo
    ```
 
-   So it looks like:
-
-   ```yaml
-    - name: Alexa-Gadgets-Embedded-Sample-Code
-      path: modules/alexa-embedded
-      revision: face92d8c62184832793f518bb1f19379538c5c1
-      remote: alexa
-    - name: nfed
-      repo-path: nrf9160-feather-examples-and-drivers
-      revision: v1.4.x
-      path: nfed
-      remote: circuitdojo
-   ```
-
 10. Then in the `projects` section add at the bottom:
 
     ```yaml
@@ -72,23 +58,40 @@ Before we start, if you already have NCS installed, you can skip to **Step 8**. 
       path: nfed
       remote: circuitdojo
     ```
-
-    So it looks like:
-
-    ```yaml
-    ...
-    - name: Alexa-Gadgets-Embedded-Sample-Code
-      path: modules/alexa-embedded
-      revision: face92d8c62184832793f518bb1f19379538c5c1
-      remote: alexa
-    - name: nfed
-      repo-path: nrf9160-feather-examples-and-drivers
-      revision: v1.4.x
-      path: nfed
-      remote: circuitdojo
-    ```
     
-11. Then run `west update` in your freshly created bash/command prompt session. This will fetch the nRF9160 Feather examples.
+    Here's the diff for the file afterwards:
+
+    ```
+    diff --git a/west.yml b/west.yml
+    index 2065ad3f..de8ea812 100644
+    --- a/west.yml
+    +++ b/west.yml
+    @@ -33,6 +33,8 @@ manifest:
+           url-base: https://github.com/nanopb
+         - name: alexa
+           url-base: https://github.com/alexa
+    +    - name: circuitdojo
+    +      url-base: https://github.com/circuitdojo
+     
+       # If not otherwise specified, the projects below should be obtained
+       # from the ncs remote.
+    @@ -124,6 +126,13 @@ manifest:
+           path: modules/alexa-embedded
+           revision: face92d8c62184832793f518bb1f19379538c5c1
+           remote: alexa
+    +    - name: nfed
+    +      repo-path: nrf9160-feather-examples-and-drivers
+    +      revision: v1.4.x
+    +      path: nfed
+    +      remote: circuitdojo
+    +    - name: pyrinas
+    +      path: pyrinas
+     
+       # West-related configuration for the nrf repository.
+       self:
+   ```
+    
+10. Then run `west update` in your freshly created bash/command prompt session. This will fetch the nRF9160 Feather examples.
 
 
 ## `newtmgr`
