@@ -21,10 +21,11 @@ The best way to debug anything cellular-related is to use the LTE Link Monitor.
 
 To install:
 
-1. Install [nRF Connect For Desktop app](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
-1. Open it up and in the list of apps find **LTE Link Monitor**
-1. Click **install**
-1. Once installed click **open** and let the fun begin!
+1. (for OSX folks) If you haven't already, [install the Si2102 USB-to-Serial drivers.](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
+3. Install [nRF Connect For Desktop app](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
+4. Open it up and in the list of apps find **LTE Link Monitor**
+5. Click **install**
+6. Once installed click **open** and let the fun begin!
    ![nRF Connect For Desktop with LTE Link Monitor installed](img/nrf-connect-desktop/nrf-connect-desktop.png)
 
 For more information check out [Nordic's Documentation.](https://nordicsemiconductor.github.io/pc-nrfconnect-docs/local_app_installation)

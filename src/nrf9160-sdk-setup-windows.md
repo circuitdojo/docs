@@ -33,7 +33,7 @@ Before we start, if you already have NCS installed, you can skip to **Step 8**. 
 6. Then paste this url into the box and click **ok**.
 
    ```
-   http://developer.nordicsemi.com/.pc-tools/toolchain/ncs-toolchain-v1.4.1-20201215-7ecf886-minimal.zip
+   http://developer.nordicsemi.com/.pc-tools/toolchain/ncs-toolchain-v1.5.0-20210225-607a0e0-minimal.zip
    ```
 
    ![Insert into box](img/sdk-setup-windows/path-to-toolchain.png)
@@ -42,7 +42,7 @@ Before we start, if you already have NCS installed, you can skip to **Step 8**. 
 8. Finally, once installed you'll have a dropdown that youc an access. Click on it and then the **Open Bash** or **Open Command Prompt** option. (I prefer bash since I use *nix a lot)
    ![Open terminal](img/sdk-setup-windows/select-bash-or-command-prompt.png)
 
-9. To get the nRF9160 Feather examples we'll update `/opt/nordic/v1.4.1/nrf/west.yml`. First in the `remotes` section add:
+9. To get the nRF9160 Feather examples we'll update `C:\Users\<your username>\ncs\v1.5.0\nrf\west.yml`. First in the `remotes` section add:
 
    ```yaml
     - name: circuitdojo
@@ -54,7 +54,7 @@ Before we start, if you already have NCS installed, you can skip to **Step 8**. 
     ```yaml
     - name: nfed
       repo-path: nrf9160-feather-examples-and-drivers
-      revision: v1.4.x
+      revision: v1.5.x
       path: nfed
       remote: circuitdojo
     ```
@@ -81,7 +81,7 @@ Before we start, if you already have NCS installed, you can skip to **Step 8**. 
            remote: alexa
     +    - name: nfed
     +      repo-path: nrf9160-feather-examples-and-drivers
-    +      revision: v1.4.x
+    +      revision: v1.5.x
     +      path: nfed
     +      remote: circuitdojo
     +    - name: pyrinas
@@ -89,16 +89,15 @@ Before we start, if you already have NCS installed, you can skip to **Step 8**. 
      
        # West-related configuration for the nrf repository.
        self:
-   ```
     
-10. Then run `west update` in your freshly created bash/command prompt session. This will fetch the nRF9160 Feather examples.
+11. Then run `west update` in your freshly created bash/command prompt session. This will fetch the nRF9160 Feather examples.
 
 
 ## `newtmgr`
 
 1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr`.
    - [Windows](files/newtmgr/windows/newtmgr.zip)
-1. Extract it and move it into your `toolchain/bin/` directory. This will likely be: `C:\Users\<your username>\ncs\v1.4.1\toolchain\bin`
+1. Extract it and move it into your `toolchain/bin/` directory. This will likely be: `C:\Users\<your username>\ncs\v1.5.0\toolchain\bin`
 2. Then, you'll need to add your serial profile to make it easier to download/update your device:
    ```
    newtmgr conn add serial type=serial connstring="dev=COM5,baud=1000000"
@@ -110,7 +109,7 @@ For more info in using `newtmgr` checkout the [programming section](nrf9160-prog
 
 ## Migrating from previous instructions
 
-Follow the same steps as above. Except for **Step 9**.  Then copy your `nfed` directory from your old setup to the new SDK folder. It will be in `/opt/nordic/ncs/v1.4.1/`. You'll want to checkout the latest using `git pull && git checkout v1.4.1`. 
+Follow the same steps as above. Except for **Step 9**.  Then copy your `nfed` directory from your old setup to the new SDK folder. It will be in `/opt/nordic/ncs/v1.5.0/`. You'll want to checkout the latest using `git pull && git checkout v1.5.x`. 
 
 ## Testing it
 

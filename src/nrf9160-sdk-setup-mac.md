@@ -35,7 +35,7 @@ Installing the latest SDK is a snap and only takes a few steps. Let's walk throu
 6. Then paste this url into the box and click **ok**.
 
    ```
-   http://developer.nordicsemi.com/.pc-tools/toolchain/ncs-toolchain-v1.4.1-20201215-7ecf886-minimal.dmg
+   http://developer.nordicsemi.com/.pc-tools/toolchain/ncs-toolchain-v1.5.0-20210225-607a0e0-minimal.dmg
    ```
 
    ![Insert into box](img/sdk-setup-mac/path-to-sdk-toolchain.png)
@@ -44,20 +44,19 @@ Installing the latest SDK is a snap and only takes a few steps. Let's walk throu
 8. Finally, once installed you'll have a dropdown that you can access. Click on it and then the **Open Terminal** option.
    ![Open terminal](img/sdk-setup-mac/open-terminal.png)
 
-9. To get the nRF9160 Feather examples we'll update `/opt/nordic/ncs/v1.4.1/nrf/west.yml`. First in the **`remotes`** section add:
+9. To get the nRF9160 Feather examples we'll update `/opt/nordic/ncs/v1.5.0/nrf/west.yml`. First in the **`remotes`** section add:
 
    ```yaml
     - name: circuitdojo
       url-base: https://github.com/circuitdojo
    ```
 
-
 10. Then in the `projects` section add at the bottom:
 
     ```yaml
     - name: nfed
       repo-path: nrf9160-feather-examples-and-drivers
-      revision: v1.4.x
+      revision: v1.5.x
       path: nfed
       remote: circuitdojo
     ```
@@ -84,7 +83,7 @@ Installing the latest SDK is a snap and only takes a few steps. Let's walk throu
            remote: alexa
     +    - name: nfed
     +      repo-path: nrf9160-feather-examples-and-drivers
-    +      revision: v1.4.x
+    +      revision: v1.5.x
     +      path: nfed
     +      remote: circuitdojo
     +    - name: pyrinas
@@ -92,34 +91,34 @@ Installing the latest SDK is a snap and only takes a few steps. Let's walk throu
      
        # West-related configuration for the nrf repository.
        self:
-   ```
 
 11. Then run `west update` in your freshly created terminal session. This will fetch the nRF9160 Feather examples.
 
 ## Installing `newtmgr`
 
-1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr`. Open a terminal window and run:
+1. If you'r on a newer version of OSX you'll need to [install the drivers.](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
+
+2. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr`. Open a terminal window and run:
 
    ```
    cd ~/Downloads
    wget "https://docs.jaredwolff.com/files/newtmgr/darwin/newtmgr.zip"
    unzip newtmgr.zip
-   mv newtmgr /opt/nordic/ncs/v1.4.1/toolchain/bin
+   mv newtmgr /opt/nordic/ncs/v1.5.0/toolchain/bin
    rm newtmgr.zip
    ```
 
-2. Then you'll need to add your serial profile to make it easier to download/update your device:
+3. Then you'll need to add your serial profile to make it easier to download/update your device:
    ```
    newtmgr conn add serial type=serial connstring='dev=/dev/tty.SLAB_USBtoUART,baud=1000000'
    ```
    If you have multiple Silicon Labs CP2102 connected to your machine your serial port *may be named differently*. I recommend you unplug all devices that could be named `tty.SLAB_USBtoUART` to ensure you're targeting the correct device during programming.
-3. **Having trouble?** You may have to [install the drivers.](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
 
 For more info in using `newtmgr` checkout the [programming section](nrf9160-programming-and-debugging.md#booloader-use) of this documentation.
 
 ## Migrating from previous instructions
 
-Follow the same steps as above. Except for **Step 9**.  Then copy your `nfed` directory from your old setup to the new SDK folder. It will be in `/opt/nordic/ncs/v1.4.1/`. You'll want to checkout the latest using `git pull && git checkout v1.4.1`. 
+Follow the same steps as above. Except for **Step 9**.  Then copy your `nfed` directory from your old setup to the new SDK folder. It will be in `/opt/nordic/ncs/v1.5.0/`. You'll want to checkout the latest using `git pull && git checkout v1.5.x`. 
 
 ## Testing it
 

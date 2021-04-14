@@ -22,6 +22,7 @@
     - [AT Client Sample](./nrf9160-at-client-sample.md)
     - [nRF Cloud AGPS Sample](./nrf9160-agps-sample.md)
     - [Serial LTE Modem](./nrf9160-serial-lte-modem-sample.md)
+  - [Compatible Cloud](./nrf9160-compatible-cloud.md)
   - [Cellular Provider Matrix](./nrf9160-cellular-matrix.md)
   - [Downloads](./nrf9160-downloads.md)
   - [Compliance](./nrf9160-compliance.md)
