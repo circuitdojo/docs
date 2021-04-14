@@ -17,6 +17,11 @@ The `nrf_cloud_agps` sample is the *easiest* way to get started with generating 
    # Cloud prefix for nRF9160 Feather
    CONFIG_NRF_CLOUD_CLIENT_ID_PREFIX="feather-"
 
+   # Image manager
+   CONFIG_IMG_MANAGER=y
+   CONFIG_FLASH=y
+   CONFIG_IMG_ERASE_PROGRESSIVELY=y
+
    # Enable Zephyr application to be booted by MCUboot
    CONFIG_BOOTLOADER_MCUBOOT=y
 

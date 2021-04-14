@@ -37,6 +37,7 @@
 * Fixed various typos
 * Updated instructions for getting modem trace
 * Install insructions updated to 1.5.0
+* Adding entries to agps sample prj.conf
 
 **Removed**
 * Video for putting device into bootloader mode (outdated)
