@@ -2,10 +2,20 @@
 
 There are currently two ways of programming the nRF9160 Feather. You can use the built-in bootloader or use an external programmer.
 
-- [Bootloader use](#bootloader-use)
-- [External programming](#requirements-for-external-programming-and-debugging)
-- [Modem trace](#getting-a-modem-trace)
-- [Debugging in Visual Code](#debugging-in-visual-code)
+- [Programming and Debugging](#programming-and-debugging)
+  - [Bootloader use](#bootloader-use)
+    - [Binary Download](#binary-download)
+    - [Setting your connection configuration (one time only)](#setting-your-connection-configuration-one-time-only)
+  - [Using `newtmgr`](#using-newtmgr)
+  - [Requirements for external programming and debugging](#requirements-for-external-programming-and-debugging)
+  - [Installing programmer software](#installing-programmer-software)
+    - [Windows](#windows)
+    - [Mac](#mac)
+  - [Setting up the nRF5340-DK](#setting-up-the-nrf5340-dk)
+  - [Securing the Bootloader](#securing-the-bootloader)
+  - [Programming with the nRF5340-DK](#programming-with-the-nrf5340-dk)
+  - [Getting a modem trace](#getting-a-modem-trace)
+  - [Debugging in Visual Code](#debugging-in-visual-code)
 
 ## Bootloader use
 
@@ -152,6 +162,41 @@ Success!
 
 **Note:** these pictures are with an early version of the nRF9160 Feather. The procedure is the same. The orientation of the Tag-Connect though is horizontal not vertical as seen in the pictures.
 
+## Securing the Bootloader
+
+In order to deliver secure over the air updates we need to generate our own signing key. Here's the (simplified) process:
+
+- Change directories to ***/opt/nordic/ncs/v1.x.x/bootloader/mcuboot***
+- Run the image generation script:
+
+```
+scripts/imgtool.py keygen -k your-key-rsa-2048.pem -t rsa-2048
+```
+
+- Create a **mcuboot.conf** file in your app with the included contents:
+
+```
+CONFIG_BOOT_SIGNATURE_TYPE_RSA=y
+CONFIG_BOOT_SIGNATURE_KEY_FILE="your-key-rsa-2048.pem"
+```
+
+- In **CMakeLists.txt** add the following lines:
+
+```
+# MCUboot related
+list(APPEND mcuboot_OVERLAY_CONFIG
+  "${CMAKE_CURRENT_SOURCE_DIR}/mcuboot.conf"
+  )
+```
+
+Then start a pristine build using **west:**
+
+```
+west build -b circuitdojo_feather_nrf9160ns -p
+```
+
+A pristine build  should happen before releasing that way the version data is up to date in the app_update.binIt's critical not to lose **your-key-rsa-2048.pem** as it's the key for (secure) OTA updates to succeed.
+
 ## Programming with the nRF5340-DK
 
 Programming with the nRF5340-DK is straight forward in Zephyr using `west`. Here's what it looks like:
@@ -254,7 +299,7 @@ Here's the process:
        {
          "name": "Cortex Debug",
          "cwd": "${workspaceRoot}",
-         "executable": "${workspaceRoot}/pyrinas/applications/dreamstars/build/zephyr/zephyr.elf",
+         "executable": "${workspaceRoot}/pyrinas/applications/application/build/zephyr/zephyr.elf",
          "request": "launch",
          "type": "cortex-debug",
          "servertype": "jlink",
@@ -288,7 +333,7 @@ Here's the process:
     ]
    }
    ```
-   Remember that `workspaceRoot` refers to the folder you have opened in VSCode. This will most likely be `C:\nfed\`. You will have to modify the `"executable"` entry to match the path of your `zephyr.elf` file.
+   Remember that `workspaceRoot` refers to the folder you have opened in VSCode. This will most likely be `C:\Users\<your username>\ncs\v1.5.0\nfed\`. (`/opt/nordic/ncs/v1.5.0` for Mac) You will have to modify the `"executable"` entry to match the path of your `zephyr.elf` file.
 1. Change the **executable** path and the **armToolchainPath** to reflect your system. Make sure you point the **executable** option to the `.elf` file that gets produced during the compilation process.
 1. Next, go to your projects `prj.conf` and disable the bootloader by **commenting out** `CONFIG_BOOTLOADER_MCUBOOT=y` or changing the `y` to a `n`. As of this writing, disabling the bootloader **is required** as it prevents the debugging process from occuring.
 1. In `prj.conf` you'll also want to enable the `CONFIG_DEBUG` option. This disables compiler optimizations which makes the debug process hairy or impossible.

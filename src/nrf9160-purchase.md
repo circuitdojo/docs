@@ -6,7 +6,7 @@ The nRF9160 Feather has arrived! It's available at our store here:
 
 It's also available on these great sites:
 
-[![Digikey](img/purchase/logo_dk.png)](https://www.digikey.com/en/products/detail/circuit-dojo/PASSY-NRF9160-FEATHER/13530500?s=N4IgTCBcDaIHYCcBmBOAjANgAwFokFMBDAFwAt8EQBdAXyA)
+[![Digikey](img/purchase/logo_dk.png)](https://www.digikey.com/en/products/detail/circuit-dojo/PASSY-NRF9160-FEATHER/13668137?s=N4IgTCBcDaIHYCcBmBOAjANgAwAIkFMBDAFwAt8EQBdAXyA)
 
 [![GroupGets Logo](img/purchase/brand-logo-31cc4254800eff691ea577188703574e.png)](https://store.groupgets.com/collections/frontpage/products/nrf9160-feather)
 

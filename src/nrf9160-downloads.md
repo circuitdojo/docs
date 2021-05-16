@@ -14,16 +14,13 @@
 
 ## Software Related
 
-| Type                        | Donwload Link              |
-| --------------------------- | -------------------------- |
-| Bootloader  (v1)            | [Link][bootloader]         |
-| Bootloader  (v2)            | [Link][bootloader-v2]      |
-| newtmgr CLI   (v1)          | [Link][newtmgr]            |
-| nRF Cloud AGPS example .bin | [Link][nrf-cloud-agps-bin] |
-| AT Client example .bin      | [link][at-client-bin]      |
-| Blinky example .bin         | [link][blinky-bin]         |
-| Board Defintions (v1.3.x)   | [link][board-defs-v1.3.x]  |
-| Board Definitions (v1.2.x)  | [link][board-defs-v1.2.x]  |
+| Type                       | Donwload Link             |
+| -------------------------- | ------------------------- |
+| Bootloader  (v1)           | [Link][bootloader]        |
+| Bootloader  (v2)           | [Link][bootloader-v2]     |
+| newtmgr CLI   (v1)         | [Link][newtmgr]           |
+| Board Defintions (v1.3.x)  | [link][board-defs-v1.3.x] |
+| Board Definitions (v1.2.x) | [link][board-defs-v1.2.x] |
 
 [github-docs]: https://www.github.com/circuitdojo/docs/
 [github-hw]: https://www.github.com/circuitdojo/nrf9160-feather/
@@ -31,12 +28,8 @@
 [bom]: https://circuitdojo.aligni.com/part/380080?revision_id=402623#tab_part-list
 [grabcad]: https://grabcad.com/library/nrf9160-feather-tracker-enclosure-1
 [bootloader]: /files/nrf9160_feather_bootloader_v1.zip
-[bootloader-v2]: /files/nrf9160_feather_bootloader_v2.zip
+[bootloader-v2]: /files/v2-010421-1502-merged.hex.zip
 [newtmgr]: /nrf9160-programming-and-debugging.md#binary-download
-[lte-link-monitor]: /files/pc-nrfconnect-linkmonitor-1.1.6.tgz
-[nrf-cloud-agps-bin]: files/nrf_cloud_agps_bb259bf.bin
-[at-client-bin]: files/at-client-v1.3.2.bin
-[blinky-bin]: files/blinky-v1.3.2.bin
 [board-defs-v1.3.x]: files/board-definitions-ncs-v1.3.x.zip
 [board-defs-v1.2.x]: files/board-definitions-ncs-v1.2.x.zip
 

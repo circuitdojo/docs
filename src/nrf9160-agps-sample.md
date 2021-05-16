@@ -53,22 +53,24 @@ During factory test, your nRF9160 Feather is added to nRF Connect for Cloud for 
 
 Every nRF9160 Feather has a device ID generated based on the IMEI. Your full device ID will look something like:
 
-`feather-<IMEI>` where `<IMEI>` is the IMEI tied to your specific device. You'll need this in a moment.
+`feather-<IMEI>` where `<IMEI>` is the IMEI tied to your specific device. 
+
+**Note:** You can get the IMEI by running the `AT+CGSN=1` command in LTE Link Monitor while running the `at_client`, default factory firmware or other firmware with AT Commands turned on. 
 
 Here are the steps to get you the rest of the way.
 
 1. First, program your device with the `nrf_cloud_agps` sample.
-1. Then, power up and confirm that the device can connect to the cloud.
-1. Create an nRF Connect for Cloud Account
+2. Then, power up and confirm that the device can connect to the cloud.
+3. Create an nRF Connect for Cloud Account
    ![Add new device](img/agps-sample/add-new-device.png)
-1. Once created, go to the top left and click the big **+** icon.
+4. Once created, go to the top left and click the big **+** icon.
    ![Add LTE device](img/agps-sample/add-lte-device.png)
-1. Then skip the iBasis setup since we're using Hologram.
+5. Then skip the iBasis setup since we're using Hologram.
    ![Skip iBasis](img/agps-sample/skip-ibasis-setup.png)
-1. Enter the Device ID and the PIN provided on your card.
+6. Enter the Device ID and the PIN provided on your card.
    ![Enter device ID and pin](img/agps-sample/enter-device-id-and-pin.png)
-1. Once you press **Add Device**, nRF Connect for Cloud should notify you that your device has been added!
-1. Navigate to **Devices** and click on the device you're working wtih!
+7. Once you press **Add Device**, nRF Connect for Cloud should notify you that your device has been added!
+8. Navigate to **Devices** and click on the device you're working wtih!
    ![Devices](img/agps-sample/devices.png)
 
 That's it!
