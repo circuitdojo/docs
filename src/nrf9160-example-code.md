@@ -12,6 +12,7 @@ All examples can be found in the [nRF9160 Feather Examples and Drivers (nFED) re
 All samples are in `nfed/samples`. They include:
 
 * accelerometer - for a basic onboard accelerometer demo
+* at_client - for testing connections using LTE Link Monitor
 * battery - for a basic onboard battery measurement demo
 * blinky - for a basic led blink demo
 * bme280 - for an example of using the bme280 on i2c

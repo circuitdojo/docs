@@ -12,27 +12,33 @@ Before we start, if you already have NCS installed, you can skip to **Step 8**. 
 
 Installing the latest SDK is a snap and only takes a few steps. Let's walk through them here:
 
-1. Download and install [nRF Connect For Desktop](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs)
+1. If you haven't already make sure you install Xcode Command Line tools. Without it you may run into issues compiling later on. Run the following in CLI:
+
+   ```
+   xcode-select --install
+   ```
+
+2. Download and install [nRF Connect For Desktop](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs)
    
    ![Download page for nRF Connect For Desktop](img/sdk-setup-mac/nrf-connect-desktop-download.png)
 
-2. Copy the app to your Applications folder
+3. Copy the app to your Applications folder
 
    ![Installer](img/sdk-setup-mac/copy-to-appliations.png)
 
-3. Open up the app and install the Toolchain Manager
+4. Open up the app and install the Toolchain Manager
 
    ![Toolchain Manager install](img/sdk-setup-mac/toolchain-manager.png)
 
-4. Then open it up.
+5. Then open it up.
 
    ![Open Toolchain Manager](img/sdk-setup-mac/open-toolchain-manager.png)
 
-5. Scroll to the bottom and click **Install package from other source**
+6. Scroll to the bottom and click **Install package from other source**
 
    ![Other source install](img/sdk-setup-mac/other-source-install.png)
 
-6. Then paste this url into the box and click **ok**.
+7. Then paste this url into the box and click **ok**.
 
    ```
    http://developer.nordicsemi.com/.pc-tools/toolchain/ncs-toolchain-v1.5.0-20210225-607a0e0-minimal.dmg
@@ -40,18 +46,18 @@ Installing the latest SDK is a snap and only takes a few steps. Let's walk throu
 
    ![Insert into box](img/sdk-setup-mac/path-to-sdk-toolchain.png)
 
-7. The download and install will take a few minutes. Hang out, take a walk, sing a song and come back later.
-8. Finally, once installed you'll have a dropdown that you can access. Click on it and then the **Open Terminal** option.
+8. The download and install will take a few minutes. Hang out, take a walk, sing a song and come back later.
+9.  Finally, once installed you'll have a dropdown that you can access. Click on it and then the **Open Terminal** option.
    ![Open terminal](img/sdk-setup-mac/open-terminal.png)
 
-9. To get the nRF9160 Feather examples we'll update `/opt/nordic/ncs/v1.5.0/nrf/west.yml`. First in the **`remotes`** section add:
+11. To get the nRF9160 Feather examples we'll update `/opt/nordic/ncs/v1.5.0/nrf/west.yml`. First in the **`remotes`** section add:
 
    ```yaml
     - name: circuitdojo
       url-base: https://github.com/circuitdojo
    ```
 
-10. Then in the `projects` section add at the bottom:
+12. Then in the `projects` section add at the bottom:
 
     ```yaml
     - name: nfed
@@ -92,7 +98,7 @@ Installing the latest SDK is a snap and only takes a few steps. Let's walk throu
        # West-related configuration for the nrf repository.
        self:
 
-11. Then run `west update` in your freshly created terminal session. This will fetch the nRF9160 Feather examples.
+13. Then run `west update` in your freshly created terminal session. This will fetch the nRF9160 Feather examples.
 
 ## Installing `newtmgr`
 
