@@ -2,6 +2,13 @@
 
 ![nRF Connect For Desktop](img/nrf-connect-desktop.png)
 
+- [nRF Connect For Desktop](#nrf-connect-for-desktop)
+  - [LTE Link Monitor](#lte-link-monitor)
+    - [Using with LTE Link Monitor](#using-with-lte-link-monitor)
+  - [Programmer](#programmer)
+    - [Updating Application Firmware](#updating-application-firmware)
+    - [Updating Modem Firmware](#updating-modem-firmware)
+
 nRF Connect For Desktop is *the* utility that you can use to manipulate your nRF9160 Feather. In this section we'll be focusing on two apps that will affect you the most:
 
 1. [LTE Link Monitor](#lte-link-monitor)

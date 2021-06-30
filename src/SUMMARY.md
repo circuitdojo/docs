@@ -16,6 +16,7 @@
     - [nRF Connect for Desktop](./nrf9160-nrf-connect-desktop.md)
     - [Debug Serial Usage](./nrf9160-serial-usage.md)
   - [Example Code](./nrf9160-example-code.md)
+  - [Low Power Operation](./nrf9160-low-power-operation.md)
   - [Compatible Cloud](./nrf9160-compatible-cloud.md)
   - [Cellular Provider Matrix](./nrf9160-cellular-matrix.md)
   - [Downloads](./nrf9160-downloads.md)

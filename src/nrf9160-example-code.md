@@ -2,12 +2,17 @@
 
 ![Examples](img/examples.png)
 
+- [Example Code](#example-code)
+  - [Examples](#examples)
+  - [Building](#building)
+
 ## Examples
 
 All examples can be found in the [nRF9160 Feather Examples and Drivers (nFED) repository](https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers). You can install it during the setup process. Here are some links to setting up on different platforms:
 
 * [Windows](nrf9160-sdk-setup-windows.md#installing-sdk)
 * [Mac](nrf9160-sdk-setup-mac.md#installing-sdk)
+* [Linux](nrf9160-sdk-setup-linux.md#installing-sdk)
 
 All samples are in `nfed/samples`. They include:
 

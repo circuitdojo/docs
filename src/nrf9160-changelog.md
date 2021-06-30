@@ -2,6 +2,10 @@
 
 ## Hardware
 
+### Uncommitted
+
+* Powersave pin to ground (Pin 7 on U3) 
+
 ### v3 - (March 2021)
 
 * Fixed SCL/SDA labels

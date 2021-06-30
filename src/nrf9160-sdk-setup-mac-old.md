@@ -103,7 +103,7 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
    set -Ux GNUARMEMB_TOOLCHAIN_PATH "~/gcc-arm-none-eabi-9-2019-q4-major"
    ```
 
-## `newtmgr`
+## `newtmgr` (Used to load your application via USB serial bootloader)
 
 1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
 
@@ -127,4 +127,4 @@ For more info in using `newtmgr` checkout the [programming section](nrf9160-prog
 
 ## Testing it
 
-You can quickly test if your SDK is set up correctly by checking out the [`blinky` example](nrf9160-blinky-sample.md).
+You can quickly test if your SDK is set up correctly by checking out the [samples](nrf9160-example-code.md).

@@ -1,5 +1,11 @@
 # SDK Setup (Linux - Ubuntu)
 
+- [SDK Setup (Linux - Ubuntu)](#sdk-setup-linux---ubuntu)
+  - [Installing IDE](#installing-ide)
+  - [Installing SDK](#installing-sdk)
+  - [The ARM Embedded Toolchain](#the-arm-embedded-toolchain)
+  - [`newtmgr` (Used to load your application via USB serial bootloader)](#newtmgr-used-to-load-your-application-via-usb-serial-bootloader)
+  - [Testing it](#testing-it)
 
 This page is all about getting your Linux machine compiling code for the nRF9160 Feather. Run into trouble during the process? Post your questions on the [community forum.](https://community.jaredwolff.com)
 
@@ -36,7 +42,7 @@ This page is all about getting your Linux machine compiling code for the nRF9160
    cd ~
    mkdir nfed
    cd nfed
-   west init -m https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers --mr main
+   west init -m https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers --mr v1.5.x
    ```
 
 1. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
@@ -88,9 +94,9 @@ This page is all about getting your Linux machine compiling code for the nRF9160
    sudo udevadm control --reload
    ```
 
-## `newtmgr`
+## `newtmgr` (Used to load your application via USB serial bootloader)
 
-1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
+1. For loading code via the bootloader to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
 
    ```
    cd ~/Downloads
@@ -131,4 +137,4 @@ For more info in using `newtmgr` checkout the [programming section](nrf9160-prog
 
 ## Testing it
 
-You can quickly test if your SDK is set up correctly by checking out the [`blinky` example](nrf9160-blinky-sample.md).
+You can quickly test if your SDK is set up correctly by checking out the [samples](nrf9160-example-code.md).

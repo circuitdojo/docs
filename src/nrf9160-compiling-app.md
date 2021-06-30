@@ -1,5 +1,12 @@
 # Compiling an Application
 
+- [Compiling an Application](#compiling-an-application)
+  - [Prerequisites/SDK Setup](#prerequisitessdk-setup)
+  - [Examples](#examples)
+  - [Building an example](#building-an-example)
+  - [Common errors and warnings](#common-errors-and-warnings)
+  - [Board Defintion Files](#board-defintion-files)
+
 ## Prerequisites/SDK Setup
 
 If you haven't already, make sure you've set up the SDK:
@@ -8,22 +15,32 @@ If you haven't already, make sure you've set up the SDK:
 - [Windows](nrf9160-sdk-setup-windows.md)
 - [Linux](nrf9160-sdk-setup-linux.md)
 
-**Side note** One of the engineers at Nordic configured a [Docker Image](https://github.com/coderbyheart/fw-nrfconnect-nrf-docker#using-prebuild-image-from-dockerhub) you can also use to build your code. I'll be adding a section on this when I get a chance to test it!
+## Examples
 
-## Board Defintion Files
+All examples can be found in the [nRF9160 Feather Examples and Drivers (nFED) repository](https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers). You can install it during the setup process. Here are some links to setting up on different platforms:
 
-Currently the 1.2 and 1.3 branchs of the nRF Connect SDK does not have support for the nRF9160 Feather built in. You'll need to download and copy the appropriate board defintion files from the [downloads page.](nrf9160-downloads.md) If you're using the latest nRF SDK those defintions should be included.
+* [Windows](nrf9160-sdk-setup-windows.md#installing-sdk)
+* [Mac](nrf9160-sdk-setup-mac.md#installing-sdk)
 
-To install, unzip the contents of the board defintions to `ncs/zephyr/boards/arm/` It should create a folder called `circuitdojo_feather_nrf9160`. Congrats your board files are installed! You should be able to use the `circuitdojo_feather_nrf9160ns` target for your Zephyr builds!
+All samples are in `nfed/samples`. They include:
 
-Here are the direct downloads:
+* accelerometer - for a basic onboard accelerometer demo
+* at_client - for testing connections using LTE Link Monitor
+* battery - for a basic onboard battery measurement demo
+* blinky - for a basic led blink demo
+* bme280 - for an example of using the bme280 on i2c
+* button - for a basic example using the onboard **mode** button
+* deep_sleep - ultra deep sleep mode demo
+* external_flash - external flash demo
+* external_rtc - using onboard RTC demo
+* gps - basic gps demo
+* sms - basic SMS demo
 
-- [board-defs-v1.3.x](files/board-definitions-ncs-v1.3.x.zip)
-- [board-defs-v1.2.x](files/board-definitions-ncs-v1.2.x.zip)
+Most of these examples are based from the nRF Connect SDK (either directly from Nordic or Zephyr)
 
-**Note:** if you're using the v1.2.x branch of nRF Connect SDK, make sure you're using the v1.2.x definitions. Same for the v1.3.x definitions.
+More examples coming soon!
 
-## Example
+## Building an example
 As long as you have all the requirements from the guide above, compiling for the nRF9160 Feather should be as simple as running the following:
 
 ```
@@ -48,9 +65,10 @@ west build
 
 `west` uses the last board that was indicated for the re-build.
 
-Here's an example compile output from the [blinky sample](nrf9160-blinky-sample.md):
+Here's an example compile output from the **blinky sample**:
 
 ```
+$ cd nfed/samples/blinky/
 $ west build -b circuitdojo_feather_nrf9160ns
 [0/1] Re-running CMake...
 Including boilerplate (Zephyr base (cached)): /Users/jaredwolff/Git/nrf-connect/ncs/zephyr/cmake/app/boilerplate.cmake
@@ -231,3 +249,18 @@ Memory region         Used Size  Region Size  %age Used
 
    The default nRF9160 Feather bootloader uses the default MCUBoot key. If you're working on a secure application, be sure to change this key.
 
+
+## Board Defintion Files
+
+All newer versions of NCS *do have support* for the nRF9160 Feather. 
+
+If you are working with an older version of NCS (1.2.x and 1.3.x), you'll need to download and copy the appropriate board defintion files from the [downloads page.](nrf9160-downloads.md)
+
+To install, unzip the contents of the board defintions to `ncs/zephyr/boards/arm/` It should create a folder called `circuitdojo_feather_nrf9160`. Congrats your board files are installed! You should be able to use the `circuitdojo_feather_nrf9160ns` target for your Zephyr builds!
+
+Here are the direct downloads:
+
+- [board-defs-v1.3.x](files/board-definitions-ncs-v1.3.x.zip)
+- [board-defs-v1.2.x](files/board-definitions-ncs-v1.2.x.zip)
+
+**Note:** if you're using the v1.2.x branch of nRF Connect SDK, make sure you're using the v1.2.x definitions. Same for the v1.3.x definitions.

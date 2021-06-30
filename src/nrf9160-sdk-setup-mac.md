@@ -1,5 +1,12 @@
 # SDK Setup (Mac OS)
 
+- [SDK Setup (Mac OS)](#sdk-setup-mac-os)
+  - [Installing IDE](#installing-ide)
+  - [Installing SDK](#installing-sdk)
+  - [Installing `newtmgr` (Used to load your application via USB serial bootloader)](#installing-newtmgr-used-to-load-your-application-via-usb-serial-bootloader)
+  - [Migrating from previous instructions](#migrating-from-previous-instructions)
+  - [Testing it](#testing-it)
+
 This page is all about getting your Mac compiling code for the nRF9160 Feather. Run into trouble during the process? Post your questions on the [community forum.](https://community.jaredwolff.com)
 
 ## Installing IDE
@@ -50,57 +57,38 @@ Installing the latest SDK is a snap and only takes a few steps. Let's walk throu
 9.  Finally, once installed you'll have a dropdown that you can access. Click on it and then the **Open Terminal** option.
    ![Open terminal](img/sdk-setup-mac/open-terminal.png)
 
-11. To get the nRF9160 Feather examples we'll update `/opt/nordic/ncs/v1.5.0/nrf/west.yml`. First in the **`remotes`** section add:
-
-   ```yaml
-    - name: circuitdojo
-      url-base: https://github.com/circuitdojo
-   ```
-
-12. Then in the `projects` section add at the bottom:
+10. To get the nRF9160 Feather examples we'll update `/opt/nordic/ncs/v1.5.0/nrf/west.yml`. In the `projects` section add at the bottom:
 
     ```yaml
     - name: nfed
-      repo-path: nrf9160-feather-examples-and-drivers
+      url: https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers
       revision: v1.5.x
       path: nfed
-      remote: circuitdojo
     ```
     
     Here's the diff for the file afterwards:
 
     ```
     diff --git a/west.yml b/west.yml
-    index 2065ad3f..de8ea812 100644
-    --- a/west.yml
-    +++ b/west.yml
-    @@ -33,6 +33,8 @@ manifest:
-           url-base: https://github.com/nanopb
-         - name: alexa
-           url-base: https://github.com/alexa
-    +    - name: circuitdojo
-    +      url-base: https://github.com/circuitdojo
-     
-       # If not otherwise specified, the projects below should be obtained
-       # from the ncs remote.
-    @@ -124,6 +126,13 @@ manifest:
-           path: modules/alexa-embedded
-           revision: face92d8c62184832793f518bb1f19379538c5c1
-           remote: alexa
-    +    - name: nfed
-    +      repo-path: nrf9160-feather-examples-and-drivers
-    +      revision: v1.5.x
-    +      path: nfed
-    +      remote: circuitdojo
-    +    - name: pyrinas
-    +      path: pyrinas
-     
-       # West-related configuration for the nrf repository.
-       self:
+      index db9211c27..4e8f92282 100644
+      --- a/west.yml
+      +++ b/west.yml
+      @@ -145,6 +145,10 @@ manifest:
+             remote: nordicsemi
+             revision: 24f1b2b0c64c694b7f9ac1b7eab60b39236ca0bf
+             path: modules/lib/cddl-gen
+      +    - name: nfed
+      +      url: https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers
+      +      revision: v1.5.x
+      +      path: nfed
+       
+         # West-related configuration for the nrf repository.
+         self:
+    ```
 
-13. Then run `west update` in your freshly created terminal session. This will fetch the nRF9160 Feather examples.
+11. Then run `west update` in your freshly created terminal session. This will fetch the nRF9160 Feather examples.
 
-## Installing `newtmgr`
+## Installing `newtmgr` (Used to load your application via USB serial bootloader)
 
 1. If you'r on a newer version of OSX you'll need to [install the drivers.](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
 
@@ -130,4 +118,4 @@ Follow the same steps as above. Except for **Step 9**.  Then copy your `nfed` di
 
 Now you can get to playing around with some of the nRF9160 Feather example code! Remember you'll always have to open a terminal using the Toolchain Manager to build code!
 
-You can quickly test if your SDK is set up correctly by checking out the [`blinky` example](nrf9160-blinky-sample.md).
+You can quickly test if your SDK is set up correctly by checking out the [samples](nrf9160-example-code.md).

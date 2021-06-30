@@ -1,5 +1,12 @@
 # SDK Setup (Windows)
 
+- [SDK Setup (Windows)](#sdk-setup-windows)
+  - [IDE Setup](#ide-setup)
+  - [SDK Install](#sdk-install)
+  - [`newtmgr` (Used to load your application via USB serial bootloader)](#newtmgr-used-to-load-your-application-via-usb-serial-bootloader)
+  - [Migrating from previous instructions](#migrating-from-previous-instructions)
+  - [Testing it](#testing-it)
+
 This page is all about getting your Windows machine compiling code for the nRF9160 Feather. Run into trouble during the process? Post your questions on the [community forum.](https://community.jaredwolff.com)
 
 ## IDE Setup
@@ -42,58 +49,39 @@ Before we start, if you already have NCS installed, you can skip to **Step 8**. 
 8. Finally, once installed you'll have a dropdown that youc an access. Click on it and then the **Open Bash** or **Open Command Prompt** option. (I prefer bash since I use *nix a lot)
    ![Open terminal](img/sdk-setup-windows/select-bash-or-command-prompt.png)
 
-9. To get the nRF9160 Feather examples we'll update `C:\Users\<your username>\ncs\v1.5.0\nrf\west.yml`. First in the `remotes` section add:
-
-   ```yaml
-    - name: circuitdojo
-      url-base: https://github.com/circuitdojo
-   ```
-
-10. Then in the `projects` section add at the bottom:
+9. To get the nRF9160 Feather examples we'll update `C:\Users\<your username>\ncs\v1.5.0\nrf\west.yml`. In the `projects` section add at the bottom:
 
     ```yaml
     - name: nfed
-      repo-path: nrf9160-feather-examples-and-drivers
+      url: https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers
       revision: v1.5.x
       path: nfed
-      remote: circuitdojo
     ```
     
     Here's the diff for the file afterwards:
 
     ```
     diff --git a/west.yml b/west.yml
-    index 2065ad3f..de8ea812 100644
-    --- a/west.yml
-    +++ b/west.yml
-    @@ -33,6 +33,8 @@ manifest:
-           url-base: https://github.com/nanopb
-         - name: alexa
-           url-base: https://github.com/alexa
-    +    - name: circuitdojo
-    +      url-base: https://github.com/circuitdojo
-     
-       # If not otherwise specified, the projects below should be obtained
-       # from the ncs remote.
-    @@ -124,6 +126,13 @@ manifest:
-           path: modules/alexa-embedded
-           revision: face92d8c62184832793f518bb1f19379538c5c1
-           remote: alexa
-    +    - name: nfed
-    +      repo-path: nrf9160-feather-examples-and-drivers
-    +      revision: v1.5.x
-    +      path: nfed
-    +      remote: circuitdojo
-    +    - name: pyrinas
-    +      path: pyrinas
-     
-       # West-related configuration for the nrf repository.
-       self:
+      index db9211c27..4e8f92282 100644
+      --- a/west.yml
+      +++ b/west.yml
+      @@ -145,6 +145,10 @@ manifest:
+             remote: nordicsemi
+             revision: 24f1b2b0c64c694b7f9ac1b7eab60b39236ca0bf
+             path: modules/lib/cddl-gen
+      +    - name: nfed
+      +      url: https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers
+      +      revision: v1.5.x
+      +      path: nfed
+       
+         # West-related configuration for the nrf repository.
+         self:
+    ```
     
 11. Then run `west update` in your freshly created bash/command prompt session. This will fetch the nRF9160 Feather examples.
 
 
-## `newtmgr`
+## `newtmgr` (Used to load your application via USB serial bootloader)
 
 1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr`.
    - [Windows](files/newtmgr/windows/newtmgr.zip)
@@ -113,4 +101,4 @@ Follow the same steps as above. Except for **Step 9**.  Then copy your `nfed` di
 
 ## Testing it
 
-You can quickly test if your SDK is set up correctly by checking out the [`blinky` example](nrf9160-blinky-sample.md). Make sure that you've closed and re-opened all terminals and Visual Studio Code so the environment is correct. Otherwise you may have issues compiling or flashing code.
+You can quickly test if your SDK is set up correctly by checking out the [samples](nrf9160-example-code.md). Make sure that you've closed and re-opened all terminals and Visual Studio Code so the environment is correct. Otherwise you may have issues compiling or flashing code.

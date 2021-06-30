@@ -2,7 +2,7 @@
 
 ![Cellular](img/cellular.png)
 
-In order to use a provider below you'll likely have to set the PDP context. This can be done in your project's `prj.conf` in Zephyr. Here's an example of setting the PDP context to use Hologram.
+In order to use a provider below you'll likely have to set the PDP context. For NCS < 1.6.x, this can be done in your project's `prj.conf` in Zephyr. Here's an example of setting the PDP context to use Hologram.
 
 ```
 # Set the PDP context
@@ -26,20 +26,21 @@ Here's a full working list of what plays nicely with the nRF9160 Feather. This l
 
 ## LTE
 
-| Provider Name             | Connected To         | Notes                                                                                                                                                                  | Working | APN        |
-| ------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| Hologram                  | Sprint/AT&T/T-Mobile | The first SIM to get working out of the box. Also supports T-Mobile and Verizon connections. [Coverage info.](https://www.hologram.io/pricing/coverage#coverage-table) | ✅       | hologram   |
-| Soracom                   | AT&T                 | Working great from Circuit Dojo HQ. More info on coverage [here](https://developers.soracom.io/en/docs/reference/carriers/).                                           | ✅       | soracom.io |
-| Verizon                   | Verizon              | Use [Verizon ThingSpace](http://thingspaceportal.verizon.com) to get starte quickly.                                                                                   | ✅       |            |
-| Twilio (Standard Wireles) | T-Mobile             | T-Mobile does not support the nRF9160.                                                                                                                                 | 🔴       |            |
-| Twilio (Super Sim)        | ?                    | Fails to make a full connection. May work with future nRF9160 modem firmware.                                                                                          | 🔴       | super      |
-| AT&T                      | AT&T                 | Untested.                                                                                                                                                              | 🔶       |            |
+| Provider Name      | Connected To         | Notes                                                                                                                                                                  | Working | APN        |
+| ------------------ | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Hologram           | Sprint/AT&T/T-Mobile | The first SIM to get working out of the box. Also supports T-Mobile and Verizon connections. [Coverage info.](https://www.hologram.io/pricing/coverage#coverage-table) | ✅       | hologram   |
+| Soracom            | AT&T/T-Mobile        | Working great from Circuit Dojo HQ. More info on coverage [here](https://developers.soracom.io/en/docs/reference/carriers/).                                           | ✅       | soracom.io |
+| Verizon            | Verizon              | Use [Verizon ThingSpace](http://thingspaceportal.verizon.com) to get starte quickly.                                                                                   | ✅       |            |
+| Twilio (Super Sim) | T-Mobile and others  | Fails to make a full connection. May work with future nRF9160 modem firmware.                                                                                          | ✅       | super      |
+| AT&T               | AT&T                 | Tested indirectly via other MVNOs.                                                                                                                                     | 🔶       |            |
+
+**Note:** are some important caveats about Verizon. [That information is located here.](nrf9160-verizon.md)
 
 ## NB IoT
 
-| Provider Name                | Connected To | Notes                                  | Working | APN |
-| ---------------------------- | ------------ | -------------------------------------- | ------- | --- |
-| Twilio (Standard Narrowband) | T-Mobile     | T-Mobile does not support the nRF9160. | 🔴       |     |
+| Provider Name                | Connected To | Notes                                                             | Working | APN |
+| ---------------------------- | ------------ | ----------------------------------------------------------------- | ------- | --- |
+| Twilio (Standard Narrowband) | T-Mobile     | T-Mobile does not support the nRF9160. This is subject to change. | 🔴       |     |
 
 Emoji usage chart:
 

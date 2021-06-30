@@ -98,7 +98,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
    setx GNUARMEMB_TOOLCHAIN_PATH "C:\Program Files (x86)\GNU Tools Arm Embedded\9 2019-q4-major"
    ```
 
-## `newtmgr`
+## `newtmgr` (Used to load your application via USB serial bootloader)
 
 1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
    - [Windows](files/newtmgr/windows/newtmgr.zip)
@@ -122,4 +122,4 @@ For more info in using `newtmgr` checkout the [programming section](nrf9160-prog
 
 ## Testing it
 
-You can quickly test if your SDK is set up correctly by checking out the [`blinky` example](nrf9160-blinky-sample.md). Make sure that you've closed and re-opened all terminals and Visual Studio Code so the environment is correct. Otherwise you may have issues compiling or flashing code.
+You can quickly test if your SDK is set up correctly by checking out the [samples](nrf9160-example-code.md). Make sure that you've closed and re-opened all terminals and Visual Studio Code so the environment is correct. Otherwise you may have issues compiling or flashing code.
