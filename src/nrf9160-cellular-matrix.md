@@ -31,7 +31,7 @@ Here's a full working list of what plays nicely with the nRF9160 Feather. This l
 | Hologram           | Sprint/AT&T/T-Mobile | The first SIM to get working out of the box. Also supports T-Mobile and Verizon connections. [Coverage info.](https://www.hologram.io/pricing/coverage#coverage-table) | ✅       | hologram   |
 | Soracom            | AT&T/T-Mobile        | Working great from Circuit Dojo HQ. More info on coverage [here](https://developers.soracom.io/en/docs/reference/carriers/).                                           | ✅       | soracom.io |
 | Verizon            | Verizon              | Use [Verizon ThingSpace](http://thingspaceportal.verizon.com) to get starte quickly.                                                                                   | ✅       |            |
-| Twilio (Super Sim) | T-Mobile and others  | Fails to make a full connection. May work with future nRF9160 modem firmware.                                                                                          | ✅       | super      |
+| Twilio (Super Sim) | T-Mobile and others  | Nordic indicates modem firmware 1.3.0 supports Twilio's Super Sim                                                                                                      | 🔶       | super      |
 | AT&T               | AT&T                 | Tested indirectly via other MVNOs.                                                                                                                                     | 🔶       |            |
 
 **Note:** are some important caveats about Verizon. [That information is located here.](nrf9160-verizon.md)

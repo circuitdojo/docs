@@ -4,9 +4,26 @@
 
 ### Uncommitted
 
-* Powersave pin to ground (Pin 7 on U3) 
+* TBD
 
-### v3 - (March 2021)
+### v4 - (October 2021)
+
+Changed:
+* Changed power supply to use TI's LM3281
+* USB connector to USB-C
+* Changed schottky doide part to make more room for USB-C
+* Updated 3D render
+* Renamed LNA_EN to GPS_EN to avoid confusion
+* Charging LED fed by 5V
+* Replaced battery charger with Microchip MCP73830T
+* Improved/cleaned up power and return paths
+* INT1 is now an optional jumper
+
+Added:
+* Added INT2 connection for accelerometer with closed jumper
+* A0 and MODE pin of LM3281 connected for PWM/PFM control
+
+### v3 - (July 2021)
 
 * Fixed SCL/SDA labels
 * Added test points for SIM tests

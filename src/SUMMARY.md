@@ -4,6 +4,7 @@
 
 ## nRF9160 Feather
 
+- [Air Quality Wing](./air-quality-wing.md)
 - [nRF9160 Feather](./nrf9160-introduction.md)
   - [Overview](./nrf9160-overview.md)
   - [Specifications](./nrf9160-specs.md)
