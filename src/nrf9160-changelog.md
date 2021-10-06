@@ -2,10 +2,6 @@
 
 ## Hardware
 
-### Uncommitted
-
-* TBD
-
 ### v4 - (October 2021)
 
 Changed:

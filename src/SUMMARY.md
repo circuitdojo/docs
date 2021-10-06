@@ -4,7 +4,16 @@
 
 ## nRF9160 Feather
 
-- [Air Quality Wing](./air-quality-wing.md)
+- [Air Quality Wing](./air-quality-wing/index.md)
+  - [Specifications](./air-quality-wing/specifications.md)
+  - [Getting Started](./air-quality-wing/getting-started.md)
+    - [Zephyr Examples](./air-quality-wing/zephyr-examples.md)
+    - [Rust Examples (WIP)](./air-quality-wing/rust-examples.md)
+  - [Enclosure](./air-quality-wing/enclosure.md)
+  - [Files/Source](air-quality-wing/files.md)
+  - [Purchase](./air-quality-wing/purchase.md)
+  - [Support](./air-quality-wing/support.md)
+  - [Changelog](./air-quality-wing/changelog.md)
 - [nRF9160 Feather](./nrf9160-introduction.md)
   - [Overview](./nrf9160-overview.md)
   - [Specifications](./nrf9160-specs.md)
@@ -17,6 +26,8 @@
     - [nRF Connect for Desktop](./nrf9160-nrf-connect-desktop.md)
     - [Debug Serial Usage](./nrf9160-serial-usage.md)
   - [Example Code](./nrf9160-example-code.md)
+    - [AGPS Example (Deprecated)](./nrf9160-agps-sample.md)
+    - [AT Client (Deprecated)](./nrf9160-at-client-sample.md)
   - [Low Power Operation](./nrf9160-low-power-operation.md)
   - [Compatible Cloud](./nrf9160-compatible-cloud.md)
   - [Cellular Provider Matrix](./nrf9160-cellular-matrix.md)

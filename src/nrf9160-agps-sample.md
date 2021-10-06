@@ -1,5 +1,7 @@
 # nRF Cloud AGPS Sample
 
+**Important:** this sample is outdated and no longer exists in future versions of nRF Connect SDK
+
 The `nrf_cloud_agps` sample is the *easiest* way to get started with generating GPS coordinates with your nRF9160 Feather.
 
 

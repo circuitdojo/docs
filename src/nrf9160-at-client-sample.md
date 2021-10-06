@@ -1,5 +1,7 @@
 # AT Client Sample
 
+**Important:** these instructions are outdated and no longer apply for NCS > v1.5.x.
+
 ## Precompiled Binary
 
 **Note:** you can get a pre-build binary file compiled using v1.3.2 [here](files/at-client-v1.3.2.bin).

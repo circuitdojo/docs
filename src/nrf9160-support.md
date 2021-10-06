@@ -4,4 +4,4 @@ The best place for support is the [Circuit Dojo support forum](https://community
 
 If you have a question relating to your order please contact [support@jaredwolff.com](mailto:support@jaredwolff.com)
 
-The nRF9160 Feather is licenced under the *CERN Open Hardware Licence v1.2.* For more details on warranty and liability [click here.](https://raw.githubusercontent.com/circuitdojo/nrf9160-feather/main/LICENSE.txt)
+The nRF9160 Feather is licenced under the *CERN Open Hardware Licence Version 2 - Weakly Reciprocal* For more details on warranty and liability [click here.](https://raw.githubusercontent.com/circuitdojo/nrf9160-feather/main/LICENSE.txt)
