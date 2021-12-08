@@ -2,8 +2,11 @@
 
 - [SDK Setup (Linux - Ubuntu)](#sdk-setup-linux---ubuntu)
   - [Installing IDE](#installing-ide)
-  - [Installing SDK](#installing-sdk)
-  - [The ARM Embedded Toolchain](#the-arm-embedded-toolchain)
+  - [Installing Extension](#installing-extension)
+    - [Install the Extension](#install-the-extension)
+    - [Run Setup](#run-setup)
+    - [Init the repo](#init-the-repo)
+    - [Then build the sample!](#then-build-the-sample)
   - [`newtmgr` (Used to load your application via USB serial bootloader)](#newtmgr-used-to-load-your-application-via-usb-serial-bootloader)
   - [Testing it](#testing-it)
 
@@ -12,87 +15,55 @@ This page is all about getting your Linux machine compiling code for the nRF9160
 ## Installing IDE
 1. Install or use the code editor of your choice. I personally use Microsoft Visual Studio Code. You can download directly from the Ubuntu Software Install utility.
    ![Ubuntu software install](img/sdk-setup-linux/visual-studio-code-install.png)
-1. If you decide to use Visual Studio Code, make sure you install the **C/C++** and **Cortex-Debug** extentions using the built in extension marketplace.
 
-## Installing SDK
-1. Install dependencies using `apt-get`
-   ```
-   sudo apt install --no-install-recommends git cmake ninja-build gperf \
-   ccache dfu-util device-tree-compiler wget \
-   python3-dev python3-pip python3-setuptools python3-tk python3-wheel xz-utils file \
-   make gcc gcc-multilib g++-multilib libsdl2-dev
-   ```
-1. Check your `cmake` version:
-   ```
-   cmake --version
-   ```
+## Installing Extension
 
-   If it's older than 3.13.3, you'll have to install a newer version using the [instructions here.](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/getting_started/index.html#install-required-tools)
-1. Install `west`. West is the most important utility for using nRF Connect SDK & Zephyr. You'll become *quite* familliar with very soon.
-   ```
-   pip3 install --user -U west
-   ```
-1. Then make sure that `~/.local/bin` is added to your path:
-   ```
-   echo 'export PATH=~/.local/bin:"$PATH"' >> ~/.bashrc
-   source ~/.bashrc
-   ```
-1. Now create a folder on your machine and call it `nfed` (short for nRF9160 Feather Examples and Drivers). Open a terminal to this folder and initialize nRF Connect SDK using `west`:
-   ```
-   cd ~
-   mkdir nfed
-   cd nfed
-   west init -m https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers --mr v1.5.x
-   ```
+Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing. 
 
-1. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
-   ```
-   west update
-   ```
-   You'll see a *bunch* of output go by as `west` downloads dependencies using Git.
+First make sure you [download the extension here. 👈](downloads/zephyr-tools-0.1.4.vsix)
 
-   Here's what your `nfed` folder should look like:
-   ```
-   ❯ tree -L 1
-   .
-   ├── bootloader
-   ├── build
-   ├── latest
-   ├── mbedtls
-   ├── modules
-   ├── nrf
-   ├── nrf9160-feather
-   ├── nrfxlib
-   ├── test
-   ├── tools
-   └── zephyr
-   ```
-1. Installing the remaining SDK requirements using `pip3`:
-   ```
-   pip3 install --user -r zephyr/scripts/requirements.txt
-   pip3 install --user -r nrf/scripts/requirements.txt
-   pip3 install --user -r bootloader/mcuboot/scripts/requirements.txt
-   ```
+Then install Git and Python.
 
-   **Note:** there may be an error during the first `pip3 install` you can safely ignore them.
+For example on Ubuntu:
 
-## The ARM Embedded Toolchain
+```
+sudo apt install git python3 python3-pip
+```
 
-1. First download the latest Zephyr SDK installer:
-   ```
-   cd ~
-   wget https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v0.11.4/zephyr-sdk-0.11.4-setup.run
-   ```
-1. Then run it:
-   ```
-   chmod +x zephyr-sdk-0.11.4-setup.run
-   ./zephyr-sdk-0.11.4-setup.run -- -d ~/zephyr-sdk-0.11.4
-   ```
-1. Finally install the udev rules which allows you to flash boards using a programmer.
-   ```
-   sudo cp ~/zephyr-sdk-0.11.4/sysroots/x86_64-pokysdk-linux/usr/share/openocd/contrib/60-openocd.rules /etc/udev/rules.d
-   sudo udevadm control --reload
-   ```
+### Install the Extension
+
+Open VSCode and go to the extensions tab. Use the dropdown to install .visx manually.
+
+![Install](air-quality-wing/img/extension/extension-install.png)
+
+Once loaded it will also install all necessary VSCode dependencies.
+
+### Run Setup
+
+Then open the command window (COMMAND+SHIFT+P on Mac or CTRL+SHIFT+P on other systems) and type `Zephyr Tools: Setup`
+
+![Setup](air-quality-wing/img/extension/setup.png)
+
+### Init the repo
+
+Then initialize this repo using the `Zephyr Tools: Init Repo` command:
+
+![Init repo](air-quality-wing/img/extension/init-repo.png)
+
+Make sure you use `https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers.git` as the URL. It's best to select an **empty folder** to initialize the project to.
+
+### Then build the sample!
+
+![Build](air-quality-wing/img/extension/build.png)
+
+You'll be prompted for a **project** and **board**. Make sure the board matches the supported boards. Current supported board targets include:
+
+Here's what it will look like:
+
+![Choosing board](air-quality-wing/img/extension/choosing-board.png)
+![Choosing app](air-quality-wing/img/extension/choosing-app.png)
+
+Once the build completes you should get a **Build complete!** popup along with some success messages in the the terminal.
 
 ## `newtmgr` (Used to load your application via USB serial bootloader)
 
@@ -102,12 +73,11 @@ This page is all about getting your Linux machine compiling code for the nRF9160
    cd ~/Downloads
    wget "https://docs.jaredwolff.com/files/newtmgr/linux/newtmgr.zip"
    unzip newtmgr.zip
-   mv newtmgr ~/.local/bin
+   mv newtmgr /usr/local/bin/
    rm newtmgr.zip
    ```
-
-   If you're not sure, `~/.local/bin` is always a good spot for these types of binaries.
-1. Then you'll need to add your serial profile to make it easier to download/update your device:
+   
+2. Then you'll need to add your serial profile to make it easier to download/update your device:
    ```
    newtmgr conn add serial type=serial connstring='dev=/dev/ttyUSB0,baud=1000000'
    newtmgr -c serial reset

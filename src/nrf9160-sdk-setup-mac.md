@@ -2,7 +2,11 @@
 
 - [SDK Setup (Mac OS)](#sdk-setup-mac-os)
   - [Installing IDE](#installing-ide)
-  - [Installing SDK](#installing-sdk)
+  - [Installing Extension](#installing-extension)
+    - [Install the Extension](#install-the-extension)
+    - [Run Setup](#run-setup)
+    - [Init the repo](#init-the-repo)
+    - [Then build the sample!](#then-build-the-sample)
   - [Installing `newtmgr` (Used to load your application via USB serial bootloader)](#installing-newtmgr-used-to-load-your-application-via-usb-serial-bootloader)
   - [Migrating from previous instructions](#migrating-from-previous-instructions)
   - [Testing it](#testing-it)
@@ -13,80 +17,52 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
 1. Install or use the code editor of your choice. I personally use Microsoft Visual Studio Code. The download link is [here](https://code.visualstudio.com/docs/?dv=osx)
 1. If you decide to use Visual Studio Code, make sure you install the **C/C++** and **Cortex-Debug** extentions using the built in extension marketplace.
 
-## Installing SDK
+## Installing Extension
 
-Before we start, if you already have NCS installed, you can skip to **Step 8**. Let's begin!
+Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing. 
 
-Installing the latest SDK is a snap and only takes a few steps. Let's walk through them here:
+First make sure you [download the extension here. 👈](downloads/zephyr-tools-0.1.4.vsix)
 
-1. If you haven't already make sure you install Xcode Command Line tools. Without it you may run into issues compiling later on. Run the following in CLI:
+The easiest way to install `git` and `python3` is with [Homebrew](https://brew.sh).
 
-   ```
-   xcode-select --install
-   ```
+```
+> brew install git python3
+```
 
-2. Download and install [nRF Connect For Desktop](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs)
-   
-   ![Download page for nRF Connect For Desktop](img/sdk-setup-mac/nrf-connect-desktop-download.png)
+### Install the Extension
 
-3. Copy the app to your Applications folder
+Open VSCode and go to the extensions tab. Use the dropdown to install .visx manually.
 
-   ![Installer](img/sdk-setup-mac/copy-to-appliations.png)
+![Install](air-quality-wing/img/extension/extension-install.png)
 
-4. Open up the app and install the Toolchain Manager
+Once loaded it will also install all necessary VSCode dependencies.
 
-   ![Toolchain Manager install](img/sdk-setup-mac/toolchain-manager.png)
+### Run Setup
 
-5. Then open it up.
+Then open the command window (COMMAND+SHIFT+P on Mac or CTRL+SHIFT+P on other systems) and type `Zephyr Tools: Setup`
 
-   ![Open Toolchain Manager](img/sdk-setup-mac/open-toolchain-manager.png)
+![Setup](air-quality-wing/img/extension/setup.png)
 
-6. Scroll to the bottom and click **Install package from other source**
+### Init the repo
 
-   ![Other source install](img/sdk-setup-mac/other-source-install.png)
+Then initialize this repo using the `Zephyr Tools: Init Repo` command:
 
-7. Then paste this url into the box and click **ok**.
+![Init repo](air-quality-wing/img/extension/init-repo.png)
 
-   ```
-   http://developer.nordicsemi.com/.pc-tools/toolchain/ncs-toolchain-v1.5.0-20210225-607a0e0-minimal.dmg
-   ```
+Make sure you use `https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers.git` as the URL. It's best to select an **empty folder** to initialize the project to.
 
-   ![Insert into box](img/sdk-setup-mac/path-to-sdk-toolchain.png)
+### Then build the sample!
 
-8. The download and install will take a few minutes. Hang out, take a walk, sing a song and come back later.
-9.  Finally, once installed you'll have a dropdown that you can access. Click on it and then the **Open Terminal** option.
-   ![Open terminal](img/sdk-setup-mac/open-terminal.png)
+![Build](air-quality-wing/img/extension/build.png)
 
-10. To get the nRF9160 Feather examples we'll update `/opt/nordic/ncs/v1.5.0/nrf/west.yml`. In the `projects` section add at the bottom:
+You'll be prompted for a **project** and **board**. Make sure the board matches the supported boards. Current supported board targets include:
 
-    ```yaml
-    - name: nfed
-      url: https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers
-      revision: v1.5.x
-      path: nfed
-    ```
-    
-    Here's the diff for the file afterwards:
+Here's what it will look like:
 
-    ```
-    diff --git a/west.yml b/west.yml
-      index db9211c27..4e8f92282 100644
-      --- a/west.yml
-      +++ b/west.yml
-      @@ -145,6 +145,10 @@ manifest:
-             remote: nordicsemi
-             revision: 24f1b2b0c64c694b7f9ac1b7eab60b39236ca0bf
-             path: modules/lib/cddl-gen
-      +    - name: nfed
-      +      url: https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers
-      +      revision: v1.5.x
-      +      path: nfed
-       
-         # West-related configuration for the nrf repository.
-         self:
-    ```
+![Choosing board](air-quality-wing/img/extension/choosing-board.png)
+![Choosing app](air-quality-wing/img/extension/choosing-app.png)
 
-11. Then run `west update` in your freshly created terminal session. This will fetch the nRF9160 Feather examples.
+Once the build completes you should get a **Build complete!** popup along with some success messages in the the terminal.
 
 ## Installing `newtmgr` (Used to load your application via USB serial bootloader)
 
@@ -98,7 +74,7 @@ Installing the latest SDK is a snap and only takes a few steps. Let's walk throu
    cd ~/Downloads
    wget "https://docs.jaredwolff.com/files/newtmgr/darwin/newtmgr.zip"
    unzip newtmgr.zip
-   mv newtmgr /opt/nordic/ncs/v1.5.0/toolchain/bin
+   mv newtmgr /usr/local/bin/
    rm newtmgr.zip
    ```
 
