@@ -67,8 +67,6 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
 3. Install the remaining `python3` requirements by running these commands in your `nfed` directory.
    ```
    pip3 install -r zephyr/scripts/requirements.txt
-   pip3 install -r nrf/scripts/requirements.txt
-   pip3 install -r bootloader/mcuboot/scripts/requirements.txt
    ```
 
 ## The ARM Embedded Toolchain

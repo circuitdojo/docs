@@ -42,6 +42,10 @@ Here's a full working list of what plays nicely with the nRF9160 Feather. This l
 | ---------------------------- | ------------ | ----------------------------------------------------------------- | ------- | --- |
 | Twilio (Standard Narrowband) | T-Mobile     | T-Mobile does not support the nRF9160. This is subject to change. | 🔴       |     |
 
+
+
+
+
 Emoji usage chart:
 
 | Emoji | Note                   |
@@ -57,8 +61,8 @@ before adopting a provider.
 
 We don't always have the ability to test every single cellular provider. In this section, here are a few providers that customers have reported success with.
 
-| Provider Name | Connected To | Notes | APN |
-| ------------- | ------------ | ----- | --- |
-|               |              |       |     |
+| Provider Name | Connected To | Notes                               | APN  |
+| ------------- | ------------ | ----------------------------------- | ---- |
+| Teal          | ?            | In Canada  (https://www.tealcom.io) | teal |
 
 For the latest information on which providers support the nRF9160 SiP check out [Nordic's nRF9160 certification page.](https://www.nordicsemi.com/Products/Low-power-cellular-IoT/nRF9160-Certifications)

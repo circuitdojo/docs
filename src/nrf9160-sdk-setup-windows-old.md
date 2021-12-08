@@ -73,9 +73,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
    ```
 6. Installing the remaining SDK requirements using `pip3`:
    ```
-   pip install -r zephyr/scripts/requirements.txt
-   pip install -r nrf/scripts/requirements.txt
-   pip install -r bootloader/mcuboot/scripts/requirements.txt
+   pip3 install -r zephyr/scripts/requirements.txt
    ```
 
    **Note** you will get an error during this process related to Visual Studio (not Visual Studio Code). You can ignore this issue.

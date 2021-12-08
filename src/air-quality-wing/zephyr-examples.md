@@ -3,6 +3,8 @@ The Air Quality Wing has first class support on Zephyr. It can be used with almo
 
 [Here's the code.](https://github.com/circuitdojo/air-quality-wing-zephyr-demo)
 
+**Prebuilt binaries are also [located here.](https://github.com/circuitdojo/air-quality-wing-zephyr-demo/suites/4487788218/artifacts/119565482)** Not all binaries will work out of the box. Golioth binaries require you to edit `golioth.conf` before using. ([See below.](#golioth-configuration))
+
 ## Sample descriptions
 The code is a a work in progress but includes a BLE example, nRF9160 Feather example an standalone sample. 
 
@@ -22,73 +24,89 @@ Here is the minimal amount of steps to get an example working. This example is c
 
 If you do not have a PM2.5 sensor you can comment out `&hpma_sensor,` within `sensors[]` in `main.c` before building. 
 
-### Virtual Environment
+### SDK Setup
 
-Set up a python virual environment:
+Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing. 
 
-```
-virtualenv -p python3 env
-```
+First make sure you [download the extension here. 👈](downloads/zephyr-tools-0.1.4.vsix)
 
-Then enable it by running:
+Then install Git and Python.
 
-```
-source env/bin/activate
-```
+#### Mac
 
-### Install `west`
+Requires `git` and `python3` to be installed. The easiest way to do that is with [Homebrew](https://brew.sh).
 
 ```
-pip3 install west
+> brew install git python3
 ```
 
-### Init and update project
+#### Windows
+
+Requires `git` and `python` to be installed.
+
+- Download and install `git` from here: https://git-scm.com/download/win
+- Download and install `python` from here: https://www.python.org/ftp/python/3.9.9/python-3.9.9-amd64.exe
+
+#### Linux
+
+Requires `git` and `python` to be installed.
+
+Use your distro's package manager of choice to install. 
+
+For example on Ubuntu:
 
 ```
-west init -m https://github.com/circuitdojo/air-quality-wing-zephyr-demo.git  --manifest-rev main
+sudo apt install git python3 python3-pip
 ```
 
-Or already cloned locally:
+#### Install the Extension
 
-```
-west init -l .
-```
+Open VSCode and go to the extensions tab. Use the dropdown to install .visx manually.
 
-Then run
+![Install](img/extension/extension-install.png)
 
-```
-west update
-```
+Once loaded it will also install all necessary VSCode dependencies.
 
-### Install remaining python dependencies
+#### Run Setup
 
-```
-pip3 install -r zephyr/scripts/requirements.txt
-```
+Then open the command window (COMMAND+SHIFT+P on Mac or CTRL+SHIFT+P on other systems) and type `Zephyr Tools: Setup`
 
-### Install toolchain
+![Setup](img/extension/setup.png)
 
-   * For **Mac** run the following: (it does require you install `wget`. `brew` is an easy way to do so: `brew install wget`)
+#### Init the repo
 
-     ```
-     cd ~
-     wget "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2"
-     tar xvfj gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2
-     rm gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2
-     ```
+Then initialize this repo using the `Zephyr Tools: Init Repo` command:
 
-     **Note** for Catalina users you will get an error when running these utilities for the first time. You must allow them to be executed in your Security preferences.
+![Init repo](img/extension/init-repo.png)
 
-     ![Error running ARM Toolchain](../img/sdk-setup-mac/cannot-be-opened.jpeg)
+Make sure you use `https://github.com/circuitdojo/air-quality-wing-zephyr-demo.git` as the URL. It's best to select an **empty folder** to initialize the project to.
 
+#### Then build the sample!
 
-   * For **Windows** you can download and install the toolchain with [this direct link.](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads/9-2019-q4-major)
+![Build](img/extension/build.png)
 
-### Golioth
+You'll be prompted for a **project** and **board**. Make sure the board matches the supported boards. Current supported board targets include:
+
+- `particle_xenon`
+- `circuitdojo_feather_nrf9160_ns`
+- `nrf52840dk_nrf52840`
+
+Here's what it will look like:
+
+![Choosing board](img/extension/choosing-board.png)
+![Choosing app](img/extension/choosing-app.png)
+
+Once the build completes you should get a **Build complete!** popup along with some success messages in the the terminal.
+
+![Build success](img/extension/success.png)
+
+### Golioth Configuration
 
 You will need to edit `golioth.conf` with your credentials in order to connect to Golioth's backend. More instructions on setting up your credentials can be [found here.](https://docs.golioth.io/docs/guides/golioth-platform-getting-started/platform-manage-devices) You can also create devices and add credentials within the [Golioth Console.](https://console.golioth.io)
 
 ## Building
+
+These commands are simlar to what the Zephyr Tools extensions uses. The programming commands are also included here.
 
 ### nRF52840 DK
 
@@ -134,3 +152,5 @@ Then flash using
 ```
 nrfjprog --program build/merged.hex --chiperase --reset
 ```
+
+You can also load using `newtmgr`. More information [is here.](../nrf9160-programming-and-debugging.md#using-newtmgr)

@@ -1,7 +1,7 @@
 # Overview
 
 
-![Diagram](img/nrf9160-feather-v31-features.png)
+![Diagram](img/nrf9160-feather-v4-labeled.png)
 
 
 This board can be powered several ways. The most popular way to power Feather boards is by using the USB port. This board is no exception. It works well across both USB and LiPoly batteries.

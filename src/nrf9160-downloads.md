@@ -16,6 +16,7 @@
 
 | Type                       | Donwload Link             |
 | -------------------------- | ------------------------- |
+| Pre-compiled Samples       | [Link][samples]           |
 | Bootloader  (v1)           | [Link][bootloader]        |
 | Bootloader  (v2)           | [Link][bootloader-v2]     |
 | newtmgr CLI   (v1)         | [Link][newtmgr]           |
@@ -32,6 +33,7 @@
 [newtmgr]: /nrf9160-programming-and-debugging.md#binary-download
 [board-defs-v1.3.x]: files/board-definitions-ncs-v1.3.x.zip
 [board-defs-v1.2.x]: files/board-definitions-ncs-v1.2.x.zip
+[samples]: https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers/suites/4268884421/artifacts/111009168
 
 ## License
 

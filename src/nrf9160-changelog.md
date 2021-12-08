@@ -7,7 +7,7 @@
 Changed:
 * Changed power supply to use TI's LM3281
 * USB connector to USB-C
-* Changed schottky doide part to make more room for USB-C
+* Changed schottky diode part to make more room for USB-C
 * Updated 3D render
 * Renamed LNA_EN to GPS_EN to avoid confusion
 * Charging LED fed by 5V
