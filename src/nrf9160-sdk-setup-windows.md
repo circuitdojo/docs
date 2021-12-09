@@ -20,11 +20,11 @@ This page is all about getting your Windows machine compiling code for the nRF91
 
 ## Installing Extension
 
-Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing. 
+![Marketplace](air-quality-wing/img/extension/marketplace.png)
 
-First make sure you [download the extension here. 👈](downloads/zephyr-tools-0.1.4.vsix)
+You can [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
 
-Then:
+Then install `git` and `python` if you don't have them already:
 
 - Download and install `git` [from here.](https://git-scm.com/download/win)
 - Download and install `python` [from here.](https://www.python.org/ftp/python/3.9.9/python-3.9.9-amd64.exe)
@@ -67,10 +67,9 @@ Once the build completes you should get a **Build complete!** popup along with s
 
 ## `newtmgr` (Used to load your application via USB serial bootloader)
 
-1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr`.
-   - [Windows](files/newtmgr/windows/newtmgr.zip)
-2. Extract it and move it into your `C:\Windows\system32` directory. You may need admin access to allow this to happen.
-3. Then, you'll need to add your serial profile to make it easier to download/update your device:
+`newtmgr` is automatically installed with your VSCode extension. Lets configure it the rest of the way.
+
+1. Then, you'll need to add your serial profile to make it easier to download/update your device:
    ```
    newtmgr conn add serial type=serial connstring="dev=COM5,baud=1000000"
    ```

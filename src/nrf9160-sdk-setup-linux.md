@@ -20,7 +20,7 @@ This page is all about getting your Linux machine compiling code for the nRF9160
 
 Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing. 
 
-First make sure you [download the extension here. 👈](downloads/zephyr-tools-0.1.4.vsix)
+First make sure you [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
 
 Then install Git and Python.
 
@@ -32,9 +32,9 @@ sudo apt install git python3 python3-pip
 
 ### Install the Extension
 
-Open VSCode and go to the extensions tab. Use the dropdown to install .visx manually.
+![Marketplace](air-quality-wing/img/extension/marketplace.png)
 
-![Install](air-quality-wing/img/extension/extension-install.png)
+You can [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
 
 Once loaded it will also install all necessary VSCode dependencies.
 
@@ -67,17 +67,9 @@ Once the build completes you should get a **Build complete!** popup along with s
 
 ## `newtmgr` (Used to load your application via USB serial bootloader)
 
-1. For loading code via the bootloader to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
-
-   ```
-   cd ~/Downloads
-   wget "https://docs.jaredwolff.com/files/newtmgr/linux/newtmgr.zip"
-   unzip newtmgr.zip
-   mv newtmgr /usr/local/bin/
-   rm newtmgr.zip
-   ```
+`newtmgr` is automatically installed with your VSCode extension. Lets configure it the rest of the way.
    
-2. Then you'll need to add your serial profile to make it easier to download/update your device:
+1. Add your serial profile to make it easier to download/update your device:
    ```
    newtmgr conn add serial type=serial connstring='dev=/dev/ttyUSB0,baud=1000000'
    newtmgr -c serial reset

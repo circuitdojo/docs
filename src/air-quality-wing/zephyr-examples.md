@@ -26,9 +26,11 @@ If you do not have a PM2.5 sensor you can comment out `&hpma_sensor,` within `se
 
 ### SDK Setup
 
+![Marketplace](img/extension/marketplace.png)
+
 Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing. 
 
-First make sure you [download the extension here. 👈](downloads/zephyr-tools-0.1.4.vsix)
+First make sure you [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
 
 Then install Git and Python.
 
