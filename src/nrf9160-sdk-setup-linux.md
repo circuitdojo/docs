@@ -1,42 +1,39 @@
 # SDK Setup (Linux - Ubuntu)
 
 - [SDK Setup (Linux - Ubuntu)](#sdk-setup-linux---ubuntu)
-  - [Installing IDE](#installing-ide)
   - [Installing Extension](#installing-extension)
-    - [Install the Extension](#install-the-extension)
     - [Run Setup](#run-setup)
     - [Init the repo](#init-the-repo)
     - [Then build the sample!](#then-build-the-sample)
   - [`newtmgr` (Used to load your application via USB serial bootloader)](#newtmgr-used-to-load-your-application-via-usb-serial-bootloader)
+    - [Fixing serial port errors](#fixing-serial-port-errors)
   - [Testing it](#testing-it)
 
-This page is all about getting your Linux machine compiling code for the nRF9160 Feather. Run into trouble during the process? Post your questions on the [community forum.](https://community.jaredwolff.com)
-
-## Installing IDE
-1. Install or use the code editor of your choice. I personally use Microsoft Visual Studio Code. You can download directly from the Ubuntu Software Install utility.
-   ![Ubuntu software install](img/sdk-setup-linux/visual-studio-code-install.png)
+This page is all about getting your Linux machine compiling code for the nRF9160 Feather. Run into trouble during the process? Post your questions on the [community forum.](https://community.circuitdojo.com)
 
 ## Installing Extension
 
-Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing. 
+If you didn't already, install Visual Studio code. You can download directly from the Ubuntu Software Install utility. (or similar)
 
-First make sure you [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
+![Ubuntu software install](img/sdk-setup-linux/visual-studio-code-install.png)
 
-Then install Git and Python.
+Then we can continue installing the extension!
+
+![Marketplace](air-quality-wing/img/extension/marketplace.png)
+
+Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing.
+
+Once Visual Studio code is installed, [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
+
+Once loaded it will also install all necessary VSCode dependencies.
+
+Then, install Git, Python, and Pip.
 
 For example on Ubuntu:
 
 ```
 sudo apt install git python3 python3-pip
 ```
-
-### Install the Extension
-
-![Marketplace](air-quality-wing/img/extension/marketplace.png)
-
-You can [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
-
-Once loaded it will also install all necessary VSCode dependencies.
 
 ### Run Setup
 
@@ -67,33 +64,29 @@ Once the build completes you should get a **Build complete!** popup along with s
 
 ## `newtmgr` (Used to load your application via USB serial bootloader)
 
-`newtmgr` is automatically installed with your VSCode extension. Lets configure it the rest of the way.
-   
-1. Add your serial profile to make it easier to download/update your device:
-   ```
-   newtmgr conn add serial type=serial connstring='dev=/dev/ttyUSB0,baud=1000000'
-   newtmgr -c serial reset
-   ```
+`newtmgr` is the command line utility for loading code to your device. It is automatically installed with the VSCode extension. Lets configure it the rest of the way.
 
-   If you have multiple Silicon Labs CP2102 connected to your machine your serial port *may be named differently*. I recommend you unplug all devices that could be named `ttyUSB0` to ensure you're targeting the correct device during programming.
+Configuring is simple as running the **Zephyr Tools: Setup Newtmgr** command
 
-   **Note** if you get a `Error: open /dev/ttyUSB0: permission denied` error. You'll have to fix permissions for the serial device for all users. Here are the steps:
+![Setup newtmgr](air-quality-wing/img/extension/setup-newtmgr.png)
 
-   Open this `.rules` file in `vi` (or your editor of choice)
+Select your serial port:
 
-   ```
-   sudo vi /etc/udev/rules.d/50-myusb.rules
-   ```
+![Select serial port](air-quality-wing/img/extension/select-serialport.png)
 
-   Then within the editor hit **i**, paste this:
+Then select the BAUD. (**Important!** The nRF19160 Feather _only_ supports `1000000`) Once complete you're ready to run the **Zephyr Tools: Load via Bootloader** command.
 
-   ```
-   KERNEL=="ttyUSB[0-9]*",MODE="0666"
-   KERNEL=="ttyACM[0-9]*",MODE="0666"
-   ```
+![Select baud](air-quality-wing/img/extension/select-baud.png)
 
-   Hit the **esc** button and then type `:wq!`.
+### Fixing serial port errors
 
+**Note** if you get a `Error: open /dev/ttyUSB0: permission denied` error. You may need to add your user to the `dialout` group:
+
+```
+sudo usermod -a -G dialout <username>
+```
+
+This allows you to open a serial port _without_ having to use `sudo`.
 
 For more info in using `newtmgr` checkout the [programming section](nrf9160-programming-and-debugging.md#booloader-use) of this documentation.
 

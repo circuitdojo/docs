@@ -1,26 +1,31 @@
 # AT Client Sample
 
-**Important:** these instructions are outdated and no longer apply for NCS > v1.5.x.
+**Important:** these instructions are outdated and no longer apply for NCS >
+v1.5.x.
 
 ## Precompiled Binary
 
-**Note:** you can get a pre-build binary file compiled using v1.3.2 [here](files/at-client-v1.3.2.bin).
+**Note:** you can get a pre-build binary file compiled using v1.3.2
+[here](files/at-client-v1.3.2.bin).
 
 ## Instructions
 
-Change directories to `ncs/nrf/samples/nrf9160/at_client`. Then compile as shown beffore in the [compiling section](nrf9160-compiling-app.md) of this guide.
+Change directories to `ncs/nrf/samples/nrf9160/at_client`. Then compile as shown
+beffore in the [example code section](nrf9160-example-code.md) of this guide.
 
-Before you do compile make sure that the following lines are added to the `prj.conf`:
+Before you do compile make sure that the following lines are added to the
+`prj.conf`:
 
 ```
 # Enable Zephyr application to be booted by MCUboot
 CONFIG_BOOTLOADER_MCUBOOT=y
 ```
 
-This will enable support for the bootloader. Then, build using the build command:
+This will enable support for the bootloader. Then, build using the build
+command:
 
 ```
-west build -b circuitdojo_feather_nrf9160ns
+west build -b circuitdojo_feather_nrf9160_ns
 
 ...
 
@@ -49,9 +54,11 @@ Memory region         Used Size  Region Size  %age Used
 [174/174] Generating zephyr/merged.hex
 ```
 
-**Note:** having trouble building? Make sure you check out the [troubleshooting](nrf9160-troubleshooting.md) page.
+**Note:** having trouble building? Make sure you check out the
+[troubleshooting](nrf9160-troubleshooting.md) page.
 
-You can see towards the end of this output that both the application **and** the bootloader have been built and merged.
+You can see towards the end of this output that both the application **and** the
+bootloader have been built and merged.
 
 Programming can be completed with `newtmgr`:
 
@@ -59,5 +66,6 @@ Programming can be completed with `newtmgr`:
 newtmgr -c serial image upload build/zephyr/app_update.bin
 ```
 
-During testing, it's recomended to use the [LTE Link Monitor](nrf9160-nrf-connect-desktop.md#using-with-lte-link-monitor) whenever you need to manually test or execute commands.
-
+During testing, it's recomended to use the
+[LTE Link Monitor](nrf9160-nrf-connect-desktop.md#using-with-lte-link-monitor)
+whenever you need to manually test or execute commands.

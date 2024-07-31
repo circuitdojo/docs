@@ -40,6 +40,11 @@ The Air Quality Wing v6 contains the following sensors and features:
 - **5V Max Input**: 5.2V
 - **5V Min Input**: 4.8V
 
+
+### Important safety note!!
+
+If USB is applied while the battery is inserted, this will cause most feather boards to activate their charger. This may damage the battery and/or the attached boards. Remove the battery at all times when USB is inserted.
+
 ### Enable Pins
 
 - **Max Input**: 3.3V ± 0.3V
@@ -48,3 +53,7 @@ The Air Quality Wing v6 contains the following sensors and features:
 
 - **I2C:** 100KHz
 - **UART:** 9600 BAUD
+
+## License
+
+Circuit Dojo LLC accepts no liablity if this board is used outside the recommended parameters. See the `CERN Open Hardware Licence Version 2 - Weakly Reciprocal` license for more details: https://github.com/circuitdojo/air-quality-wing-hardware/blob/master/LICENSE

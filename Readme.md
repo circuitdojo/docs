@@ -1,6 +1,6 @@
 # Circuit Dojo - Product Documentation
 
-This documentation is hosted at [docs.jaredwolff.com](https://docs.jaredwolff.com)
+This documentation is hosted at [docs.circuitdojo.com](https://docs.circuitdojo.com)
 
 ## License
 

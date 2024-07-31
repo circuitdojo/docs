@@ -3,7 +3,7 @@ The Air Quality Wing has first class support on Zephyr. It can be used with almo
 
 [Here's the code.](https://github.com/circuitdojo/air-quality-wing-zephyr-demo)
 
-**Prebuilt binaries are also [located here.](https://github.com/circuitdojo/air-quality-wing-zephyr-demo/suites/4487788218/artifacts/119565482)** Not all binaries will work out of the box. Golioth binaries require you to edit `golioth.conf` before using. ([See below.](#golioth-configuration))
+**Prebuilt binaries are also [located here.](https://github.com/circuitdojo/air-quality-wing-zephyr-demo/)** (Under Github actions) Not all binaries will work out of the box. Golioth binaries require you to edit `golioth.conf` before using. ([See below.](#golioth-configuration))
 
 ## Sample descriptions
 The code is a a work in progress but includes a BLE example, nRF9160 Feather example an standalone sample. 
@@ -26,11 +26,13 @@ If you do not have a PM2.5 sensor you can comment out `&hpma_sensor,` within `se
 
 ### SDK Setup
 
+If you didn't already, install Visual Studio code. You can [download it here.](https://code.visualstudio.com/Download)
+
 ![Marketplace](img/extension/marketplace.png)
 
-Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing. 
+Once Visual Studio code is installed, [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
 
-First make sure you [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
+Once loaded it will also install all necessary VSCode dependencies.
 
 Then install Git and Python.
 
@@ -46,12 +48,12 @@ Requires `git` and `python3` to be installed. The easiest way to do that is with
 
 Requires `git` and `python` to be installed.
 
-- Download and install `git` from here: https://git-scm.com/download/win
-- Download and install `python` from here: https://www.python.org/ftp/python/3.9.9/python-3.9.9-amd64.exe
+- Download and install `git` [from here.](https://git-scm.com/download/win)
+- Download and install `python` [from here.](https://www.python.org/ftp/python/3.9.9/python-3.9.9-amd64.exe)
 
 #### Linux
 
-Requires `git` and `python` to be installed.
+Requires `git`,`python` and `pip` to be installed.
 
 Use your distro's package manager of choice to install. 
 
@@ -61,21 +63,13 @@ For example on Ubuntu:
 sudo apt install git python3 python3-pip
 ```
 
-#### Install the Extension
-
-Open VSCode and go to the extensions tab. Use the dropdown to install .visx manually.
-
-![Install](img/extension/extension-install.png)
-
-Once loaded it will also install all necessary VSCode dependencies.
-
-#### Run Setup
+### Run Setup
 
 Then open the command window (COMMAND+SHIFT+P on Mac or CTRL+SHIFT+P on other systems) and type `Zephyr Tools: Setup`
 
 ![Setup](img/extension/setup.png)
 
-#### Init the repo
+### Init the repo
 
 Then initialize this repo using the `Zephyr Tools: Init Repo` command:
 
@@ -83,7 +77,7 @@ Then initialize this repo using the `Zephyr Tools: Init Repo` command:
 
 Make sure you use `https://github.com/circuitdojo/air-quality-wing-zephyr-demo.git` as the URL. It's best to select an **empty folder** to initialize the project to.
 
-#### Then build the sample!
+### Then build the sample!
 
 ![Build](img/extension/build.png)
 
@@ -106,7 +100,28 @@ Once the build completes you should get a **Build complete!** popup along with s
 
 You will need to edit `golioth.conf` with your credentials in order to connect to Golioth's backend. More instructions on setting up your credentials can be [found here.](https://docs.golioth.io/docs/guides/golioth-platform-getting-started/platform-manage-devices) You can also create devices and add credentials within the [Golioth Console.](https://console.golioth.io)
 
-## Building
+
+## Loading using VSCode
+
+Once built, place the device into bootloader mode:
+   1. Hold the MODE button
+   2. Then tap the RST button while holding mode
+   3. **Hold the MODE button until the Blue LED illuminates**
+
+
+Then, load using the **Zephyr Tools: Load via Bootloader** task.
+
+![Option for loading](img/extension/load-via-newtmgr.png)
+
+Pay attention to the progress in the bottom console.
+
+![Option for loading](img/extension/load-via-newtmgr-progress.png)
+
+Once complete, the extension will reset your device and should start executing!
+
+**Important:** make sure you close all console sessions with your nRF9160 Feather before programming using `newtmgr`. Otherwise the `newtmgr` image upload will timeout.
+
+## Building Manually
 
 These commands are simlar to what the Zephyr Tools extensions uses. The programming commands are also included here.
 

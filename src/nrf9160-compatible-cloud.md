@@ -5,7 +5,8 @@ The nRF9160 Feather is compatible a handful of cloud providers and the list is g
 ## Hosted
 
 * [Golioth](https://golioth.io)
-* [Soracom Cloud](https://www.soracom.io)
+* [Nordic nRF Cloud](https://nrfcloud.com/)
+* Soracom Cloud
 * Amazon AWS MQTT Broker
 * Azure MQTT Broker
 

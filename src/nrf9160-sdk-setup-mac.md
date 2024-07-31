@@ -1,38 +1,30 @@
 # SDK Setup (Mac OS)
 
 - [SDK Setup (Mac OS)](#sdk-setup-mac-os)
-  - [Installing IDE](#installing-ide)
   - [Installing Extension](#installing-extension)
-    - [Install the Extension](#install-the-extension)
     - [Run Setup](#run-setup)
     - [Init the repo](#init-the-repo)
     - [Then build the sample!](#then-build-the-sample)
-  - [Installing `newtmgr` (Used to load your application via USB serial bootloader)](#installing-newtmgr-used-to-load-your-application-via-usb-serial-bootloader)
+  - [`newtmgr` (Used to load your application via USB serial bootloader)](#newtmgr-used-to-load-your-application-via-usb-serial-bootloader)
   - [Testing it](#testing-it)
 
-This page is all about getting your Mac compiling code for the nRF9160 Feather. Run into trouble during the process? Post your questions on the [community forum.](https://community.jaredwolff.com)
-
-## Installing IDE
-1. Install or use the code editor of your choice. I personally use Microsoft Visual Studio Code. The download link is [here](https://code.visualstudio.com/docs/?dv=osx)
-1. If you decide to use Visual Studio Code, make sure you install the **C/C++** and **Cortex-Debug** extentions using the built in extension marketplace.
+This page is all about getting your Mac compiling code for the nRF9160 Feather. Run into trouble during the process? Post your questions on the [community forum.](https://community.circuitdojo.com)
 
 ## Installing Extension
 
-Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing. 
-
-First make sure you [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
-
-The easiest way to install `git` and `python3` is with [Homebrew](https://brew.sh).
-
-```
-> brew install git python3
-```
-
-### Install the Extension
+If you didn't already, install Visual Studio code. You can [download it here.](https://code.visualstudio.com/docs/?dv=osx)
 
 ![Marketplace](air-quality-wing/img/extension/marketplace.png)
 
-You can [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
+Fortunately, it's a bit easier to get started with the VSCode extension. The VSCode is required along with a Python 3 and Git on your system before continuing. Arm64 Macs will require the additional install of `ninja`.
+
+Once Visual Studio code is installed, [download the extension here. 👈](https://marketplace.visualstudio.com/items?itemName=circuitdojo.zephyr-tools&ssr=false#overview)
+
+The easiest way to install `git`, `python3` and `ninja` (only required for Arm64 Macs) is with [Homebrew](https://brew.sh).
+
+```
+> brew install git python3 ninja
+```
 
 ### Run Setup
 
@@ -61,19 +53,23 @@ Here's what it will look like:
 
 Once the build completes you should get a **Build complete!** popup along with some success messages in the the terminal.
 
-## Installing `newtmgr` (Used to load your application via USB serial bootloader)
+## `newtmgr` (Used to load your application via USB serial bootloader)
 
-`newtmgr` is automatically installed with your VSCode extension. Lets configure it the rest of the way.
+`newtmgr` is the command line utility for loading code to your device. It is automatically installed with the VSCode extension. Lets configure it the rest of the way.
 
 1. If you'r on a newer version of OSX you'll need to [install the drivers.](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
 
-1. Then you'll need to add your serial profile to make it easier to download/update your device:
-   ```
-   newtmgr conn add serial type=serial connstring='dev=/dev/tty.SLAB_USBtoUART,baud=1000000'
-   ```
-   If you have multiple Silicon Labs CP2102 connected to your machine your serial port *may be named differently*. I recommend you unplug all devices that could be named `tty.SLAB_USBtoUART` to ensure you're targeting the correct device during programming.
+2. Configuring is simple as running the **Zephyr Tools: Setup Newtmgr** command
 
-For more info in using `newtmgr` checkout the [programming section](nrf9160-programming-and-debugging.md#booloader-use) of this documentation.
+   ![Setup newtmgr](air-quality-wing/img/extension/setup-newtmgr.png)
+
+   Select your serial port:
+
+   ![Select serial port](air-quality-wing/img/extension/select-serialport.png)
+
+   Then select the BAUD. (**Important!** The nRF19160 Feather _only_ supports `1000000`) Once complete you're ready to run the **Zephyr Tools: Load via Bootloader** command.
+
+   ![Select baud](air-quality-wing/img/extension/select-baud.png)
 
 ## Testing it
 

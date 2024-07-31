@@ -16,24 +16,20 @@
 
 | Type                       | Donwload Link             |
 | -------------------------- | ------------------------- |
-| Pre-compiled Samples       | [Link][samples]           |
-| Bootloader  (v1)           | [Link][bootloader]        |
-| Bootloader  (v2)           | [Link][bootloader-v2]     |
+| Compiled Samples (latest)  | [Link][github-samples]    |
 | newtmgr CLI   (v1)         | [Link][newtmgr]           |
-| Board Defintions (v1.3.x)  | [link][board-defs-v1.3.x] |
-| Board Definitions (v1.2.x) | [link][board-defs-v1.2.x] |
 
 [github-docs]: https://www.github.com/circuitdojo/docs/
 [github-hw]: https://www.github.com/circuitdojo/nrf9160-feather/
 [aligni]: https://www.aligni.com
 [bom]: https://circuitdojo.aligni.com/part/380080?revision_id=402623#tab_part-list
 [grabcad]: https://grabcad.com/library/nrf9160-feather-tracker-enclosure-1
-[bootloader]: /files/nrf9160_feather_bootloader_v1.zip
-[bootloader-v2]: /files/v2-010421-1502-merged.hex.zip
 [newtmgr]: /nrf9160-programming-and-debugging.md#binary-download
-[board-defs-v1.3.x]: files/board-definitions-ncs-v1.3.x.zip
-[board-defs-v1.2.x]: files/board-definitions-ncs-v1.2.x.zip
-[samples]: https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers/suites/4268884421/artifacts/111009168
+[github-samples]: https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers/actions/workflows/build.yml
+
+## Manual downloads of NCS
+
+Manual downloads of NCS (including minimal version) are hosted here: [https://developer.nordicsemi.com/.pc-tools/toolchain](https://developer.nordicsemi.com/.pc-tools/toolchain)
 
 ## License
 

@@ -8,4 +8,4 @@ This boards source is [located on Github.](https://github.com/circuitdojo/air-qu
 
 ## Pre-compiled samples
 
-The AQW library for Zephyr is configured for CI/CD deployments. You can get the latest .hex and app_update.bin files from [Github here](https://github.com/circuitdojo/air-quality-wing-zephyr-demo/suites/3993861687/artifacts/100640008).
+The AQW library for Zephyr is configured for CI/CD deployments. You can get the latest .hex and app_update.bin files from [Github here](https://github.com/circuitdojo/air-quality-wing-zephyr-demo/). (Under Github actions)

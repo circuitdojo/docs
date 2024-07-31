@@ -30,8 +30,7 @@ rm -rf ~/Library/Caches/zephyr
 
 More info here: [https://devzone.nordicsemi.com/f/nordic-q-a/55475/the-toolchain-is-unable-to-build-a-dummy-c-file](https://devzone.nordicsemi.com/f/nordic-q-a/55475/the-toolchain-is-unable-to-build-a-dummy-c-file)
 
-Also a post on the forum: [https://community.jaredwolff.com/d/51-error-whilst-compiling-blinky/3](https://community.jaredwolff.com/d/51-error-whilst-compiling-blinky/3)
-
+Also a post on the forum: [https://community.circuitdojo.com/d/51-error-whilst-compiling-blinky/3](https://community.circuitdojo.com/d/51-error-whilst-compiling-blinky/3)
 
 ### Debugging a Hard Fault
 
@@ -60,7 +59,6 @@ $ /opt/nordic/ncs/v1.5.0/toolchain/bin/arm-none-eabi-addr2line -e build/zephyr/z
 reent.c:?
 ```
 
-
 ### `Error 3` from `newtmgr`
 
 While programming via `newtmgr` you may run into problems programming your board via the bootloader:
@@ -73,14 +71,13 @@ Error: 3
 
 There are a few reasons for this incuding:
 
-* Make sure that you do not have your serial console open while transferring. This will case some data to drop during the application upgrade.
-* V1 versions of the nRF9160 Feather only work with older versions of the SDK (1.2.x ad 1.3.x). The solution here is to upgrade the bootloader.
-    * Navigate to the [downloads](nrf9160-downloads.md) page and download the V2 bootloader
-    * Attach your programming cable and board as you would in [programming and debugging](nrf9160-programming-and-debugging.md)
-    * Use `nrfjprog` (or similar) to load the file:
-    
-    ```
-    nrfjprog --program bootloader.hex --chiperase
-    ```
+- Make sure that you do not have your serial console open while transferring. This will case some data to drop during the application upgrade.
+- V1 versions of the nRF9160 Feather only work with older versions of the SDK (1.2.x ad 1.3.x). The solution here is to upgrade the bootloader.
+  - Navigate to the [downloads](nrf9160-downloads.md) page and download the V2 bootloader
+  - Attach your programming cable and board as you would in [programming and debugging](nrf9160-programming-and-debugging.md)
+  - Use `nrfjprog` (or similar) to load the file:
+  ```
+  nrfjprog --program bootloader.hex --chiperase
+  ```
   Alternatively you can also downgrade SDK version but this is not supported.
-* For V1 bootloaders, `newtmgr` will not program images above 196kB. The solution here is to upgrade to the latest bootloader.
+- For V1 bootloaders, `newtmgr` will not program images above 196kB. The solution here is to upgrade to the latest bootloader.

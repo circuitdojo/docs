@@ -1,6 +1,6 @@
 # SDK Setup (Windows)
 
-This page is all about getting your Windows machine compiling code for the nRF9160 Feather. Run into trouble during the process? Post your questions on the [community forum.](https://community.jaredwolff.com)
+This page is all about getting your Windows machine compiling code for the nRF9160 Feather. Run into trouble during the process? Post your questions on the [community forum.](https://community.circuitdojo.com)
 
 ## IDE Setup
 
@@ -15,24 +15,27 @@ This page is all about getting your Windows machine compiling code for the nRF91
    ![Powershell w/ Admin](img/sdk-setup-windows/powershell-admin.png)
 
 1. Then paste the install script and press enter:
+
    ```
    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
    ```
 
    For more info check out [this page](https://chocolatey.org/install).
-2. Now, lets install the remaining deps we'll need for Zephyr/nRF Connect using `choco`. In a new `cmd.exe` session (with Administrator privledges) run:
+
+1. Now, lets install the remaining deps we'll need for Zephyr/nRF Connect using `choco`. In a new `cmd.exe` session (with Administrator privledges) run:
 
    ```
    choco feature enable -n allowGlobalConfirmation
    choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' --version 3.18.5
    choco install ninja gperf python git
    ```
-3. Next install `west` using `pip`. West is the most important utility for using nRF Connect SDK & Zephyr. You'll become *quite* familliar with very soon.
+
+1. Next install `west` using `pip`. West is the most important utility for using nRF Connect SDK & Zephyr. You'll become _quite_ familliar with very soon.
    ```
    pip install west
    ```
    **💡Note:** you can update `west` by issuing `pip3 install -U west` It will uninstall the version on your machine and replace it with the latest. (It won't do anything if you have the latest installed.)
-4. Now create a folder on your machine and call it `nfed` (short for nRF9160 Feather Examples and Drivers). For windows it's best to put it in `C:\`.
+1. Now create a folder on your machine and call it `nfed` (short for nRF9160 Feather Examples and Drivers). For windows it's best to put it in `C:\`.
    Open a **new** `cmd.exe` prompt in this folder and initialize nRF Connect SDK using `west`:
 
    ```
@@ -42,13 +45,16 @@ This page is all about getting your Windows machine compiling code for the nRF91
    west init -m https://github.com/circuitdojo/nrf9160-feather-examples-and-drivers --mr main
    ```
 
-5. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
+1. Once your nRF Connect SDK compontents are downloaded, you'll need to fetch the remaining SDK:
+
    ```
    west update
    ```
-   You'll see a *bunch* of output go by as `west` downloads dependencies using Git. (This will take hot minute so make sure you're prepared with something else to do. 😬)
+
+   You'll see a _bunch_ of output go by as `west` downloads dependencies using Git. (This will take hot minute so make sure you're prepared with something else to do. 😬)
 
    Here's what your `nfed` folder should look like:
+
    ```
    C:\nfed>dir
     Volume in drive C has no label.
@@ -71,7 +77,9 @@ This page is all about getting your Windows machine compiling code for the nRF91
                   0 File(s)              0 bytes
                  11 Dir(s)  29,099,958,272 bytes free
    ```
-6. Installing the remaining SDK requirements using `pip3`:
+
+1. Installing the remaining SDK requirements using `pip3`:
+
    ```
    pip3 install -r zephyr/scripts/requirements.txt
    ```
@@ -99,9 +107,11 @@ This page is all about getting your Windows machine compiling code for the nRF91
 ## `newtmgr` (Used to load your application via USB serial bootloader)
 
 1. For loading code to your nRF9160 Feather, you'll need to download and copy a custom version of `newtmgr` to a folder in your `PATH`.
+
    - [Windows](files/newtmgr/windows/newtmgr.zip)
 
-    If you're not sure, `C:\bin\` is always a good spot for these types of binaries.
+   If you're not sure, `C:\bin\` is always a good spot for these types of binaries.
+
 1. You'll have to make sure that `C:\bin\` is added to your system `PATH`. Hit the start menu or Windows key and type "environment variables". Open the "Edit the system environment variables." option.
 1. Go to the **System variables** section and find path.
 1. Click **Edit**

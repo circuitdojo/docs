@@ -29,12 +29,12 @@
 * Micro USB connection for USB-to-Serial and DFU
 * Pre-programmed MCUBoot bootloader
 * External NOR Flash by Winbond
-  * ~~2MB~~ 4MB of space (Upgraded for all boards as of August 2, 2020!)
+  * 4MB of space (Upgraded for all boards as of August 2, 2020!)
   * Max bus speed of 133MHz
   * Standard SPI
 * Power supply
-  * 3.3V Buck/Boost up to 0.9A of current draw
-  * Operating range 2.8 to 5.5V
+  * 3.3V Buck with < 1uA of quiesent current. 750 mA ouput max
+  * Operating range 3.0 to 6.5V
   * External LiPoly battery connection (JST SPH type)
   * LiPoly set to 300mA with indication
 * Programmer
@@ -62,8 +62,10 @@ Here are the elctrical specifications for the nRF9160 Feather. Most of the speci
 ### Board Supply
 
 - **Output voltage:** 3.3V ± 0.3V
-- **Max output current:** 800mA
-- **Off current w/ Low Power RTC:** < 3µA
+- **Max output current:** 750
+- **Active sleep current** < 10µA @ 3.6V¹
+
+¹ Current above 4.0V increases significantly due to the switching regulator design. We recommend using single cell Lithium batteries or providing external power <= 4.0V
 
 ### Pin Ratings (MD/A0-A5/D0-D8/TX/RX/CIPO/COPI/SCK/RST)
 
@@ -71,9 +73,9 @@ Here are the elctrical specifications for the nRF9160 Feather. Most of the speci
 
 ### Enable Pin
 
-- **Max input voltage:** 8V¹
+- **Max input voltage:** 6.5V¹
 
-¹Enable pin is *active low.*
+¹Enable pin is *active high.*
 
 ### External Power Supply
 
@@ -93,6 +95,8 @@ The nRF9160 Feather can be powered via battery or USB. See below for the specifi
 - **Charging current:** 294mA ± 10%
 
 ²*Batteries below this capacity are not recommended nor supported.*
+
+**Note:** with charging circuit disabled (short JMP2) any input source up to 6.5V is supported.
 
 ### GPS Antenna
 
@@ -117,10 +121,10 @@ and verified with the following parts:
 
 The nRF9160 Feather has been tested with these approved antennas. They're chosen specifically to match the FCC requirements as indicated [here.](https://apps.fcc.gov/oetcf/tcb/reports/Tcb731GrantForm.cfm?mode=COPY&RequestTimeout=500&tcb_code=&application_id=5jPUJx5%2Bvjp3BKCESrEhWw%3D%3D&fcc_id=2ANPO00NRF9160)
 
-| Part Number     | Manufacturerer        | Datasheet                  | Notes           |
-| --------------- | --------------------- | -------------------------- | --------------- |
-| FH2B4MH1F2F0100 | Unictron Technologies | [Link][uni-ds]             | Included        |
-| ANT-LTE-RPC-UFL | Linx                  | [Link][ant-lte-rpc-ufl-ds] | GPS/GNSS, Rigid |
+| Part Number     | Manufacturerer        | Datasheet                  | Notes                |
+| --------------- | --------------------- | -------------------------- | -------------------- |
+| H2B4MH1F2F0100  | Unictron Technologies | [Link][uni-ds]             | Offered as an addon  |
+| ANT-LTE-RPC-UFL | Linx                  | [Link][ant-lte-rpc-ufl-ds] | GPS/GNSS, Rigid      |
 
 [uni-ds]: https://www.unictron.com/wp-content/uploads/H2B4MH1F2F0100.pdf
 [uni-pricing]: https://octopart.com/h2b4mh1f2f0100-unictron-93186548?r=sp
