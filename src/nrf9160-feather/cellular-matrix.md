@@ -1,6 +1,6 @@
 # Cellular Provider Matrix
 
-![Cellular](img/cellular.png)
+![Cellular](/img/cellular.png)
 
 In order to use a provider below you'll likely have to set the PDP context. For NCS >= 1.7.x you can set it in your `prj.conf` using the following config variables:
 

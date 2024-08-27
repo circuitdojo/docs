@@ -89,7 +89,7 @@ This page is all about getting your Mac compiling code for the nRF9160 Feather. 
 
    **Note** for Catalina users you will get an error when running these utilities for the first time. You must allow them to be executed in your Security preferences.
 
-   ![Error running ARM Toolchain](img/sdk-setup-mac/cannot-be-opened.jpeg)
+   ![Error running ARM Toolchain](/img/sdk-setup-mac/cannot-be-opened.jpeg)
 
 1. Finally you'll need export a few important environment variables for things to work. For `bash` here's the entry for `.bash_profile` that I have:
 

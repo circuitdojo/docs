@@ -1,6 +1,6 @@
 # Downloads
 
-![Downloads](img/downloads.png)
+![Downloads](/img/downloads.png)
 
 ## Hardware Related
 
@@ -14,10 +14,10 @@
 
 ## Software Related
 
-| Type                       | Donwload Link             |
-| -------------------------- | ------------------------- |
-| Compiled Samples (latest)  | [Link][github-samples]    |
-| newtmgr CLI   (v1)         | [Link][newtmgr]           |
+| Type                      | Donwload Link          |
+| ------------------------- | ---------------------- |
+| Compiled Samples (latest) | [Link][github-samples] |
+| newtmgr CLI (v1)          | [Link][newtmgr]        |
 
 [github-docs]: https://www.github.com/circuitdojo/docs/
 [github-hw]: https://www.github.com/circuitdojo/nrf9160-feather/

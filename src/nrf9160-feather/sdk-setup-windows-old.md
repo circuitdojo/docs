@@ -6,13 +6,13 @@ This page is all about getting your Windows machine compiling code for the nRF91
 
 1. Install or use the code editor of your choice. I personally use Microsoft Visual Studio Code. The download link is [here](https://code.visualstudio.com/docs/?dv=win64user)
 1. If you decide to use Visual Studio Code, make sure you install the **C/C++** and **Cortex-Debug** extentions using the built in extension marketplace.
-   ![Extensions installed](img/sdk-setup-windows/visual-studio-code-extensions.png)
+   ![Extensions installed](/img/sdk-setup-windows/visual-studio-code-extensions.png)
 
 ## SDK Install
 
 1. Install the Chocolatey (`choco`) package manager. In the start menu type `cmd` then right click and open with Administrative Privledges.
 
-   ![Powershell w/ Admin](img/sdk-setup-windows/powershell-admin.png)
+   ![Powershell w/ Admin](/img/sdk-setup-windows/powershell-admin.png)
 
 1. Then paste the install script and press enter:
 
@@ -115,7 +115,7 @@ This page is all about getting your Windows machine compiling code for the nRF91
 1. You'll have to make sure that `C:\bin\` is added to your system `PATH`. Hit the start menu or Windows key and type "environment variables". Open the "Edit the system environment variables." option.
 1. Go to the **System variables** section and find path.
 1. Click **Edit**
-   ![Edit system variables](img/sdk-setup-windows/editing-variables.png)
+   ![Edit system variables](/img/sdk-setup-windows/editing-variables.png)
 1. Click **New**
 1. Enter **C:\bin\\** into the new line.
 1. Press **Ok** for the remaining prompts.

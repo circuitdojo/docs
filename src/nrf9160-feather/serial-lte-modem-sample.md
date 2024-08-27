@@ -34,6 +34,7 @@ setting things up:
    a file called `circuitdojo_feather_nrf9160_ns.overlay` In this overlay file,
    we'll redirect the AT interface to UART2 for use with an external
    microcontroller:
+
    ```
    &uart2 {
        compatible = "nordic,nrf-uarte";
@@ -48,9 +49,11 @@ setting things up:
 
    **Note:** it's **very important** that your overlay file ends in `.overlay`
    or you will get compilation errors.
+
 1. When you're done, here's what it should look like:
 
-   ![boards folder](img/serial-lte-modem/file-setup.png)
+   ![boards folder](/img/serial-lte-modem/file-setup.png)
+
 1. From the `serial_lte_modem` folder, compile the example using
 
    ```
@@ -59,11 +62,13 @@ setting things up:
 
    **Note:** having trouble building? Make sure you check out the
    [troubleshooting](nrf9160-troubleshooting.md) page.
+
 1. Flash the example using `newtmgr`:
 
    ```
    newtmgr -c serial image upload build/zephyr/app_update.bin
    ```
+
 1. Running the app, you should see the boot message if you open
    [LTE Link Monitor](nrf9160-nrf-connect-desktop.md#using-with-lte-link-monitor)
    with **Flow Control turned off**:

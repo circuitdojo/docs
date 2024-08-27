@@ -31,14 +31,14 @@ ARGS:
 
 Typical usage includes:
 
-* List all available ports use:
+- List all available ports use:
 
   ```
   ❯ zephyr-tools-monitor -l
-  ["/dev/tty.URT2","/dev/tty.URT1","/dev/tty.BLTH","/dev/tty.Bluetooth-Incoming-Port","/dev/tty.usbmodem0009600833633","/dev/tty.usbmodem0009600833631","/dev/tty.usbmodem0009600833635","/dev/tty.SLAB_USBtoUART","/dev/tty.usbserial-14530"]⏎  
+  ["/dev/tty.URT2","/dev/tty.URT1","/dev/tty.BLTH","/dev/tty.Bluetooth-Incoming-Port","/dev/tty.usbmodem0009600833633","/dev/tty.usbmodem0009600833631","/dev/tty.usbmodem0009600833635","/dev/tty.SLAB_USBtoUART","/dev/tty.usbserial-14530"]⏎
   ```
 
-* A typical connection attempt:
+- A typical connection attempt:
 
   ```
   ❯ zephyr-tools-monitor --port /dev/tty.SLAB_USBtoUART --follow
@@ -52,6 +52,6 @@ If you haven't already, make sure you check out the [LTE Link Monitor](nrf9160-n
 
 ## CoolTerm
 
-![CoolTerm](img/coolterm.png)
+![CoolTerm](/img/coolterm.png)
 
 CoolTerm has been my go-to for testing and debugging. Fortunately it's also multi-platform! You can download it by going here: https://www.freeware.the-meiers.org

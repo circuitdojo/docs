@@ -16,6 +16,7 @@ v1.3.2 [here](files/nrf_cloud_agps_bb259bf.bin).
 1. Change directories to `ncs/nrf` (Make sure you're using NCS v1.4.0 or newer.)
 2. Then change directories to `/nrf/samples/nrf9160/agps/`
 3. Add this to `prj.conf`:
+
    ```
    # Cloud prefix for nRF9160 Feather
    CONFIG_NRF_CLOUD_CLIENT_ID_PREFIX="feather-"
@@ -71,24 +72,24 @@ Here are the steps to get you the rest of the way.
 1. First, program your device with the `nrf_cloud_agps` sample.
 2. Then, power up and confirm that the device can connect to the cloud.
 3. Create an nRF Connect for Cloud Account
-   ![Add new device](img/agps-sample/add-new-device.png)
+   ![Add new device](/img/agps-sample/add-new-device.png)
 4. Once created, go to the top left and click the big **+** icon.
-   ![Add LTE device](img/agps-sample/add-lte-device.png)
+   ![Add LTE device](/img/agps-sample/add-lte-device.png)
 5. Then skip the iBasis setup since we're using Hologram.
-   ![Skip iBasis](img/agps-sample/skip-ibasis-setup.png)
+   ![Skip iBasis](/img/agps-sample/skip-ibasis-setup.png)
 6. Enter the Device ID and the PIN provided on your card.
-   ![Enter device ID and pin](img/agps-sample/enter-device-id-and-pin.png)
+   ![Enter device ID and pin](/img/agps-sample/enter-device-id-and-pin.png)
 7. Once you press **Add Device**, nRF Connect for Cloud should notify you that
    your device has been added!
 8. Navigate to **Devices** and click on the device you're working wtih!
-   ![Devices](img/agps-sample/devices.png)
+   ![Devices](/img/agps-sample/devices.png)
 
 That's it!
 
 Your device screen will adapt to the example code that you're using. For
 example, it should display a map when you begin to publish GPS data.
 
-![nRF Connect for Cloud Screenshot with map](img/agps-sample/nrf-cloud-screenshot.png)
+![nRF Connect for Cloud Screenshot with map](/img/agps-sample/nrf-cloud-screenshot.png)
 
 ### Troubleshooting
 

@@ -1,59 +1,59 @@
 # Specifications and Requirements
 
-![Specs photo](img/specs.png)
+![Specs photo](/img/specs.png)
 
 ## Technical Details
 
-* Nordic nRF9160*
-  * Microcontroller
-    * ARM Cortex M33
-    * 1MB Flash
-    * 256kB RAM
-    * ARM® TrustZone®
-    * ARM® Cryptocell 310
-    * Up to 4x SPI, I2C and UART with Easy DMA
-    * I2S w/ EasyDMA
-    * 4x PWM with EasyDMA
-    * 12bit SADC with EasyDMA
-    * 2x RTC
-    * PPI (Programmable peripheral interconnect) interface
-  * Radio
-    * Transceiver and baseband
-    * 3GPP LTE release 13 Category M1 and NB1 compliant
-    * 3GPP release 14 NB2 compliant
-    * GPS receiver (GPS L1 C/A supported) - Active antenna only.
-    * RF Transceiver for global coverage supporting bands:
-      *  Cat-M1: B1, B2, B3, B4, B5, B8, B12, B13, B14, B17, B18, B19, B20, B25, B26, B28, B66
-       *  Cat-NB1/NB2: B1, B2, B3, B4, B5, B8, B12, B13, B17, B18, B20, B25, B26, B28, B66
-    *  Supports 4FF Nano SIM
-* Micro USB connection for USB-to-Serial and DFU
-* Pre-programmed MCUBoot bootloader
-* External NOR Flash by Winbond
-  * 4MB of space (Upgraded for all boards as of August 2, 2020!)
-  * Max bus speed of 133MHz
-  * Standard SPI
-* Power supply
-  * 3.3V Buck with < 1uA of quiesent current. 750 mA ouput max
-  * Operating range 3.0 to 6.5V
-  * External LiPoly battery connection (JST SPH type)
-  * LiPoly set to 300mA with indication
-* Programmer
-  * Capable of interfacing with Jlink and CMSIS-DAP based programmers
-  * Use with a Tag Connect TC2030-CTX-NL over Serial Wire Debug (SWD)
-* Low Power RTC on board for time keeping and as a low power wakeup source.
-* User I/O
-  * Standard feather form factor GPIOs (0.1" pitch)
-  * 2x buttons (1 Reset, 1 General Purpose)
-  * 1x Blue LED connected to D7
-* Antenna connections:
-  * 1x U.FL for LTE with matching network
-  * 1x U.FL for active GPS antennas
-* Feather form factor
-  * 50.8mm x 22.86mm (2" x 0.9")
+- Nordic nRF9160\*
+  - Microcontroller
+    - ARM Cortex M33
+    - 1MB Flash
+    - 256kB RAM
+    - ARM® TrustZone®
+    - ARM® Cryptocell 310
+    - Up to 4x SPI, I2C and UART with Easy DMA
+    - I2S w/ EasyDMA
+    - 4x PWM with EasyDMA
+    - 12bit SADC with EasyDMA
+    - 2x RTC
+    - PPI (Programmable peripheral interconnect) interface
+  - Radio
+    - Transceiver and baseband
+    - 3GPP LTE release 13 Category M1 and NB1 compliant
+    - 3GPP release 14 NB2 compliant
+    - GPS receiver (GPS L1 C/A supported) - Active antenna only.
+    - RF Transceiver for global coverage supporting bands:
+      - Cat-M1: B1, B2, B3, B4, B5, B8, B12, B13, B14, B17, B18, B19, B20, B25, B26, B28, B66
+      - Cat-NB1/NB2: B1, B2, B3, B4, B5, B8, B12, B13, B17, B18, B20, B25, B26, B28, B66
+    - Supports 4FF Nano SIM
+- Micro USB connection for USB-to-Serial and DFU
+- Pre-programmed MCUBoot bootloader
+- External NOR Flash by Winbond
+  - 4MB of space (Upgraded for all boards as of August 2, 2020!)
+  - Max bus speed of 133MHz
+  - Standard SPI
+- Power supply
+  - 3.3V Buck with < 1uA of quiesent current. 750 mA ouput max
+  - Operating range 3.0 to 6.5V
+  - External LiPoly battery connection (JST SPH type)
+  - LiPoly set to 300mA with indication
+- Programmer
+  - Capable of interfacing with Jlink and CMSIS-DAP based programmers
+  - Use with a Tag Connect TC2030-CTX-NL over Serial Wire Debug (SWD)
+- Low Power RTC on board for time keeping and as a low power wakeup source.
+- User I/O
+  - Standard feather form factor GPIOs (0.1" pitch)
+  - 2x buttons (1 Reset, 1 General Purpose)
+  - 1x Blue LED connected to D7
+- Antenna connections:
+  - 1x U.FL for LTE with matching network
+  - 1x U.FL for active GPS antennas
+- Feather form factor
+  - 50.8mm x 22.86mm (2" x 0.9")
 
-*\* nRF9160 tech specs provided from the nRF9160 Product Specification*
+_\* nRF9160 tech specs provided from the nRF9160 Product Specification_
 
-![Block Diagram](img/nrf9160-feather-block-diagram.png)
+![Block Diagram](/img/nrf9160-feather-block-diagram.png)
 
 ## Electrical
 
@@ -75,7 +75,7 @@ Here are the elctrical specifications for the nRF9160 Feather. Most of the speci
 
 - **Max input voltage:** 6.5V¹
 
-¹Enable pin is *active high.*
+¹Enable pin is _active high._
 
 ### External Power Supply
 
@@ -100,7 +100,7 @@ The nRF9160 Feather can be powered via battery or USB. See below for the specifi
 
 ### GPS Antenna
 
-![GPS Antenna](img/gps-antenna.png)
+![GPS Antenna](/img/gps-antenna.png)
 
 The U.FL port on the nRf9160 Feather is to be used with an **active GPS antenna only.**
 
@@ -109,7 +109,6 @@ The U.FL port on the nRf9160 Feather is to be used with an **active GPS antenna 
 
 The port works with most U.FL based active antenna parts. The nRF9160 Feather has been tested
 and verified with the following parts:
-
 
 | Part Number     | Manufacturerer   | Datasheet            | Notes               |
 | --------------- | ---------------- | -------------------- | ------------------- |
@@ -121,10 +120,10 @@ and verified with the following parts:
 
 The nRF9160 Feather has been tested with these approved antennas. They're chosen specifically to match the FCC requirements as indicated [here.](https://apps.fcc.gov/oetcf/tcb/reports/Tcb731GrantForm.cfm?mode=COPY&RequestTimeout=500&tcb_code=&application_id=5jPUJx5%2Bvjp3BKCESrEhWw%3D%3D&fcc_id=2ANPO00NRF9160)
 
-| Part Number     | Manufacturerer        | Datasheet                  | Notes                |
-| --------------- | --------------------- | -------------------------- | -------------------- |
-| H2B4MH1F2F0100  | Unictron Technologies | [Link][uni-ds]             | Offered as an addon  |
-| ANT-LTE-RPC-UFL | Linx                  | [Link][ant-lte-rpc-ufl-ds] | GPS/GNSS, Rigid      |
+| Part Number     | Manufacturerer        | Datasheet                  | Notes               |
+| --------------- | --------------------- | -------------------------- | ------------------- |
+| H2B4MH1F2F0100  | Unictron Technologies | [Link][uni-ds]             | Offered as an addon |
+| ANT-LTE-RPC-UFL | Linx                  | [Link][ant-lte-rpc-ufl-ds] | GPS/GNSS, Rigid     |
 
 [uni-ds]: https://www.unictron.com/wp-content/uploads/H2B4MH1F2F0100.pdf
 [uni-pricing]: https://octopart.com/h2b4mh1f2f0100-unictron-93186548?r=sp

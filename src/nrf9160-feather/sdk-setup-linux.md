@@ -15,7 +15,7 @@ This page is all about getting your Linux machine compiling code for the nRF9160
 
 If you didn't already, install Visual Studio code. You can download directly from the Ubuntu Software Install utility. (or similar)
 
-![Ubuntu software install](img/sdk-setup-linux/visual-studio-code-install.png)
+![Ubuntu software install](/img/sdk-setup-linux/visual-studio-code-install.png)
 
 Then we can continue installing the extension!
 

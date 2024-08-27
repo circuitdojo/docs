@@ -1,12 +1,12 @@
 # Compliance
 
-![Compliance](img/compliance.png)
+![Compliance](/img/compliance.png)
 
 To make things easier for you, the nRF9160 Feather comes pre-tested and ready for integration. All applicable testing will be done to ensure comppliance with FCC and CE EMI/EMC requirements. See each section below for more information.
 
 ## Open Source Hardware Certification:
 
-![OSHW](img/OSHW_mark_US000644.png)
+![OSHW](/img/OSHW_mark_US000644.png)
 
 - **Current status:** Compliant
 - **UID:** US000644
@@ -35,7 +35,7 @@ When designing the nRF9160 Feather into your own projects, there are some markin
 - Contains FCC ID: 2ANPO00NRF9160
 - Contains IC: 24529-NRF9160
 
-Additionally, the nRF9160 Feather *must* be used at a minimum of 20 cm (7.87 inches) from the body at all times. This means the nRF9160 Feather should not worn on the body without sufficent isolation.
+Additionally, the nRF9160 Feather _must_ be used at a minimum of 20 cm (7.87 inches) from the body at all times. This means the nRF9160 Feather should not worn on the body without sufficent isolation.
 
 ## Country of Origin
 

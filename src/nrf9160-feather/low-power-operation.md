@@ -3,11 +3,11 @@
 In most examples when your device goes idle, it will go into a sleep mode
 automatically. In the best case,
 
-1. v6 boards draw about:
+1. v6 boards draw:
 
-   - <10 uA via 3.6V Vbat at room temp
+   - ~10 uA via 3.6V Vbat at room temp
 
-2. v4 boards draw about:
+2. v4 boards draw:
 
    - ~30µA via 3.6V Vbat at room temp.
 

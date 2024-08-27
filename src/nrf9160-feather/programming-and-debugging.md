@@ -101,7 +101,7 @@ supported boards.
 4. You may also have to add `JLink.exe` to your path. It's the exact
    [same proceedure](nrf9160-sdk-setup-windows.md#newtmgr) as adding `newtmgr`
    except the path you're adding is `C:\Program Files (x86)\SEGGER\JLink`
-   ![Paths updated for Windows for JLink](img/programming-and-debugging/paths-updated-for-jlink.png)
+   ![Paths updated for Windows for JLink](/img/programming-and-debugging/paths-updated-for-jlink.png)
 5. Close/restart VSCode and your Command Prompt
 6. Run `jlink.exe` and make sure it opens.
 
@@ -133,19 +133,19 @@ supported boards.
 
 Here are a couple of close up shots of how to connect the nRF5340-DK:
 
-![nrf53-dk-connected](img/nrf53-dk-connected.jpg)
+![nrf53-dk-connected](/img/nrf53-dk-connected.jpg)
 
-![nRF9160 Feather w/ USB](img/nrf9160-feather.jpg)
+![nRF9160 Feather w/ USB](/img/nrf9160-feather.jpg)
 
-![nRF9160 Feather w/ Tag Connect](img/nrf9160-feather-tag-connect.jpg)
+![nRF9160 Feather w/ Tag Connect](/img/nrf9160-feather-tag-connect.jpg)
 
-![nRF9160 Feather w/ Tag Connect Connected](img/nrf9160-feather-tag-connect-connected.jpg)
+![nRF9160 Feather w/ Tag Connect Connected](/img/nrf9160-feather-tag-connect-connected.jpg)
 
 I highly recommend you jump _SB47_ on your nRF5340-DK with some solder. This
 forces the debugger to think an external devices is permanently connected. If
 you're only doing external debugging, this is very useful.
 
-![nRF5340-DK jumper highlighted](img/nrf53-dk-jumper.jpeg)
+![nRF5340-DK jumper highlighted](/img/nrf53-dk-jumper.jpeg)
 
 After hooking things up, It's time to do a quick smoke test. Running
 `nrfjprog -r` in a terminal should show this result:
@@ -296,13 +296,13 @@ each of the lines broken out.
    hold the wires in place. Connect the **yellow** wire to the TX on the board.
    Connect the **orange** wire to the RX on the board.
 
-   ![Wiring diagram](img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.42.58_PM.png)
+   ![Wiring diagram](/img/programming-and-debugging/Screen_Shot_2020-09-16_at_4.42.58_PM.png)
 
-   ![Probes connected](img/programming-and-debugging/25C83B8C-FBA0-4C2B-B2A7-9CFD2C642EF1.jpeg)
+   ![Probes connected](/img/programming-and-debugging/25C83B8C-FBA0-4C2B-B2A7-9CFD2C642EF1.jpeg)
 
 1. Then open the serial port in the modem trace App and click start.
 
-   ![Open port](img/programming-and-debugging/cellular-monitor-select-port.png)
+   ![Open port](/img/programming-and-debugging/cellular-monitor-select-port.png)
 
 1. Then run your app as normal. You should see the **Trace size** go up little
    by little as connections are made, etc.
@@ -311,7 +311,7 @@ each of the lines broken out.
    monitor in real time (recomended). You will only see activity during
    network/modem activity.
 
-   ![Wireshark](img/programming-and-debugging/wireshark.png)
+   ![Wireshark](/img/programming-and-debugging/wireshark.png)
 
    For more information, check out Nordic's
    [original article](https://devzone.nordicsemi.com/nordic/cellular-iot-guides/b/getting-started-cellular/posts/how-to-get-modem-trace-using-trace-collector-in-nrf-connect)
@@ -332,11 +332,11 @@ Here's the process:
    [nRF Command Line Tools](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Command-Line-Tools/Download#infotabs)
 1. Install the **C/C++ Extension** and the **Cortex-Debug** extensions. They're
    both very handy in development and debugging of Zephyr based projects.
-   ![C/C++ Extension](img/programming-and-debugging/c_extention.png)
+   ![C/C++ Extension](/img/programming-and-debugging/c_extention.png)
    ![Cortex M Debug Extension](iimg/../img/programming-and-debugging/cortex_m_debug_extension.png)
 1. If you don't have one already, create a `.vscode` folder in the **root** of
    your project.
-   ![.vscode Fodler](img/programming-and-debugging/vscode_folder.png)
+   ![.vscode Fodler](/img/programming-and-debugging/vscode_folder.png)
 1. Create a file called `launch.json`. This is where we'll set up the
    configuration for debugging.
 1. Here's a real example of a config I was using to debug a project in OSX:
@@ -407,10 +407,10 @@ Here's the process:
    be able to follow the final steps to debug your application!
 1. Set some breakpoints in your code by pressing the line number you want. A red
    dot will appear where the breakpoint is set.
-   ![Breakpoint](img/programming-and-debugging/breakpoint.png)
+   ![Breakpoint](/img/programming-and-debugging/breakpoint.png)
 1. Start debugging by clicking the debug icon on the left. Then click the
    **play** button in the top left.
-   ![Debug menu](img/programming-and-debugging/debug_menu.png)
-   ![Debug play button](img/programming-and-debugging/debug_play_button.png)
+   ![Debug menu](/img/programming-and-debugging/debug_menu.png)
+   ![Debug play button](/img/programming-and-debugging/debug_play_button.png)
 1. You can use the popup menu on the right to control traversal through your
-   code. ![Popup debug control](img/programming-and-debugging/debug_control.png)
+   code. ![Popup debug control](/img/programming-and-debugging/debug_control.png)

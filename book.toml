@@ -8,10 +8,48 @@ title = "Product Documentation"
 [build]
 # create-missing = false
 
-[output.html.fold]
-# enable = true
-
 [output.html]
-# no-section-label = true
-additional-js = ["src/js/fathom.js"]
-git-repository-url = "https://www.github.com/circuitdojo/docs"
+no-section-label = true
+preferred-dark-theme = "light"
+additional-css = ["theme/page-toc.css", "theme/plugins.css"]
+additional-js = ["theme/page-toc.js", "theme/plugins.js"]
+
+[output.html.fold]
+enable = true
+
+[output.html.print]
+enable = false
+
+[output.html.redirect]
+"/nrf9160-agps-sample.html" = "/nrf9160-feather/agps-sample.html"
+"/nrf9160-archive.html" = "/nrf9160-feather/archive.html"
+"/nrf9160-at-client-sample.html" = "/nrf9160-feather/at-client-sample.html"
+"/nrf9160-blinky-sample.html" = "/nrf9160-feather/blinky-sample.html"
+"/nrf9160-cellular-matrix.html" = "/nrf9160-feather/cellular-matrix.html"
+"/nrf9160-changelog.html" = "/nrf9160-feather/changelog.html"
+"/nrf9160-compatible-cloud.html" = "/nrf9160-feather/compatible-cloud.html"
+"/nrf9160-compliance.html" = "/nrf9160-feather/compliance.html"
+"/nrf9160-downloads.html" = "/nrf9160-feather/downloads.html"
+"/nrf9160-example-code.html" = "/nrf9160-feather/example-code.html"
+"/nrf9160-getting-started.html" = "/nrf9160-feather/getting-started.html"
+"/nrf9160-low-power-operation.html" = "/nrf9160-feather/low-power-operation.html"
+"/nrf9160-managing-mfw.html" = "/nrf9160-feather/managing-mfw.html"
+"/nrf9160-micropython.html" = "/nrf9160-feather/micropython.html"
+"/nrf9160-nrf-connect-desktop.html" = "/nrf9160-feather/nrf-connect-desktop.html"
+"/nrf9160-overview.html" = "/nrf9160-feather/overview.html"
+"/nrf9160-programming-and-debugging.html" = "/nrf9160-feather/programming-and-debugging.html"
+"/nrf9160-purchase.html" = "/nrf9160-feather/purchase.html"
+"/nrf9160-pyrinas.html" = "/nrf9160-feather/pyrinas.html"
+"/nrf9160-sdk-setup-linux.html" = "/nrf9160-feather/sdk-setup-linux.html"
+"/nrf9160-sdk-setup-mac.html" = "/nrf9160-feather/sdk-setup-mac.html"
+"/nrf9160-sdk-setup-mac-old.html" = "/nrf9160-feather/sdk-setup-mac-old.html"
+"/nrf9160-sdk-setup-windows.html" = "/nrf9160-feather/sdk-setup-windows.html"
+"/nrf9160-sdk-setup-windows-old.html" = "/nrf9160-feather/sdk-setup-windows-old.html"
+"/nrf9160-serial-lte-modem-sample.html" = "/nrf9160-feather/serial-lte-modem-sample.html"
+"/nrf9160-serial-usage.html" = "/nrf9160-feather/serial-usage.html"
+"/nrf9160-specs.html" = "/nrf9160-feather/specs.html"
+"/nrf9160-support.html" = "/nrf9160-feather/support.html"
+"/nrf9160-thanks.html" = "/nrf9160-feather/thanks.html"
+"/nrf9160-troubleshooting.html" = "/nrf9160-feather/troubleshooting.html"
+"/nrf9160-verizon.html" = "/nrf9160-feather/verizon.html"
+"/nrf9160-working-in-rust.html" = "/nrf9160-feather/working-in-rust.html"

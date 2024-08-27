@@ -1,8 +1,8 @@
 # Getting Started
 
-![Start here](img/start-here.png)
+![Start here](/img/start-here.png)
 
-## 🚨Read this first🚨
+## 🚨 Read this first 🚨
 
 There are some important things about the nRF9160 Feather before you get started:
 
@@ -14,7 +14,7 @@ There are some important things about the nRF9160 Feather before you get started
 
 ## What's included
 
-![nRF9160 Feather](img/nrf9160-feather-v4-nobg.jpg)
+![nRF9160 Feather](/img/nrf9160-feather-v4-nobg.jpg)
 
 - 1x nRF9160 Feather board
 - 1x set of male headers (16 pin and 12 pin)

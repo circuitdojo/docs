@@ -1,6 +1,6 @@
 # Example Code
 
-![Examples](img/examples.png)
+![Examples](/img/examples.png)
 
 - [Example Code](#example-code)
   - [Examples](#examples)

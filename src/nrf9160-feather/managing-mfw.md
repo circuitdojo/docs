@@ -16,7 +16,7 @@ Make sure you have the VSCode plugin installed and running. Here are the instruc
 
 Get your modem firmware of choice by nagivating to the [nRF9160 Download page](https://www.nordicsemi.com/Products/Development-hardware/nRF9160-DK/Download) and scrolling to the **nRF9160 SiP modem firmware** section:
 
-![Download page](img/mfw-update/download-page.png)
+![Download page](/img/mfw-update/download-page.png)
 
 Download the version you'd like to use.
 
@@ -26,15 +26,15 @@ Download the version you'd like to use.
 
 Build the sample located in `samples/mfw_update` targeting `circuitdojo_feather_nrf9160_ns`.
 
-![Building sample complete](img/mfw-update/build-option.png)
-![Building sample complete](img/mfw-update/build-complete.png)
+![Building sample complete](/img/mfw-update/build-option.png)
+![Building sample complete](/img/mfw-update/build-complete.png)
 
 ### Loading
 
 Then load to your device:
 
-![Loading](img/mfw-update/load.png)
-![Load complete](img/mfw-update/load-in-progress.png)
+![Loading](/img/mfw-update/load.png)
+![Load complete](/img/mfw-update/load-in-progress.png)
 
 ### Running Python script
 
@@ -54,7 +54,7 @@ python3 update_modem.py mfw_nrf9160_1.3.0.zip /dev/tty.SLAB_USBtoUART 1000000
 
 Here's what it should look like at the end of the process.
 
-![Upload complete](img/mfw-update/upload-complete.png)
+![Upload complete](/img/mfw-update/upload-complete.png)
 
 ### Confirming
 
@@ -98,14 +98,14 @@ Here are the instructions for updating your modem firmware:
 1. [Download](https://www.nordicsemi.com/Products/Low-power-cellular-IoT/nRF9160/Download#infotabs) the modem firmware you need.
 2. Next, open up the _Programmer_ in nRF Connect For Desktop. (You may need to open it first)
 3. Then open up a connection to your programmer. (Your programmer should be connected to USB and attached to your nRF9160 Feather)
-   ![Port choices](img/2-programmer-choices.png)
+   ![Port choices](/img/2-programmer-choices.png)
 4. Once opened, the program will read the memory contents of your device and display it.
-   ![Reading non-volatile mem](img/3-reading-non-volatile-mem.png)
+   ![Reading non-volatile mem](/img/3-reading-non-volatile-mem.png)
 5. To update the modem firmware, scroll down to the bottom right and click **Update modem**
-   ![Update modem button](img/4-update-modem-button.png)
+   ![Update modem button](/img/4-update-modem-button.png)
 6. Find your modem firmware
-   ![Find modem firmware](img/5-modem-firmware.png)
+   ![Find modem firmware](/img/5-modem-firmware.png)
 7. Start the DFU process by clicking **Write**!
-   ![Start the process](img/6-start-mfw-dfu.png)
+   ![Start the process](/img/6-start-mfw-dfu.png)
 
 Then, your device will be updated. This process takes about _45 seconds_. You can check if the firmware version using the `AT+CGMR` AT command. Devices running on Verizon **must** use modem firmware v1.1.2.
